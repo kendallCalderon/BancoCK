@@ -54,7 +54,7 @@ h1 {
     
     display:flex;
     width:500px;
-    height:600px;
+    height:620px;
     flex-direction:column;
     background:linear-gradient(to left, #111, transparent, #111);
     border-radius:8px;
@@ -65,6 +65,25 @@ h1 {
     flex-direction:row;
     flex-wrap:wrap;
     
+}
+
+.btnConfirmar {
+    width: 40%;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to right, var(--rojo), var(--rojo), var(--rojo), var(--rojo-orcuro) );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+    margin: 15px auto;
+}
+
+.btnConfirmar:hover {
+    box-shadow: 4px 4px 5px var(--rojo);
+    transform: scaleX(1.07);
 }
 
 .ddlid{
