@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +74,7 @@
     <Content Include="bulma\css\bulma-rtl.min.css" />
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
+    <Content Include="ConsumoBaseDatos.svc" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1890,6 +1894,7 @@
     <Content Include="img\Vivienda.jpg" />
     <Content Include="img\logoBanco.png" />
     <Content Include="img\Viviendagr.jpg" />
+    <Content Include="js\modals.js" />
     <Content Include="pages\Analista.aspx" />
     <Content Include="pages\CalculadoraCréditos.aspx" />
     <Content Include="pages\FormularioPrestamo.aspx" />
@@ -1935,6 +1940,10 @@
     <Compile Include="Cliente.Master.designer.cs">
       <DependentUpon>Cliente.Master</DependentUpon>
     </Compile>
+    <Compile Include="ConsumoBaseDatos.svc.cs">
+      <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IConsumoBaseDatos.cs" />
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
