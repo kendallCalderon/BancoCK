@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Analista.master.cs" Inherits="BancoCK.Analista" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <script src="https://kit.fontawesome.com/be9c2ad52f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/bulma/css/bulma.css">
+ <link rel="stylesheet" href="/Foundation/css/foundation.css">
+    <link rel="stylesheet" href="/uikit/css/uikit.css">
+
+    <link href="/css/ClienteMaster.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="headerr">
+            <div class="navbar-fixed">
+                <nav class="navcase">
+                    <div class="head"></div>
+                    <div class="nav-wrapper navcolor">
+                        <img class="brand-logo" src="/img/logoBanco.png" />
+                        <div class="navmenu">
+                            <a class="navmenu_items" href="sass.html">$UScompra $500</a>
+                            <a class="navmenu_items" href="badges.html">$USventa $400</a>
+                            <a class="navmenu_items" href="collapsible.html">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="Contenedor_hijo">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="page-footer foter">
+            <div class="container">
+                <div class="row footerdiv">
+                    <div class="col l6 s12">
+                        <img src="/img/logoBanco.png" />
+                    </div>
+                    <div class="divcontactos">
+                        <h5 class="white-text">Contactos</h5>
+                        <ul>
+                            <li class="grey-text text-lighten-3">Correo</li>
+                            <li class="grey-text text-lighten-3">bck@hotmail.com</li>
+                            <li class="grey-text text-lighten-3">Teléfono: 22715566</li>
+                        </ul>
+                    </div>
+                    <div class="divinformacion">
+                        <h5 class="white-text">Información</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tipo de cambio</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Calculadora</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">¿Quiénes somos?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,229 @@
+﻿/*:root {
+    --rojo: #D03737;
+    --azul: #0C1248;
+    --gris: #444;
+}
+body {
+}
+
+.flexible{
+    display:flex;
+    width:100%;
+    height:450px;
+    flex-wrap:wrap;
+}
+
+.flexible2 {
+    background-color: lightgrey;
+    width: 97%;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexible3 {
+    background-color: lightgrey;
+    width: 97%;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap
+}
+
+
+.img-emprender {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+.img-usuario {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+.img-Estudio {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+
+.card {
+    width: 270px;
+    height: 385px;
+}
+
+
+
+
+.btnIngresar {
+    width: 60%;
+    height: 30px;
+    background-color: #D03737;
+    color: white;
+    display: block;
+    margin: 15px auto;
+}
+
+::placeholder {
+    color: black;
+}
+
+
+.btnRegistrarse {
+    width: 30%;
+    height: 30px;
+    background-color: #D03737;
+    color: white;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 50px;
+    float: right;
+    margin-top:15px;
+}
+
+
+.img-imagenFondo {
+    height: 450px;
+    width: 100%;
+}
+.container_item_imagen {
+    flex-grow:8;
+    height: 450px;
+}
+
+.container_item_formulario {
+    flex-grow: 1;
+    height: 450px;
+    flex-basis:300px;
+    text-align: center;
+    background-color: #272727;
+    color:white;
+}
+
+
+.titulo {
+    margin-top: 40px;
+    color: white;
+    font-size: 25px;
+}
+
+
+.formulario_input {
+    vertical-align: middle !important;
+    width: 80% !important;
+    height: 40px !important;
+    background-color: #fff !important;
+    margin: 20px auto !important;
+    outline: none !important;
+}
+
+
+
+.formulario_input:focus{
+   
+    animation-name: s !important;
+    animation-duration: 3s !important;
+    animation-fill-mode: forwards !important;
+    
+    
+}
+ 
+
+
+
+
+
+@keyframes s {
+    0% {
+        border-left: 2px solid #f00 ;
+    }
+
+    50% {
+        border-left: 2px solid #f00 ;
+        border-bottom: 2px solid #f00 ;
+    }
+
+    100% {
+        border-left: 2px solid #f00 ;
+        border-bottom: 2px solid #f00 ;
+        border-right: 2px solid #f00 ;
+    }
+}
+
+.card-content{
+    text-align:center;
+}
+
+.card-title{
+    text-align:center;
+    display:block;
+    margin-top:10px;
+}
+
+.publicidad {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background: var(--rojo);
+    flex-wrap: wrap;
+    align-content:space-between;
+
+}
+
+.parrafo{
+    display:inline-block;
+    float:left;
+    margin-left:20px;
+}
+
+
+.img-alcancia {
+    margin-top: 10px;
+    width: 250px !important;
+    height: 170px !important;
+}
+
+.img-alcancia2 {
+    margin-top: 10px;
+    width: 250px !important;
+    height: 170px !important;
+}
+
+.img-alcancia3 {
+    margin-top: 10px;
+    width: 250px !important;
+    height: 170px !important;
+}
+
+.anuncio1 {
+    width: 270px;
+    height: 270px;
+    text-align: center;
+    color: white;
+}
+
+.publicidad__elemento1 {
+    color: white;
+    flex-grow: 2;
+    display:flex;
+    justify-content:center;
+}
+
+.uk-divider-small {
+    background-color: white !important;
+    width: 90% !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+    margin: 40px auto;
+}
+    .uk-divider-small::after {
+        background-color: white !important;
+        width: 90% !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+        margin: 40px auto;
+    }
+
+*/

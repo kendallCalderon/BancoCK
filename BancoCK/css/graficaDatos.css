@@ -1,0 +1,222 @@
+﻿body {
+    font-family:Poppins;
+}
+
+:root {
+    --rojo: #D03737;
+    --rojo-orcuro: #bf1717;
+    --azul: #0C1248;
+    --azul-oscuro: #0C1228;
+    --gris: #444;
+}
+
+
+.contenedor_Imagen_imagenFondo {
+    object-fit:cover;
+    margin:0px auto;
+    
+    
+
+    
+}
+
+h3 {
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa;
+}
+
+
+.contenedor_formulario_item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin:0px 40px;
+}
+
+
+.lblfechas{
+color:#000;
+font-size:17px;
+}
+.cbxfechas{
+    background-color:var(--azul) !important;
+    border-color:var(--rojo) !important;
+    color:#fff !important;
+    
+}
+
+.select {
+    width: 167px;
+    height: 40px;
+}
+
+
+.contenedor_formulario {
+    display: flex;
+    flex-wrap: wrap;
+    height: 70px;
+    flex-direction: row;
+    width:100%;
+    margin:50px 0;
+    justify-content:center;
+}
+
+
+
+
+.boton_aceptar {
+    margin:30% 0px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to right, var(--rojo), var(--rojo), var(--rojo), var(--rojo-orcuro));
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+}
+
+    .boton_aceptar:hover {
+        box-shadow: 4px 4px 5px var(--rojo);
+        transform: scaleX(1.07);
+    }
+
+h3 {
+    height: 20px;
+    color:black;
+    text-align:center;
+}
+
+.ContenedorBusqueda{
+    margin:10px;
+    background-color:#eee;
+}
+
+h3{
+   
+    font-weight:700;
+    color:var(--azul);
+}
+
+
+.contenedorTarjetas_contenido {
+    background-color: #eee;
+    margin: 10px;
+    height: 990px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.contenedorTarjetas_contenido1{
+   display:flex;
+   flex-wrap:wrap;
+}
+
+
+
+.contenedorTarjetas {
+    width: 100%;
+}
+
+.card {
+    width: 270px;
+    height: 385px;
+    margin: 50px;
+    color: #fff;
+    padding-top: 75%;
+    box-shadow: 8px 8px 12px #777;
+    font-weight:700;
+    transition-duration:0.8s;
+}
+
+    .card:hover {
+        box-shadow: 8px 8px 12px var(--rojo);
+    }
+
+p {
+    border: 2px solid #fff;
+    width: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition-duration:0.8s;
+    
+}
+
+
+
+.cartaUno {
+    background-image: url("/img/Negociogr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartaDos {
+    background-image: url("/img/Personalgr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartaTres {
+    background-image: url("/img/Edugr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartaCuatro {
+    background-image: url("/img/Deudagr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+    
+   
+}
+
+.cartaCinco {
+    background-image: url("/img/Vehiculogr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartaSeis {
+    background-image: url("/img/Viviendagr.jpg") !important;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.card-content {
+    text-align: center;
+    padding:5px  !important;
+
+}
+
+.card-title {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.img-emprender {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+.img-usuario {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+.img-Estudio {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+}
+
+
+
+
