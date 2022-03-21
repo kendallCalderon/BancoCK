@@ -22,7 +22,7 @@ namespace BancoCK
         {
             try
             {
-                string strConexion = "Password=Morado571998Medellin;Persist Security Info=True;User ID=proyectoWebGrupo9;Initial Catalog=proyectoWebGrupo9;Data Source=tiusr2pl.cuc-carrera-ti.ac.cr\\MSSQLSERVER2019";
+                string strConexion = "Password=Morado571998Medellin;Persist Security Info=True;User ID=proyectoWebGrupo9;Initial Catalog=ProyectoSitios;Data Source=tiusr2pl.cuc-carrera-ti.ac.cr\\MSSQLSERVER2019";
                 conexion = new SqlConnection(strConexion);
                 conexion.Open();
             }
@@ -52,7 +52,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Telefono", telefono);
                 comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
                 comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto", añosLaborando);
+                comando.Parameters.AddWithValue("@SalarioBruto",salarioBruto);
                 comando.Parameters.AddWithValue("@Rol", rol);
                 comando.ExecuteNonQuery();
 
@@ -117,94 +117,31 @@ namespace BancoCK
             }
         }
 
-        public int registradoPreviamente(string identificacion)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito)
         {
             try
             {
                 abrirConexion();
-                comando = new SqlCommand("existeUsuario", conexion);
+                comando = new SqlCommand("registrarPrestamo", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                DatatableUsuarios = new DataTable();
-                adaptador.Fill(DatatableUsuarios);
-                if (DatatableUsuarios.Rows.Count > 0)
-                {
-                    return 1;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al recuperar , detalles:  " + ex.Message);
-            }
-            finally
-            {
-                cerrarConexion();
-            }
-            return 0;
-        }
-
-        public void registrarSolicitudPrestamoUsuarioNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, float salarioNeto, int añosLaborando, float salarioBruto)
-        {
-            try
-            {
-                abrirConexion();
-                comando = new SqlCommand("registrarSolicitudNoAutenticado", conexion);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Identificacion", cedula);
-                comando.Parameters.AddWithValue("@Nombre", nombre);
-                comando.Parameters.AddWithValue("@Apellido1", apellido1);
-                comando.Parameters.AddWithValue("@Apellido2", apellido2);
-                comando.Parameters.AddWithValue("@Correo", correo);
-                comando.Parameters.AddWithValue("@Telefono", telefono);
-                comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
-                comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto", añosLaborando);
+                comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
                 comando.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocurrio un error al guardar los datos del cliente en BD, detalles: " + ex.Message);
+                throw new Exception("Error al recuperar los requisitos del prestamo, detalles:  " + ex.Message);
             }
             finally
             {
                 cerrarConexion();
             }
-
         }
 
+        
 
-        bool verificarUsuario(string identificacion)
-        {
-            try
-            {
-                abrirConexion();
-                comando = new SqlCommand("existeUsuario", conexion);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Identificacion", identificacion);
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                DatatableUsuarios = new DataTable();
-                adaptador.Fill(DatatableUsuarios);
-                string usuario = DatatableUsuarios.Rows[0]["Identificacion"].ToString();
-                if (usuario.Equals("") || usuario == null)
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al recuperar , detalles:  " + ex.Message);
-            }
-            finally
-            {
-                cerrarConexion();
-            }
-            return true;
-        }
+
 
     }
 }

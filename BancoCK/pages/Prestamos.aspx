@@ -28,7 +28,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                        <asp:Button class="btnSolicitar" OnClick="Unnamed1_Click"  Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                        <asp:Button class="btnSolicitar" OnClick="Unnamed2_Click"  Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                        <asp:Button class="btnSolicitar" OnClick="Unnamed3_Click" Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                        <asp:Button class="btnSolicitar" OnClick="Unnamed4_Click"  Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                     <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                     <asp:Button class="btnSolicitar" OnClick="Unnamed5_Click"  Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <asp:Button class="btnSolicitar" Text="Solicitar" runat="server" /> 
+                        <asp:Button class="btnSolicitar" OnClick="Unnamed6_Click"  Text="Solicitar" runat="server" /> 
                     </div>
                 </div>
             </div>
