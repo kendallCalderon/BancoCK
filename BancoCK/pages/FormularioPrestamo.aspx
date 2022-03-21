@@ -11,53 +11,53 @@
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Identificación</label>
-                        <input type="text" />
+                        <input type="text" maxlength="15" runat="server" id="txtIdentificacion" required="required" />
                         <label>Primer Apellido</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtApellido1"  required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Nombre</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtNombre"  required="required" />
                         <label>Segundo Apellido</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtApellido2"  required="required"  />
                     </div>
                 </div>
                 <h2 class="titulo">Información de contácto</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Número Teléfonico</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtTelefono"  required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Correo electrónico</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtCorreo"  required="required" />
                     </div>  
                 </div>
                 <h2 class="titulo">Información laboral</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Años laborando</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtAñosLaborando"  required="required" />
                         <label>Salario Neto</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtSalarioNeto"  required="required"  />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Salario bruto</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtSalarioBruto"  required="required"  />
                     </div>
                 </div>
                 <h2 class="titulo">Información del préstamo</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Monto</label>
-                        <input type="text" />
+                        <input type="text" runat="server" id="txtMonto"  required="required"  />
                         <label>Plazo en años</label>
-                        <input type="range" class="browser-default rango" id="test5" min="1" max="30" />
+                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños"  required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Moneda</label>
                         <div class="select is-danger">
-                            <select>
+                            <select runat="server" id="txtCombo">
                                 <option>Colones</option>
                                 <option>Dolares</option>
                             </select>
@@ -65,8 +65,8 @@
                     </div>
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
-                    <button class="btn1">Atrás</button>
-                    <button class="btn2">Tramitar</button>
+                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click"/>
+                    <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click"/>
                 </div>
 
 
@@ -120,4 +120,5 @@
         </div>
 
     </div>
+     <asp:ScriptManager ID="ScriptManager1" runat="server" />
 </asp:Content>
