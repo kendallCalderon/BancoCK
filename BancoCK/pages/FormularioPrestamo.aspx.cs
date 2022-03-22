@@ -26,13 +26,20 @@ namespace BancoCK.pages
         {
             try
             {
+                if(txtIdentificacion.Value.ToString().Equals("") || txtNombre.Value.ToString().Equals("") || txtApellido1.Value.ToString().Equals("") || txtApellido2.Value.ToString().Equals("") || txtCorreo.Value.ToString().Equals("") || txtTelefono.Value.ToString().Equals("") || txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
+                {
+                    script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                }
+                else
+                {
+                    string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                    metodos.guardarInformacionClienteNoAutenticado(txtIdentificacion.Value.ToString(), txtNombre.Value.ToString(), txtApellido1.Value.ToString(), txtApellido2.Value.ToString(), txtCorreo.Value.ToString(), int.Parse(txtTelefono.Value.ToString()), float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), "NoLogeado");
+                    metodos.registrarPrestamoCliente(txtIdentificacion.Value.ToString(), fecha,"espera");
+                    script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
 
-                string fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                metodos.guardarInformacionClienteNoAutenticado(txtIdentificacion.Value.ToString(), txtNombre.Value.ToString(), txtApellido1.Value.ToString(), txtApellido2.Value.ToString(), txtCorreo.Value.ToString(), int.Parse(txtTelefono.Value.ToString()), float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), "Cliente");
-                metodos.registrarPrestamoCliente(txtIdentificacion.Value.ToString(), fecha);
-                script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
-
+                }
             }
             catch (Exception ex)
             {

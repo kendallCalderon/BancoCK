@@ -11,48 +11,48 @@
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Identificación</label>
-                        <input type="text" maxlength="15" runat="server" id="txtIdentificacion" required="required" />
+                        <input type="text" maxlength="15" runat="server" id="txtIdentificacion"/>
                         <label>Primer Apellido</label>
-                        <input type="text" runat="server" id="txtApellido1"  required="required" />
+                        <input type="text" runat="server" id="txtApellido1"/>
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Nombre</label>
-                        <input type="text" runat="server" id="txtNombre"  required="required" />
+                        <input type="text" runat="server" id="txtNombre" />
                         <label>Segundo Apellido</label>
-                        <input type="text" runat="server" id="txtApellido2"  required="required"  />
+                        <input type="text" runat="server" id="txtApellido2" />
                     </div>
                 </div>
                 <h2 class="titulo">Información de contácto</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Número Teléfonico</label>
-                        <input type="text" runat="server" id="txtTelefono"  required="required" />
+                        <input type="text" runat="server" id="txtTelefono" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Correo electrónico</label>
-                        <input type="text" runat="server" id="txtCorreo"  required="required" />
+                        <input type="text" runat="server" id="txtCorreo" />
                     </div>  
                 </div>
                 <h2 class="titulo">Información laboral</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Años laborando</label>
-                        <input type="text" runat="server" id="txtAñosLaborando"  required="required" />
+                        <input type="text" runat="server" id="txtAñosLaborando" />
                         <label>Salario Neto</label>
-                        <input type="text" runat="server" id="txtSalarioNeto"  required="required"  />
+                        <input type="text" runat="server" id="txtSalarioNeto" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Salario bruto</label>
-                        <input type="text" runat="server" id="txtSalarioBruto"  required="required"  />
+                        <input type="text" runat="server" id="txtSalarioBruto" />
                     </div>
                 </div>
                 <h2 class="titulo">Información del préstamo</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Monto</label>
-                        <input type="text" runat="server" id="txtMonto"  required="required"  />
+                        <input type="text" runat="server" id="txtMonto" />
                         <label>Plazo en años</label>
-                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños"  required="required" />
+                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Moneda</label>
