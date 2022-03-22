@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 
 namespace BancoCK
 {
@@ -117,7 +112,7 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito,string estadoCredito)
         {
             try
             {
@@ -126,6 +121,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
                 comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
+                comando.Parameters.AddWithValue("@EstadoCredito",estadoCredito);
                 comando.ExecuteNonQuery();
 
             }

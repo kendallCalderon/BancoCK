@@ -11,7 +11,12 @@ namespace BancoCK.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void btnRgistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/Registro.aspx");
         }
     }
 }

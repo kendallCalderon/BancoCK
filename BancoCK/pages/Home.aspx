@@ -37,7 +37,7 @@
                 <button class="btnIngresar">Ingresar</button>
                 <hr class="uk-divider-small">
                 <p class="parrafo">¿Primera vez que ingresa?</p>
-                <button class="btnRegistrarse">Registrarse</button>
+                <asp:Button runat="server" id="btnRgistrarse" OnClick="btnRgistrarse_Click" class="btnRegistrarse" Text="Registrarse"/>
 
             </div>
         </div>

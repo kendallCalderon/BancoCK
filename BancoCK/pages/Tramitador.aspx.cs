@@ -12,22 +12,30 @@ namespace BancoCK
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable detalles = new DataTable();
+            try
+            {
+                DataTable detalles = new DataTable();
 
-            detalles.Columns.Add("Préstamo #");
-            detalles.Columns.Add("Identificación");
-            detalles.Columns.Add("Nombre Analista");
+                detalles.Columns.Add("Préstamo #");
+                detalles.Columns.Add("Identificación");
+                detalles.Columns.Add("Nombre Analista");
 
 
-            System.Data.DataRow row = detalles.NewRow();
+                System.Data.DataRow row = detalles.NewRow();
 
-            row["Préstamo #"] = "y2y22yy3";
-            row["Identificación"] = "Cristian";
-            row["Nombre Analista"] = "Arias";
-            detalles.Rows.Add(row);
+                row["Préstamo #"] = "y2y22yy3";
+                row["Identificación"] = "Cristian";
+                row["Nombre Analista"] = "Arias";
+                detalles.Rows.Add(row);
 
-            GridView1.DataSource = detalles;
-            GridView1.DataBind();
+                GridView1.DataSource = detalles;
+                GridView1.DataBind();
+            }
+            catch(Exception ex)
+            {
+
+            }
+           
         }
     }
 }

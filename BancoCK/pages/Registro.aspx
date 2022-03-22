@@ -29,7 +29,7 @@
         <form class="contenedor_form" id="form1" runat="server">
 
          <div class="formulario">
-             <h1>Registro Cliente</h1>
+             <h1>Registro Usuario</h1>
              <div class="formulario-cajas">
                  <div class="form__group field">
              <asp:DropDownList ID="ddlTipoCedula"  CssClass="ddlid" runat="server"></asp:DropDownList>
@@ -81,6 +81,7 @@
                          <label for="Usuario" class="form__label">Salario neto</label>
                          </div>
                    </div>
+             <asp:Button CssClass="btnConfirmar" Text="Confirmar" runat="server" />
                      
          </div>
 
