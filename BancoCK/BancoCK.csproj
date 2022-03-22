@@ -1897,9 +1897,11 @@
     <Content Include="js\modals.js" />
     <Content Include="pages\Analista.aspx" />
     <Content Include="pages\CalculadoraCréditos.aspx" />
+    <Content Include="pages\FormularioAutenticado.aspx" />
     <Content Include="pages\FormularioPrestamo.aspx" />
     <Content Include="pages\graficaDatos.aspx" />
     <Content Include="pages\Home.aspx" />
+    <Content Include="pages\HomeAutenticado.aspx" />
     <Content Include="pages\Prestamos.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Tramitador.aspx" />
@@ -1940,6 +1942,13 @@
     <Compile Include="Cliente.Master.designer.cs">
       <DependentUpon>Cliente.Master</DependentUpon>
     </Compile>
+    <Compile Include="ClienteAutenticado.Master.cs">
+      <DependentUpon>ClienteAutenticado.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteAutenticado.Master.designer.cs">
+      <DependentUpon>ClienteAutenticado.Master</DependentUpon>
+    </Compile>
     <Compile Include="ConsumoBaseDatos.svc.cs">
       <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
     </Compile>
@@ -1957,6 +1966,13 @@
     </Compile>
     <Compile Include="pages\CalculadoraCréditos.aspx.designer.cs">
       <DependentUpon>CalculadoraCréditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FormularioAutenticado.aspx.cs">
+      <DependentUpon>FormularioAutenticado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\FormularioAutenticado.aspx.designer.cs">
+      <DependentUpon>FormularioAutenticado.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\FormularioPrestamo.aspx.cs">
       <DependentUpon>FormularioPrestamo.aspx</DependentUpon>
@@ -1978,6 +1994,13 @@
     </Compile>
     <Compile Include="pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\HomeAutenticado.aspx.cs">
+      <DependentUpon>HomeAutenticado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\HomeAutenticado.aspx.designer.cs">
+      <DependentUpon>HomeAutenticado.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Prestamos.aspx.cs">
       <DependentUpon>Prestamos.aspx</DependentUpon>
@@ -2079,6 +2102,7 @@
     <Content Include="bulma\sass\utilities\mixins.sass" />
     <Content Include="bulma\sass\utilities\_all.sass" />
     <Content Include="Analista.Master" />
+    <Content Include="ClienteAutenticado.Master" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
