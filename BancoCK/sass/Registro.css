@@ -61,7 +61,7 @@ h1 {
 }
 
 .btnConfirmar {
-  width: 40%;
+  width: 210px;
   height: 30px;
   border: none;
   background: linear-gradient(to right, var(--rojo), var(--rojo), var(--rojo), var(--rojo-orcuro));
@@ -71,7 +71,12 @@ h1 {
   font-size: 15px;
   color: #fff;
   transition-duration: 0.1s;
-  margin: 15px auto;
+  margin: 15px auto !important;
+}
+
+#UpdatePanel1 {
+  width: 230px;
+  margin: 0px auto;
 }
 
 .btnConfirmar:hover {

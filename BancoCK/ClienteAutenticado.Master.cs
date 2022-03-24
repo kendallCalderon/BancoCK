@@ -13,5 +13,12 @@ namespace BancoCK
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Session["Login"] = null;
+            Response.Redirect("/Pages/Home.aspx");
+            
+        }
     }
 }

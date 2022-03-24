@@ -25,13 +25,14 @@
     <video class="vid" src="/img/regis.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
        
     
-   
+    
     
     
 
         <form class="contenedor_form" id="form1" runat="server">
-
+            
          <div class="formulario">
+             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
              <h1>Registro Usuario</h1>
              <div class="formulario-cajas">
                  <div class="form__group field">
@@ -84,11 +85,13 @@
                          <label for="Usuario" class="form__label">Salario neto (Opcional)</label>
                          </div>
                    </div>
+             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                 <ContentTemplate>
              <asp:Button CssClass="btnConfirmar" OnClick="btnConfirmar_Click" Text="Confirmar" runat="server" />
-                     
+                     </ContentTemplate>
+           </asp:UpdatePanel> 
          </div>
           
-            
           
 
 
@@ -96,7 +99,7 @@
 
      
      <asp:LinkButton ID="fake" runat="server" Enabled="false"></asp:LinkButton>
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            
             
        
             <ajaxtoolkit:modalpopupextender ID="ModalExito" runat="server" PopupControlID="ContenedorModal" TargetControlID="fake" BackgroundCssClass="BackgroundModal"></ajaxtoolkit:modalpopupextender>
@@ -107,6 +110,14 @@
                 <asp:Button Text="OK" runat="server" ID="btnOk" OnClick="btnOk_Click" />
 
             </div>
+            <script  language="javascript">
+
+                function QuitarRequired() {
+                    $('#Contraseña').removeAttr("required");
+                }
+
+            </script>
+            
 
     </form>
 </body>

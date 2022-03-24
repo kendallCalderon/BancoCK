@@ -15,6 +15,15 @@ namespace BancoCK.pages
     {
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// Control tbxUsuario.
         /// </summary>
         /// <remarks>
@@ -33,6 +42,15 @@ namespace BancoCK.pages
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword tbxPassword;
 
         /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
         /// Control btnIngresar.
         /// </summary>
         /// <remarks>
@@ -42,13 +60,13 @@ namespace BancoCK.pages
         protected global::System.Web.UI.WebControls.Button btnIngresar;
 
         /// <summary>
-        /// Control lblError.
+        /// Control lblPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblError;
+        protected global::System.Web.UI.WebControls.Label lblPass;
 
         /// <summary>
         /// Control btnRgistrarse.

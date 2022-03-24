@@ -8,7 +8,7 @@
 
 
     <div class="Contenedor">
-
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="flexible">
             <div class="container_item_imagen">
                 <%--<img class="img-imagenFondo" src="/img/imagenFondo.jpg" />--%>
@@ -33,15 +33,21 @@
                 <%-- <input class=" browser-default formulario_input"   type="text" placeholder="Usuario" />
                 <input class=" browser-default formulario_input"   type="password" placeholder="Contraseña" />
                 <label for="name" class="form__label">Name</label>--%>
-
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
                 <asp:button runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ID="btnIngresar" class="btnIngresar"/>
-                <label runat="server" id="lblError" >Usuario y/o Contraseña incorrecta</label>
+                        <asp:Label ID="lblPass" CssClass="lblError"  Text="Usuario y/o Contraseña incorrecta" runat="server"></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                
                 <hr class="uk-divider-small">
                 <p class="parrafo">¿Primera vez que ingresa?</p>
                 <asp:Button runat="server" id="btnRgistrarse" OnClick="btnRgistrarse_Click" class="btnRegistrarse" Text="Registrarse"/>
 
             </div>
+            
         </div>
+        
 
         <div class="publicidad">
             <div class="publicidad__elemento1">

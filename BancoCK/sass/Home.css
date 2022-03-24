@@ -11,10 +11,11 @@
   --gris: #444;
 }
 
-#lblError {
-  color: var(--rojo);
-  display: block;
-  margin-top: 15px;
+.lblError {
+  all: unset !important;
+  color: var(--rojo) !important;
+  display: block !important;
+  margin-top: 15px !important;
 }
 
 .flexible {

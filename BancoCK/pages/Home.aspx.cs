@@ -14,7 +14,7 @@ namespace BancoCK.pages
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            lblError.Visible = false;
+            lblPass.Visible = false;
             
         }
 
@@ -25,24 +25,48 @@ namespace BancoCK.pages
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+            string username = tbxUsuario.Value;
+            string password = tbxPassword.Value;
             string validar  = iConsumoBaseDatos.CredencialesUsuario(tbxUsuario.Value, tbxPassword.Value);
 
             if (validar.Equals("0"))
             {
-                lblError.Visible = true;
+                lblPass.Visible = true;
             }
             else if (validar.Equals("Cliente"))
             {
-                Response.Redirect("/pages/HomeAutenticado.aspx");
+                HttpCookie cookie = new HttpCookie("Token", username);
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                this.Response.Cookies.Add(cookie);
+
+                Session["Login"] = username;
+                Response.Redirect("/pages/HomeAutenticado.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                
 
             }else if (validar.Equals("Tramitador"))
             {
-                Response.Redirect("/pages/Tramitador.aspx");
+
+                HttpCookie cookie = new HttpCookie("Token", username);
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                this.Response.Cookies.Add(cookie);
+
+                Session["Login"] = username;
+                Response.Redirect("/pages/Tramitador.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+               
             }
             else
             {
-                Response.Redirect("/pages/Analista.aspx");
+
+                HttpCookie cookie = new HttpCookie("Token", username);
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                this.Response.Cookies.Add(cookie);
+
+                Session["Login"] = username;
+                Response.Redirect("/pages/Analista.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                
             }
            
         }
