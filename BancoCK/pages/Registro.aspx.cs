@@ -12,7 +12,7 @@ namespace BancoCK.pages
         ConsumoBaseDatos iConsumoBaseDatos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (IsPostBack == false)
             {
                 ListItem i;
@@ -33,7 +33,13 @@ namespace BancoCK.pages
         {
             string Rol = "Cliente";
             iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Salarioneto.Value, Añoslaborando.Value, Salariobruto.Value, Contraseña.Value, ddlTipoCedula.Text);
-            
+            ModalExito.Show();
+
+        }
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/Home.aspx");
         }
     }
 }
