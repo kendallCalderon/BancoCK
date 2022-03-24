@@ -135,7 +135,50 @@ namespace BancoCK
             }
         }
 
-        
+        public string CredencialesUsuario(string Identificación, string password)
+        {
+            abrirConexion();
+            comando = new SqlCommand("CredencialesUsuarios", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataAdapter adp = new SqlDataAdapter(comando);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            if (dt.Rows.Count == 1 && dt.Rows[0][0].ToString().Equals("") || dt.Rows[0][1].ToString().Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return dt.Rows[0][2].ToString();
+            }
+        }
+
+
+        public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula)
+        {
+
+            abrirConexion();
+            comando = new SqlCommand("RegistroUsuarios", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+            comando.Parameters.AddWithValue("@Nombre", Nombre);
+            comando.Parameters.AddWithValue("@Apellido1", PrimerApellido);
+            comando.Parameters.AddWithValue("@Apellido2", SegundoApellido);
+            comando.Parameters.AddWithValue("@Correo", Correo);
+            comando.Parameters.AddWithValue("@Telefono", Telefono);
+            comando.Parameters.AddWithValue("@SalarioNeto", SalarioNeto);
+            comando.Parameters.AddWithValue("@AñosLaborando", AñosLaborando);
+            comando.Parameters.AddWithValue("@SalarioBruto", SalarioBruto);
+            comando.Parameters.AddWithValue("@Contraseña", Password);
+            comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
+            comando.ExecuteNonQuery();
+
+
+        }
+
+
+
 
 
 

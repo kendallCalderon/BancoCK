@@ -9,6 +9,7 @@ namespace BancoCK.pages
 {
     public partial class Registro : System.Web.UI.Page
     {
+        ConsumoBaseDatos iConsumoBaseDatos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,6 +27,13 @@ namespace BancoCK.pages
 
             }
 
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string Rol = "Cliente";
+            iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Salarioneto.Value, Añoslaborando.Value, Salariobruto.Value, Contraseña.Value, ddlTipoCedula.Text);
+            
         }
     }
 }

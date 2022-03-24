@@ -11,6 +11,12 @@
   --gris: #444;
 }
 
+#lblError {
+  color: var(--rojo);
+  display: block;
+  margin-top: 15px;
+}
+
 .flexible {
   display: flex;
   width: 100%;
@@ -144,6 +150,7 @@
   text-align: center;
   background-color: #272727;
   color: white;
+  flex-direction: column;
 }
 
 .titulo {

@@ -21,12 +21,12 @@
                 <h1 class="titulo">Banca en Linea</h1>
 
                 <div class="form__group field">
-                    <input type="text" class=" browser-default form__field" placeholder="Usuario" name="Usuario" />
+                    <input runat="server" type="text" id="tbxUsuario" class=" browser-default form__field" placeholder="Usuario" name="Usuario" />
                     <label for="Usuario" class="form__label">Usuario</label>
                 </div>
 
                 <div class="form__group2 field">
-                    <input type="password" class=" browser-default form__field2" placeholder="Usuario" name="Usuario" />
+                    <input runat="server" id="tbxPassword" type="password" class=" browser-default form__field2" placeholder="Usuario" name="Usuario" />
                     <label for="Contraseña" class="form__label2">Contraseña</label>
                 </div>
 
@@ -34,7 +34,8 @@
                 <input class=" browser-default formulario_input"   type="password" placeholder="Contraseña" />
                 <label for="name" class="form__label">Name</label>--%>
 
-                <button class="btnIngresar">Ingresar</button>
+                <asp:button runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ID="btnIngresar" class="btnIngresar"/>
+                <label runat="server" id="lblError" >Usuario y/o Contraseña incorrecta</label>
                 <hr class="uk-divider-small">
                 <p class="parrafo">¿Primera vez que ingresa?</p>
                 <asp:Button runat="server" id="btnRgistrarse" OnClick="btnRgistrarse_Click" class="btnRegistrarse" Text="Registrarse"/>
