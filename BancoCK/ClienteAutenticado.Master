@@ -37,7 +37,7 @@
                         <img class="brand-logo" src="/img/logoBanco.png" />
                         <div class="navmenu">
                             <a class="navmenu_items" href="sass.html">Pagina inicio</a>
-                            <a class="navmenu_items" href="badges.html">Préstamos</a>
+                            <a class="navmenu_items" href="/pages/Prestamos.aspx">Préstamos</a>
                             <a class="navmenu_items" href="collapsible.html">Contactos</a>
                             <a class="navmenu_items" href="collapsible.html">Historia</a>
                             <asp:LinkButton OnClick="Unnamed_Click"  class="navmenu_items"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
