@@ -17,12 +17,6 @@
     width:100%;
 }
 
-.ImagenInicial_Fondo{
-    width:95%;
-    height:350px;
-    position:absolute;
-    margin:0px 25px;
-}
 
 h1 {
     color: var(--azul);
@@ -49,6 +43,8 @@ h1 {
     flex-direction: row;
     
 }
+
+
 
 .ContenedorFormulario_contenido1 {
     display: flex;
@@ -98,12 +94,15 @@ h1 {
    
 }
 
+.cbxCombo{
+    height:30px !important;
+}
+
 
 .tabla_header {
     background-color: var(--rojo);
     color: #fff;
-    border:none;
-    
+    border: none;
 }
 
 .tabla_item {
@@ -112,7 +111,7 @@ h1 {
 
 .btnBuscar {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 70px;
     width: 200px;
     height: 30px;
     border: none;
@@ -183,8 +182,6 @@ input {
     border-bottom: 3px solid var(--rojo);
     outline: none;
 }
-
-
 
 
 
