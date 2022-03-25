@@ -116,19 +116,19 @@ C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
+C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csc.exe
+C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\BancoCK.dll.config
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\BancoCK.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\BancoCK.pdb
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csc.exe
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csc.exe.config
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csc.rsp
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csi.exe
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csi.exe.config
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\csi.rsp
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\Microsoft.CSharp.Core.targets
@@ -170,8 +170,8 @@ C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\VBCSComp
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
