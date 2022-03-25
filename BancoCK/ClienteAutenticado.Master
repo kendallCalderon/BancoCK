@@ -40,7 +40,7 @@
                             <a class="navmenu_items" href="badges.html">Préstamos</a>
                             <a class="navmenu_items" href="collapsible.html">Contactos</a>
                             <a class="navmenu_items" href="collapsible.html">Historia</a>
-                            <a class="navmenu_items" href="collapsible.html">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></a>
+                            <asp:LinkButton OnClick="Unnamed_Click"  class="navmenu_items"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
                         </div>
                     </div>
                 </nav>

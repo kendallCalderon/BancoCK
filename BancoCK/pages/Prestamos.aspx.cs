@@ -13,7 +13,7 @@ namespace BancoCK.pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -106,5 +106,7 @@ namespace BancoCK.pages
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", script, true);
             }
         }
+
+      
     }
 }

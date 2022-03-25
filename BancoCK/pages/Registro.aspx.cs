@@ -9,9 +9,10 @@ namespace BancoCK.pages
 {
     public partial class Registro : System.Web.UI.Page
     {
+        ConsumoBaseDatos iConsumoBaseDatos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (IsPostBack == false)
             {
                 ListItem i;
@@ -25,7 +26,32 @@ namespace BancoCK.pages
 
 
             }
+         
 
+
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string Rol = "Cliente";
+            if (Salarioneto.Value.Equals("")) Salarioneto.Value = "0";
+
+            if (Salariobruto.Value.Equals("")) Salariobruto.Value = "0";
+
+            iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Salarioneto.Value, Añoslaborando.Value, Salariobruto.Value, Contraseña.Value, ddlTipoCedula.Text);
+           
+                
+
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "QuitarRequired", "QuitarRequired();",  true);
+
+            ModalExito.Show();
+            
+        }
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+          
+            Response.Redirect("/pages/Home.aspx");
         }
     }
 }

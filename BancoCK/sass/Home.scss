@@ -18,6 +18,15 @@ h1{
     --gris: #444;
 }
 
+
+
+.lblError {
+    all: unset !important;
+    color: var(--rojo) !important;
+    display: block !important;
+    margin-top: 15px !important;
+}
+
 body {
 }
 
@@ -109,6 +118,7 @@ body {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
+    
 }
 
 
@@ -171,6 +181,7 @@ body {
     text-align: center;
     background-color: #272727;
     color: white;
+    flex-direction:column;
 }
 
 
