@@ -1900,7 +1900,7 @@
     <Content Include="img\Viviendagr.jpg" />
     <Content Include="js\modals.js" />
     <Content Include="pages\Analista.aspx" />
-    <Content Include="pages\CalculadoraCréditos.aspx" />
+    <Content Include="pages\CalculadoraCreditos.aspx" />
     <Content Include="pages\FormularioAutenticado.aspx" />
     <Content Include="pages\FormularioPrestamo.aspx" />
     <Content Include="pages\graficaDatos.aspx" />
@@ -1964,12 +1964,12 @@
     <Compile Include="pages\Analista.aspx.designer.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\CalculadoraCréditos.aspx.cs">
-      <DependentUpon>CalculadoraCréditos.aspx</DependentUpon>
+    <Compile Include="pages\CalculadoraCreditos.aspx.cs">
+      <DependentUpon>CalculadoraCreditos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\CalculadoraCréditos.aspx.designer.cs">
-      <DependentUpon>CalculadoraCréditos.aspx</DependentUpon>
+    <Compile Include="pages\CalculadoraCreditos.aspx.designer.cs">
+      <DependentUpon>CalculadoraCreditos.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\FormularioAutenticado.aspx.cs">
       <DependentUpon>FormularioAutenticado.aspx</DependentUpon>

@@ -19,6 +19,34 @@
    
 }
 
+.icono{
+    position:absolute;
+    top:16px;
+    margin-left:18px;
+    color:var(--azul);
+    transition-duration:0.1s;
+
+}
+
+    .icono:hover {
+        
+        transform: scaleX(1.09);
+    }
+
+.iconoo {
+    margin-left: 18px;
+    height: 31px;
+    transition-duration: 0.1s;
+    filter: drop-shadow(1px 1px 1px var(--azul)) drop-shadow(1px 1px 1px var(--azul));
+}
+
+    .iconoo:hover {
+        filter: drop-shadow(1px 1px 1px var(--azul)) drop-shadow(1px 1px 1px var(--azul)) drop-shadow(1px 1px 1px var(--azul));
+        transform: scaleX(1.09);
+    }
+
+   
+
 .imgvivienda{
     width:264.328px;
     height:220.219px;
@@ -65,7 +93,7 @@
 
 .btnSolicitar {
     width: 100px;
-    height: 30px;
+    height: 32px;
     border: none;
     background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
     border-bottom: solid 4px #910000;
@@ -74,13 +102,18 @@
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
+    
 }
 
-    .btnSolicitar:hover {
-        
-        box-shadow: 4px 4px 5px var(--rojo);
-        transform:scaleX(1.07);
-    }
+.card-action{
+    display:flex;
+    justify-content:center;
+}
+
+.btnSolicitar:hover {
+    box-shadow: 4px 4px 5px var(--rojo);
+    transform: scaleX(1.07);
+}
 
 .titulo {
     color: #fff !important;

@@ -107,6 +107,34 @@ namespace BancoCK.pages
             }
         }
 
-      
+        protected void btnVivienda_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnPersonal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnVehiculo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnDeudas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnNegocio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnEducacion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
     }
 }
