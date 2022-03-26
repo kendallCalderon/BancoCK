@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -32,9 +33,28 @@ namespace BancoCK
         void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito);
 
         [OperationContract]
+<<<<<<< HEAD
         string CredencialesUsuario( string Identificacion, string password);
 
         [OperationContract]
         void RegistrarUsuario( string Identificacion, string Nombre, string Rol,string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula );
+=======
+        DataTable devolverPrestamosClientes();
+
+        [OperationContract]
+        string devolverCedulaAnalista(string nombre, string apellido1, string apellido2);
+
+        [OperationContract]
+        void asignarAnalista(string identificacion,int idPrestamo);
+
+        [OperationContract]
+        DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula);
+
+        [OperationContract]
+        DataTable devolverPrestamos_tipoPrestamo(string tipoPrestamo);
+
+        [OperationContract]
+        void cambiarEstadoPrestamoSolicitud(int idPrestamo);
+>>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
     }
 }

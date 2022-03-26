@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -12,6 +13,7 @@ namespace BancoCK
         private SqlCommand comando;
         private SqlDataAdapter adaptador;
         DataTable DatatableUsuarios = null;
+        public string comboBoxItem;
 
         public void abrirConexion()
         {
@@ -30,6 +32,29 @@ namespace BancoCK
         public void cerrarConexion()
         {
             conexion.Close();
+        }
+
+        public DataTable devolverPrestamosClientes()
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerPrestamos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar los requisitos del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return DatatableUsuarios;
         }
 
         public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, float salarioNeto, int añosLaborando, float salarioBruto, string rol)
@@ -135,6 +160,7 @@ namespace BancoCK
             }
         }
 
+<<<<<<< HEAD
         public string CredencialesUsuario(string Identificacion, string password)
         {
             abrirConexion();
@@ -158,10 +184,14 @@ namespace BancoCK
 
 
         public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula)
+=======
+        public string devolverCedulaAnalista(string nombre, string apellido1, string apellido2)
+>>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
         {
             try
             {
                 abrirConexion();
+<<<<<<< HEAD
                 comando = new SqlCommand("RegistroUsuarios", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion", Identificacion);
@@ -176,11 +206,45 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@SalarioBruto", Convert.ToSingle(SalarioBruto));
                 comando.Parameters.AddWithValue("@Contraseña", Password);
                 comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
+=======
+                comando = new SqlCommand("traerAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre",nombre);
+                comando.Parameters.AddWithValue("@Apellido1",apellido1);
+                comando.Parameters.AddWithValue("@Apellido2",apellido2);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string usuario = DatatableUsuarios.Rows[0]["Identificacion"].ToString();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void asignarAnalista(string identificacion, int idPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("asignarAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@identificacion",identificacion);
+                comando.Parameters.AddWithValue("@idPrestamo",idPrestamo);
+>>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
                 comando.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
 
                 throw new Exception("Error al registrar el usuario, detalles:  " + ex.Message);
             }
@@ -192,8 +256,86 @@ namespace BancoCK
 
 
 
+=======
+                throw new Exception("Ocurrio un error al asignar un analista para un prestamo, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+>>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
 
 
 
+        public DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerPrestamos_TipoYcedula", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mostrar los prestamos por el filtro de nombre y cedula, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable devolverPrestamos_tipoPrestamo(string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerPrestamos_TipoPrestamos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mostrar los prestamos por el filtro de nombre, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void cambiarEstadoPrestamoSolicitud(int idPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("cambiarEstadoParaAprobrarONo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idPrestamo",idPrestamo);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrio un error al cambiar el estado prestamo, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
     }
 }
