@@ -58,11 +58,9 @@
                     <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Nombre Analista">
 
                            <ItemTemplate>
-<<<<<<< HEAD
-                               <asp:DropDownList  ID="ddlNombreAnalistas" class="select is-danger" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
-=======
+
                                <asp:DropDownList  ID="ddlNombreAnalistas" CssClass=" browser-default cbxCombo" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
->>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
+
                                </asp:DropDownList>
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource> 
                         </ItemTemplate>
