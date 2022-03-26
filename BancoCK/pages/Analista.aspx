@@ -6,7 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
 
-
         <div class="cajaFlexible1">
             <div class="cajaFlexible1_elemento1">
                 <img class="img-negocios" src="/img/salaanalista.gif" />
@@ -16,7 +15,6 @@
             </div>
         </div>
 
-
         <div class="Titulo">
             <h2>Analista</h2>
         </div>
@@ -25,20 +23,42 @@
 
             <div class="ContenedorFormulario_contenido1">
                 <h1 class="subtitulo">Solicitudes de préstamos</h1>
-                <label>Ingrese tipo Préstamo</label>
-                <div class="select is-danger">
-                    <select>
-                        <option>Vehiculo</option>
-                        <option>Vivienda</option>
-                        <option>Refundir deudas</option>
-                        <option>Educación</option>
-                        <option>Personal</option>
-                        <option>Apoyo negocio</option>
-                    </select>
+                <div class="ContenedorFormulario_contenido_filtros">
+                    <div class="ContenedorFormulario_contenido_filtros_1">
+                        <label>Ingrese tipo Préstamo</label>
+                        <div class="select is-danger">
+                            <select runat="server" id="cbxPrestamos">
+                                <option>Vehiculo</option>
+                                <option>Vivienda</option>
+                                <option>Refundir deudas</option>
+                                <option>Educación</option>
+                                <option>Personal</option>
+                                <option>Apoyo negocio</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                    <div class="ContenedorFormulario_contenido_filtros_1">
+                         <label>Ingrese el filtro a buscar:</label>
+                          <div class="select is-danger">
+                            <select runat="server" id="cbxFiltros">
+                                <option>Nombre</option>
+                                <option>Apellido1</option>
+                                <option>Apellido2</option>
+                                <option>Identificacion</option>
+                                <option>Correo</option>
+                                <option>Telefono</option>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
-                <label>Ingrese cedula del cliente:</label>
-                <input type="text" placeholder="Cedula Cliente" class=" browser-default tbx tbxCedulaCliente" />
-                <button class="btnBuscar">Buscar</button>
+                <div class="ContenedorFormulario_contenido_filtros_1">
+                         <label>Ingrese el campo a buscar:</label>
+                        <input type="text" placeholder="Cedula Cliente" class=" browser-default tbx tbxCedulaCliente" />
+                </div>
+
+                <asp:Button runat="server" id="btnBuscar" CssClass="btnBuscar" Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
 
             <div class="ContenedorFormulario_imagen">
@@ -146,6 +166,5 @@
         </div>
 
     </div>
-
 
 </asp:Content>

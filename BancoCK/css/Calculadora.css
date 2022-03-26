@@ -172,3 +172,7 @@ input {
     
     color: var(--rojo) !important;
 }
+
+.marginMensaje{
+    margin:10px 0;
+}
