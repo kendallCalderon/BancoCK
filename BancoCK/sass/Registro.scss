@@ -8,6 +8,14 @@
    
     }
 
+
+.lblError {
+    all: unset !important;
+    color: var(--rojo) !important;
+    display: block !important;
+    margin-top: 15px !important;
+}
+
 .logo {
     margin: 5px 3px;
     position: absolute;
@@ -34,6 +42,7 @@
 
 h1 {
     margin: 0px auto;
+    margin-top:50px;
     color: #fff;
     font-size: 22px;
     
@@ -78,7 +87,7 @@ h1 {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
-    margin: 15px auto !important;
+    margin: 60px auto !important;
 }
 
 #UpdatePanel1{

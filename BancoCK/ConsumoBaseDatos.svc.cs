@@ -184,7 +184,7 @@ namespace BancoCK
         }
 
 
-        public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula)
+        public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono,  string Password, string TipoCedula)
 
         {
             try
@@ -200,9 +200,6 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Apellido2", SegundoApellido);
                 comando.Parameters.AddWithValue("@Correo", Correo);
                 comando.Parameters.AddWithValue("@Telefono", Convert.ToInt32(Telefono));
-                comando.Parameters.AddWithValue("@SalarioNeto", Convert.ToSingle(SalarioNeto));
-                comando.Parameters.AddWithValue("@AñosLaborando", AñosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto", Convert.ToSingle(SalarioBruto));
                 comando.Parameters.AddWithValue("@Contraseña", Password);
                 comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
             }
@@ -336,6 +333,34 @@ namespace BancoCK
                 cerrarConexion();
             }
 
+        }
+
+
+       public bool ValidarExistenciaUsuario(string Identificacion)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("ValidarExistenciaUsuario", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                SqlDataAdapter adp = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if(dt.Rows.Count==0 || dt.Rows[0][0].ToString().Equals(""))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
         }
     }
 }
