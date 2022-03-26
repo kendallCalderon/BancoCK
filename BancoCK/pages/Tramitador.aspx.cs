@@ -16,6 +16,16 @@ namespace BancoCK
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["Login"] == null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
+
+
+            }
+
             try
             {
                 

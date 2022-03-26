@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
+
 namespace BancoCK
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IConsumoBaseDatos" en el código y en el archivo de configuración a la vez.
@@ -32,6 +33,13 @@ namespace BancoCK
         void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito);
 
         [OperationContract]
+
+        string CredencialesUsuario( string Identificacion, string password);
+
+        [OperationContract]
+        void RegistrarUsuario( string Identificacion, string Nombre, string Rol,string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula );
+
+        [OperationContract]
         DataTable devolverPrestamosClientes();
 
         [OperationContract]
@@ -48,5 +56,6 @@ namespace BancoCK
 
         [OperationContract]
         void cambiarEstadoPrestamoSolicitud(int idPrestamo);
+
     }
 }

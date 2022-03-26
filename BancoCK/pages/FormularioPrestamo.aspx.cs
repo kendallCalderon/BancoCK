@@ -14,7 +14,15 @@ namespace BancoCK.pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["Login"] == null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
 
+
+            }
         }
 
         protected void btnTramitar_Click(object sender, EventArgs e)

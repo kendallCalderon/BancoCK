@@ -13,7 +13,7 @@ namespace BancoCK.pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -105,6 +105,36 @@ namespace BancoCK.pages
                 script = string.Format("javascript:alerta('{0}')", "ocurrio un error al darle click al boton, detalles: " + ex.Message);
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", script, true);
             }
+        }
+
+        protected void btnVivienda_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnPersonal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnVehiculo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnDeudas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnNegocio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+        }
+
+        protected void btnEducacion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
     }
 }
