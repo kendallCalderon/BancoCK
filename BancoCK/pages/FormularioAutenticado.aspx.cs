@@ -30,7 +30,7 @@ namespace BancoCK.pages
 
             try
             {
-                if ( txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
+                if (txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
                 {
                     script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);

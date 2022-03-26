@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ClienteAutenticado.Master" AutoEventWireup="true" CodeBehind="FormularioAutenticado.aspx.cs" Inherits="BancoCK.pages.FormularioAutenticado" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="/css/FormularioAutenticado.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -7,27 +9,29 @@
         <div class="contenidoPrincipal">
             <div class="contenidoPrincipal_formulario">
 
-               
+
                 <h2 class="titulo">Información laboral</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Años laborando</label>
-                        <input type="text" runat="server" id="txtAñosLaborando"  required="required" />
+                        <input type="text" runat="server" id="txtAñosLaborando" required="required" />
                         <label>Salario Neto</label>
-                        <input type="text" runat="server" id="txtSalarioNeto"  required="required"  />
+                        <input type="text" runat="server" id="txtSalarioNeto" required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Salario bruto</label>
-                        <input type="text" runat="server" id="txtSalarioBruto"  required="required"  />
+                        <input type="text" runat="server" id="txtSalarioBruto" required="required" />
                     </div>
                 </div>
                 <h2 class="titulo">Información del préstamo</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Monto</label>
-                        <input type="text" runat="server" id="txtMonto"  required="required"  />
+                        <input type="text" runat="server" id="txtMonto" required="required" />
                         <label>Plazo en años</label>
-                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños"  required="required" />
+                        <input type="number" class="browser-default rango" runat="server" id="txtRangoAños" required="required" />
+                        
+
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Moneda</label>
@@ -40,8 +44,8 @@
                     </div>
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
-                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click"/>
-                    <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click"/>
+                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click" />
+                    <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click" />
                 </div>
 
 
@@ -59,7 +63,7 @@
                     consequuntur, iure dolores atque reiciendis tempore delectus
                 </div>
 
-                 <div class="parrafo">
+                <div class="parrafo">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Similique repudiandae, consequatur vitae at eum expedita
                     fugiat odio voluptatibus incidunt harum tenetur ullam
@@ -81,7 +85,7 @@
                     consequuntur, iure dolores atque reiciendis tempore delectus
                 </div>
 
-                 <div class="parrafo">
+                <div class="parrafo">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Similique repudiandae, consequatur vitae at eum expedita
                     fugiat odio voluptatibus incidunt harum tenetur ullam
@@ -95,5 +99,5 @@
         </div>
 
     </div>
-     <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
 </asp:Content>
