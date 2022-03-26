@@ -1900,7 +1900,6 @@
     <Content Include="pages\FormularioPrestamo.aspx" />
     <Content Include="pages\graficaDatos.aspx" />
     <Content Include="pages\Home.aspx" />
-    <Content Include="pages\jdjdjd.aspx" />
     <Content Include="pages\Prestamos.aspx" />
     <Content Include="pages\Registro.aspx" />
     <Content Include="pages\Tramitador.aspx" />
@@ -1979,13 +1978,6 @@
     </Compile>
     <Compile Include="pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\jdjdjd.aspx.cs">
-      <DependentUpon>jdjdjd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\jdjdjd.aspx.designer.cs">
-      <DependentUpon>jdjdjd.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Prestamos.aspx.cs">
       <DependentUpon>Prestamos.aspx</DependentUpon>

@@ -103,7 +103,7 @@ ContenedorFormulario_imagen {
     vertical-align: middle !important;
     height: 40px !important;
     background-color: #fff !important;
-    margin: 20px auto !important;
+    margin: 0px auto !important;
     outline: none !important;
     
 }
@@ -202,6 +202,7 @@ ContenedorFormulario_imagen {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
+    margin-bottom:20px;
 }
 
     .btnBuscar:hover {
@@ -335,8 +336,20 @@ input {
     height: 40px !important;
     background-color: white !important;
     border: 10px;
-    margin:0 auto !important;
+    margin: 0 auto !important;
 
 }
 
-
+.ContenedorFormulario_contenido_filtros{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.ContenedorFormulario_contenido_filtros_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:10px;
+}

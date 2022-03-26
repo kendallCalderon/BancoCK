@@ -58,7 +58,7 @@
                     <asp:TemplateField  HeaderText="Nombre Analista">
 
                            <ItemTemplate>
-                               <asp:DropDownList  ID="ddlNombreAnalistas" class="select is-danger" AutoPostBack="True" name="listaUsuarios cbxCombo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
+                               <asp:DropDownList  ID="ddlNombreAnalistas" class="select is-danger" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
                                </asp:DropDownList>
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource> 
                         </ItemTemplate>
