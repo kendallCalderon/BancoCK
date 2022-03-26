@@ -27,7 +27,7 @@
                         <option>Apoyo negocio</option>
                     </select>
                 </div>
-                <label>Ingrese cedula del Analista:</label>
+                <label>Ingrese cedula del Analista</label>
                 <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista"  runat="server" id="txtCedulaAnalista"/>
                 <asp:Button  runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
@@ -55,10 +55,14 @@
                     </asp:BoundField>
 
 
-                    <asp:TemplateField  HeaderText="Nombre Analista">
+                    <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Nombre Analista">
 
                            <ItemTemplate>
+<<<<<<< HEAD
                                <asp:DropDownList  ID="ddlNombreAnalistas" class="select is-danger" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
+=======
+                               <asp:DropDownList  ID="ddlNombreAnalistas" CssClass=" browser-default cbxCombo" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
+>>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
                                </asp:DropDownList>
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource> 
                         </ItemTemplate>
@@ -69,7 +73,7 @@
 
 
 
-                    <asp:TemplateField  HeaderText="Acciones">
+                    <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Acciones">
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
