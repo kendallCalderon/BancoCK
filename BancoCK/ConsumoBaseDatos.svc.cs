@@ -72,7 +72,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Telefono", telefono);
                 comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
                 comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto",salarioBruto);
+                comando.Parameters.AddWithValue("@SalarioBruto", salarioBruto);
                 comando.Parameters.AddWithValue("@Rol", rol);
                 comando.ExecuteNonQuery();
 
@@ -137,7 +137,7 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito,string estadoCredito)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito)
         {
             try
             {
@@ -146,7 +146,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
                 comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
-                comando.Parameters.AddWithValue("@EstadoCredito",estadoCredito);
+                comando.Parameters.AddWithValue("@EstadoCredito", estadoCredito);
                 comando.ExecuteNonQuery();
 
             }
@@ -160,7 +160,8 @@ namespace BancoCK
             }
         }
 
-<<<<<<< HEAD
+
+
         public string CredencialesUsuario(string Identificacion, string password)
         {
             abrirConexion();
@@ -184,14 +185,12 @@ namespace BancoCK
 
 
         public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula)
-=======
-        public string devolverCedulaAnalista(string nombre, string apellido1, string apellido2)
->>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
+
         {
             try
             {
                 abrirConexion();
-<<<<<<< HEAD
+
                 comando = new SqlCommand("RegistroUsuarios", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion", Identificacion);
@@ -206,67 +205,40 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@SalarioBruto", Convert.ToSingle(SalarioBruto));
                 comando.Parameters.AddWithValue("@Contraseña", Password);
                 comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
-=======
-                comando = new SqlCommand("traerAnalista", conexion);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Nombre",nombre);
-                comando.Parameters.AddWithValue("@Apellido1",apellido1);
-                comando.Parameters.AddWithValue("@Apellido2",apellido2);
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                DatatableUsuarios = new DataTable();
-                adaptador.Fill(DatatableUsuarios);
-                string usuario = DatatableUsuarios.Rows[0]["Identificacion"].ToString();
-                return usuario;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
-            }
-            finally
-            {
-                cerrarConexion();
-            }
-        }
-
-        public void asignarAnalista(string identificacion, int idPrestamo)
-        {
-            try
-            {
-                abrirConexion();
-                comando = new SqlCommand("asignarAnalista", conexion);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@identificacion",identificacion);
-                comando.Parameters.AddWithValue("@idPrestamo",idPrestamo);
->>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
-                comando.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-<<<<<<< HEAD
 
                 throw new Exception("Error al registrar el usuario, detalles:  " + ex.Message);
             }
 
 
-           
 
         }
 
+        public void asignarAnalista(string identificacion, int idPrestamo)
+        {
 
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("asignarAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@identificacion", identificacion);
+                comando.Parameters.AddWithValue("@idPrestamo", idPrestamo);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
-=======
                 throw new Exception("Ocurrio un error al asignar un analista para un prestamo, detalles: " + ex.Message);
             }
             finally
             {
                 cerrarConexion();
             }
+
         }
->>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
-
-
 
         public DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula)
         {
@@ -324,7 +296,7 @@ namespace BancoCK
                 abrirConexion();
                 comando = new SqlCommand("cambiarEstadoParaAprobrarONo", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@idPrestamo",idPrestamo);
+                comando.Parameters.AddWithValue("@idPrestamo", idPrestamo);
                 comando.ExecuteNonQuery();
 
             }
@@ -336,6 +308,34 @@ namespace BancoCK
             {
                 cerrarConexion();
             }
+        }
+
+        public string devolverCedulaAnalista(string nombre, string apellido1, string apellido2)
+        {
+
+            try
+            {
+                comando = new SqlCommand("traerAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre", nombre);
+                comando.Parameters.AddWithValue("@Apellido1", apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", apellido2);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string usuario = DatatableUsuarios.Rows[0]["Identificacion"].ToString();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
         }
     }
 }
