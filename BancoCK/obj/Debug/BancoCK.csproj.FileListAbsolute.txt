@@ -176,7 +176,6 @@ C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.c
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
 <<<<<<< HEAD
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\AjaxControlToolkit.dll
 =======
 >>>>>>> 723c74c00300493fb849cadedc5fbc3957319648

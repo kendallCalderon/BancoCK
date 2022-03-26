@@ -33,12 +33,13 @@ namespace BancoCK
         void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito);
 
         [OperationContract]
-<<<<<<< HEAD
+
         string CredencialesUsuario( string Identificacion, string password);
 
         [OperationContract]
         void RegistrarUsuario( string Identificacion, string Nombre, string Rol,string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string SalarioNeto, string AñosLaborando, string SalarioBruto, string Password, string TipoCedula );
-=======
+
+        [OperationContract]
         DataTable devolverPrestamosClientes();
 
         [OperationContract]
@@ -55,6 +56,6 @@ namespace BancoCK
 
         [OperationContract]
         void cambiarEstadoPrestamoSolicitud(int idPrestamo);
->>>>>>> 723c74c00300493fb849cadedc5fbc3957319648
+
     }
 }
