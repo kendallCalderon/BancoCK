@@ -57,7 +57,7 @@ namespace BancoCK
             return DatatableUsuarios;
         }
 
-        public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, float salarioNeto, int añosLaborando, float salarioBruto, string rol)
+        public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono,string rol)
         {
             try
             {
@@ -70,9 +70,6 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Apellido2", apellido2);
                 comando.Parameters.AddWithValue("@Correo", correo);
                 comando.Parameters.AddWithValue("@Telefono", telefono);
-                comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
-                comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto", salarioBruto);
                 comando.Parameters.AddWithValue("@Rol", rol);
                 comando.ExecuteNonQuery();
 
@@ -137,7 +134,7 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,float cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto)
         {
             try
             {
@@ -147,6 +144,12 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
                 comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
                 comando.Parameters.AddWithValue("@EstadoCredito", estadoCredito);
+                comando.Parameters.AddWithValue("@Monto",monto);
+                comando.Parameters.AddWithValue("@PlazoAños",plazoAños);
+                comando.Parameters.AddWithValue("@CuotaMensual",cuotaMensual);
+                comando.Parameters.AddWithValue("@SalarioNeto",salarioNeto);
+                comando.Parameters.AddWithValue("@AñosLaborando",añosLaborando);
+                comando.Parameters.AddWithValue("@SalarioBruto",salarioBruto);
                 comando.ExecuteNonQuery();
 
             }
@@ -326,6 +329,31 @@ namespace BancoCK
                 adaptador.Fill(DatatableUsuarios);
                 string usuario = DatatableUsuarios.Rows[0]["Identificacion"].ToString();
                 return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public float devolverTasaTipoPrestamo(string tipoPrestamo)
+        {
+            try
+            {
+                comando = new SqlCommand("devolverTasa", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["Tasa"].ToString());
+                return tasa;
             }
             catch (Exception ex)
             {

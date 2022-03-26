@@ -109,31 +109,37 @@ namespace BancoCK.pages
 
         protected void btnVivienda_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Préstamo Vivienda";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
 
         protected void btnPersonal_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Préstamo Personal";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
 
         protected void btnVehiculo_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Préstamo vehiculo";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
 
         protected void btnDeudas_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Refundir mis deudas";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
 
         protected void btnNegocio_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Apoyo Negocio";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
 
         protected void btnEducacion_Click(object sender, EventArgs e)
         {
+            Session["tipoPrestamo"] = "Préstamo Educacion";
             Response.Redirect("/pages/CalculadoraCreditos.aspx");
         }
     }
