@@ -69,15 +69,6 @@ namespace BancoCK.pages
         protected global::System.Web.UI.HtmlControls.HtmlSelect txtCombo;
 
         /// <summary>
-        /// Control btnTramitar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTramitar;
-
-        /// <summary>
         /// Control btnAtras.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace BancoCK.pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAtras;
+
+        /// <summary>
+        /// Control btnTramitar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTramitar;
 
         /// <summary>
         /// Control ScriptManager1.

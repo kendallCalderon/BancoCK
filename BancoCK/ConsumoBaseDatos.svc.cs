@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Text;
 
 namespace BancoCK
 {
@@ -389,6 +391,42 @@ namespace BancoCK
                 cerrarConexion();
             }
 
+        }
+
+
+        public bool enviarCorreo(string receptor)
+        {
+            string to = receptor; //el que recibe el correo    
+            string from = "bancock.control.interno@gmail.com"; //el que envia  
+            MailMessage message = new MailMessage(from, to);
+            string cuerpo = "Muchas gracias por escogernos, le invitamos a ingresar a nuestro sitio, para visualizar nuestros diferentes servicios";
+            string titulo = "Notificación de BancoCK";
+
+
+            string body = @"<html lang=""en""><head><meta charset=""UTF-8""><meta http-equiv = ""X-UA-Compatible"" content=""IE=edge"" ><meta name=""viewport"" content=""width=device-width, initial-scale=1.0""><title> Document </title><body><style type=""text/css"">body{font-family: 'Poppins', sans-serif;}.cabecera {border: 3px solid #27292d;border-radius: 10px;background-color: #27292d;width: 500px;}.title{font-weight: 700;color: #D03737;text-align: center;}h2{text-align: center;color: white;}a{background-color: #D03737; border: 3px solid #6846ec;border-radius: 5px;color: #fff!important;text-decoration: none;font-weight: 600;padding: 8px; margin-bottom: 20px;}a:hover {background-color: #6846ec;color: white;border-color: #6846ec;}</style></head><body><div class=""cabecera""><h1 class=""title"">Control de recepción de solicitud de créditos</h1><h2>Hola, hemos recibido su solicitud, la estaremos evaluando, pronto recibirá respuesta del estado</h2></div><p>" + cuerpo + @"</p><a href=""https://tiusr2pl.cuc-carrera-ti.ac.cr/BancoCK/pages/Home.aspx""> Ir al sistema</a> </body></html>";
+
+            string mailbody = body;
+            message.Subject = titulo;
+            message.Body = body;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            System.Net.NetworkCredential basicCredential1 = new
+            System.Net.NetworkCredential(from, "BancoCKinterno");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = basicCredential1;
+            try
+            {
+                client.Send(message);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
         }
     }
 }

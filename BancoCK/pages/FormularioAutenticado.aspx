@@ -44,11 +44,9 @@
                     </div>
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
-                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click" />
-                    <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click" />
+                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnAtras" OnClick="btnAtras_Click1"  />
+                    <asp:Button class="btn2" Text="Tramitar" ID="btnTramitar" OnClick="Unnamed_Click" runat="server" />
                 </div>
-
-
             </div>
 
             <div class="Descripciones">

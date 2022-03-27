@@ -63,5 +63,8 @@ namespace BancoCK
         [OperationContract]
         bool ValidarExistenciaUsuario(string Identificacion);
 
+        [OperationContract]
+        bool enviarCorreo(string receptor);
+
     }
 }
