@@ -12,7 +12,7 @@ namespace BancoCK.pages
         ConsumoBaseDatos iConsumoBaseDatos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            lblPass.Visible = false;
             if (IsPostBack == false)
             {
                 ListItem i;
@@ -34,11 +34,19 @@ namespace BancoCK.pages
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             string Rol = "Cliente";
-            if (Salarioneto.Value.Equals("")) Salarioneto.Value = "0";
+            bool validarExistencia = false;
 
-            if (Salariobruto.Value.Equals("")) Salariobruto.Value = "0";
+            validarExistencia = iConsumoBaseDatos.ValidarExistenciaUsuario(Identificacion.Value);
 
-            iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Salarioneto.Value, Añoslaborando.Value, Salariobruto.Value, Contraseña.Value, ddlTipoCedula.Text);
+            if (validarExistencia == false)
+            {
+                iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Contraseña.Value, ddlTipoCedula.Text);
+            }
+            else
+            {
+                lblPass.Visible = true;
+            }
+            
            
                 
 

@@ -82,6 +82,7 @@
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
+    <Content Include="css\FormularioAutenticado.css" />
     <Content Include="css\formularioPréstamo.css" />
     <Content Include="css\graficaDatos.css" />
     <Content Include="css\home.css" />

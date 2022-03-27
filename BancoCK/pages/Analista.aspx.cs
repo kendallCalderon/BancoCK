@@ -52,5 +52,20 @@ namespace BancoCK
             GridView1.DataSource = detalles;
             GridView1.DataBind();
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string tipoPrestamo = cbxPrestamos.Value.ToString();
+                string filtro = cbxFiltros.Value.ToString();
+
+
+            }catch(Exception ex)
+            {
+
+            }
+        }
     }
 }
