@@ -365,5 +365,94 @@ namespace BancoCK
             }
 
         }
+
+        public string devolverLimiteMontoPrestamo(string tipoPrestamo)
+        {
+            try
+            {
+                comando = new SqlCommand("monto_Maximo_Minimo_préstamo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string usuario = DatatableUsuarios.Rows[0]["MontoMaximo"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimo"].ToString();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al devolver el monto maximo y minimo del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public string devolverLimiteMontoPrestamoDolares(string tipoPrestamo)
+        {
+            try
+            {
+                comando = new SqlCommand("monto_Maximo_Minimo_préstamo_Dolares", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string usuario = DatatableUsuarios.Rows[0]["MontoMaximo"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimo"].ToString();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al devolver el monto maximo y minimo del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public float devolverTasaTipoPrestamoDolares(string tipoPrestamo)
+        {
+            try
+            {
+                comando = new SqlCommand("devolverTasaDolares", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["Tasa"].ToString());
+                return tasa;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
+        {
+            try
+            {
+                return (tasaInteres * prestamo) / (Math.Pow(1 + tasaInteres,-1*años));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
     }
 }

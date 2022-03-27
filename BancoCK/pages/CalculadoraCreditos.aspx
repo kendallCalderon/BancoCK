@@ -10,8 +10,8 @@
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <h3>Moneda</h3>
                     <div class="contenedorFlexible_contenido_subcontenido_row">
-                        <asp:Button runat="server" id="btnDolares" text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
-                        <asp:Button runat="server" id="btnColones" CssClass="btnColones" name="btnColones" Text="Colones" OnClick="btnColones_Click"></asp:Button>
+                        <asp:Button runat="server" id="btnDolaresMoneda" text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
+                        <asp:Button runat="server" id="btnColonesMoneda" CssClass="btnColones" name="btnColones" Text="Colones" OnClick="btnColones_Click"></asp:Button>
                     </div>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
@@ -25,11 +25,12 @@
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <label>Tasa %</label>
-                    <input type="text" runat="server" id="txtTasa" readonly/>
+                    <input type="text" runat="server" id="txtTasa" readonly="readonly" />
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
-                    <label>Monto mensual</label>
-                    <input type="text" runat="server" id="txtMontoMensual"  />
+                       <label>Monto mensual</label>
+                           <input type="text" runat="server" id="txtMontoMensual" readonly="readonly" />
+                           <asp:LinkButton Text="text" ID="btnCalcular"onclick="CalcularCuota" runat="server"></asp:LinkButton>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido_row">
                     <button class="btnAtras">Atras</button>

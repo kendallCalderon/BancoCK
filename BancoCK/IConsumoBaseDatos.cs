@@ -60,5 +60,17 @@ namespace BancoCK
         [OperationContract]
         float devolverTasaTipoPrestamo(string tipoPrestamo);
 
+        [OperationContract]
+        string devolverLimiteMontoPrestamo(string tipoPrestamo);
+
+        [OperationContract]
+        string devolverLimiteMontoPrestamoDolares(string tipoPrestamo);
+
+        [OperationContract]
+        float devolverTasaTipoPrestamoDolares(string tipoPrestamo);
+
+        [OperationContract]
+        double calcularCuotaMensual(float prestamo, int años, float tasaInteres);
+
     }
 }

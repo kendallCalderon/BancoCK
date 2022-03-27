@@ -175,4 +175,24 @@ input {
 
 .marginMensaje{
     margin:10px 0;
+    color:white;
+    font-size:18px;
+}
+
+.icn {
+    color: var(--azul) !important;
+    margin-top:0;
+    margin-bottom:0;
+    transition-duration: 0.2s;
+}
+
+    .icn:hover {
+        transform: scale(1.2);
+    }
+
+.contenedorFlexible_contenido_subcontenido_Calculadora {
+    margin: 20px 0;
+    width:100%;
+    text-align:center;
+
 }
