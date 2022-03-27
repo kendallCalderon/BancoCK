@@ -27,17 +27,17 @@ namespace BancoCK
         string mostrarRequisitos(string tipoPrestamo);
 
         [OperationContract]
-        void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono,string rol);
+        void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, string rol);
 
         [OperationContract]
         void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto);
 
         [OperationContract]
 
-        string CredencialesUsuario( string Identificacion, string password);
+        string CredencialesUsuario(string Identificacion, string password);
 
         [OperationContract]
-        void RegistrarUsuario( string Identificacion, string Nombre, string Rol,string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string Password, string TipoCedula );
+        void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string Password, string TipoCedula);
 
         [OperationContract]
         DataTable devolverPrestamosClientes();
@@ -46,7 +46,7 @@ namespace BancoCK
         string devolverCedulaAnalista(string nombre, string apellido1, string apellido2);
 
         [OperationContract]
-        void asignarAnalista(string identificacion,int idPrestamo);
+        void asignarAnalista(string identificacion, int idPrestamo);
 
         [OperationContract]
         DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula);
@@ -65,6 +65,9 @@ namespace BancoCK
 
         [OperationContract]
         bool enviarCorreo(string receptor);
+
+        [OperationContract]
+        string ObtenerCorreo(string Identificacion, string Rol);
 
     }
 }

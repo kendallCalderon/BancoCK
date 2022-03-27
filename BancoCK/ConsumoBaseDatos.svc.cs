@@ -428,5 +428,24 @@ namespace BancoCK
                 return false;
             }
         }
+
+
+        public string ObtenerCorreo(string Identificacion,string Rol)
+        {
+
+
+            abrirConexion();
+            comando = new SqlCommand("ObtenerCorreo", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+            comando.Parameters.AddWithValue("@Rol", Rol);
+            SqlDataAdapter adp = new SqlDataAdapter(comando);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            string Correo = dt.Rows[0][0].ToString();
+            return Correo;
+
+
+        }
     }
 }
