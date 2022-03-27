@@ -70,24 +70,10 @@
                          <label for="Usuario" class="form__label">Número telefónico</label>
                          </div>
                  </div>
-             <h1>Información laboral</h1>
-             <div class="formulario-cajas">
-                     <div class="form__group field">
-             <input runat="server" class="form__field" type="number" name="name" id="Añoslaborando" placeholder="Años laborando (Opcional)"  />
-                         <label for="Usuario" class="form__label">Años laboro (Opcional)</label>
-                         </div>
-                     <div class="form__group field">
-             <input runat="server" class="form__field" type="text" name="name" id="Salariobruto" placeholder="Salario bruto (Opcional)"  />
-                         <label for="Usuario" class="form__label">Salario bruto (Opcional)</label>
-                         </div>
-                     <div class="form__group field">
-             <input runat="server" class="form__field" type="text" name="name" id="Salarioneto" placeholder="Salario neto (Opcional)"  />
-                         <label for="Usuario" class="form__label">Salario neto (Opcional)</label>
-                         </div>
-                   </div>
              <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                  <ContentTemplate>
              <asp:Button CssClass="btnConfirmar" OnClick="btnConfirmar_Click" Text="Confirmar" runat="server" />
+                     <asp:Label ID="lblPass" CssClass="lblError"  Text="Usuario y/o Contraseña incorrecta" runat="server"></asp:Label>
                      </ContentTemplate>
            </asp:UpdatePanel> 
          </div>
