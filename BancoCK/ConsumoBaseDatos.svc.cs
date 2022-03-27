@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 
 namespace BancoCK
 {
@@ -399,8 +400,8 @@ namespace BancoCK
 
         public bool enviarCorreo(string receptor)
         {
-            string to = receptor; //el que recibe el correo    
-            string from = "bancock.control.interno@gmail.com"; //el que envia  
+            string to = receptor;   
+            string from = "bancock.control.interno@gmail.com"; 
             MailMessage message = new MailMessage(from, to);
             string cuerpo = "Muchas gracias por escogernos, le invitamos a ingresar a nuestro sitio, para visualizar nuestros diferentes servicios";
             string titulo = "Notificación de BancoCK";
@@ -413,15 +414,20 @@ namespace BancoCK
             message.Body = body;
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
+           
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+           
             System.Net.NetworkCredential basicCredential1 = new
             System.Net.NetworkCredential(from, "BancoCKinterno");
+           
             client.EnableSsl = true;
-            client.UseDefaultCredentials = false;
+            client.UseDefaultCredentials = true;
             client.Credentials = basicCredential1;
             try
             {
+                Thread.Sleep(1000);
                 client.Send(message);
+               
                 return true;
             }
 

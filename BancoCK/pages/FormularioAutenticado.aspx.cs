@@ -45,12 +45,13 @@ namespace BancoCK.pages
                 else
                 {
                     string fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()));
-                    script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     string Rol = "Cliente";
                     string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);
                     metodos.enviarCorreo(Correo);
+                    script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                  
 
                 }
             }

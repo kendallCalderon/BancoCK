@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/FormularioAutenticado.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
     <div class="Contenedor">
         <div class="contenidoPrincipal">
             <div class="contenidoPrincipal_formulario">
@@ -45,9 +45,14 @@
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
                     <asp:Button class="btn1" Text="Atras" runat="server" ID="btnAtras" OnClick="btnAtras_Click1"  />
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
                     <asp:Button class="btn2" Text="Tramitar" ID="btnTramitar" OnClick="Unnamed_Click" runat="server" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </div>
             </div>
+            
 
             <div class="Descripciones">
                 <h2 class="titulo2">Información del préstamo</h2>
@@ -97,5 +102,5 @@
         </div>
 
     </div>
-    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    
 </asp:Content>
