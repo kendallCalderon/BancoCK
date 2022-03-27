@@ -15,22 +15,22 @@ namespace BancoCK
     {
 
         /// <summary>
-        /// Control btnDolares.
+        /// Control btnDolaresMoneda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDolares;
+        protected global::System.Web.UI.WebControls.Button btnDolaresMoneda;
 
         /// <summary>
-        /// Control btnColones.
+        /// Control btnColonesMoneda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnColones;
+        protected global::System.Web.UI.WebControls.Button btnColonesMoneda;
 
         /// <summary>
         /// Control txtMonto.
@@ -76,6 +76,15 @@ namespace BancoCK
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtMontoMensual;
+
+        /// <summary>
+        /// Control btnCalcular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnCalcular;
 
         /// <summary>
         /// Control cbxComboPrestamo.
