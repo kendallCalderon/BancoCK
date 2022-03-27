@@ -134,7 +134,7 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,float cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,float cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto, string tipoPrestamo)
         {
             try
             {
@@ -144,6 +144,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
                 comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
                 comando.Parameters.AddWithValue("@EstadoCredito", estadoCredito);
+                comando.Parameters.AddWithValue("@TipoPrestamo",tipoPrestamo);
                 comando.Parameters.AddWithValue("@Monto",monto);
                 comando.Parameters.AddWithValue("@PlazoAños",plazoAños);
                 comando.Parameters.AddWithValue("@CuotaMensual",cuotaMensual);
@@ -318,6 +319,7 @@ namespace BancoCK
 
             try
             {
+                abrirConexion();
                 comando = new SqlCommand("traerAnalista", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Nombre", nombre);
@@ -345,6 +347,7 @@ namespace BancoCK
         {
             try
             {
+                abrirConexion();
                 comando = new SqlCommand("devolverTasa", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
@@ -370,6 +373,7 @@ namespace BancoCK
         {
             try
             {
+                abrirConexion();
                 comando = new SqlCommand("monto_Maximo_Minimo_préstamo", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
@@ -377,7 +381,7 @@ namespace BancoCK
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
                 adaptador.Fill(DatatableUsuarios);
-                string usuario = DatatableUsuarios.Rows[0]["MontoMaximo"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimo"].ToString();
+                string usuario = DatatableUsuarios.Rows[0]["MontoMaximoColones"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimoColones"].ToString();
                 return usuario;
             }
             catch (Exception ex)
@@ -395,6 +399,7 @@ namespace BancoCK
         {
             try
             {
+                abrirConexion();
                 comando = new SqlCommand("monto_Maximo_Minimo_préstamo_Dolares", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
@@ -402,7 +407,7 @@ namespace BancoCK
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
                 adaptador.Fill(DatatableUsuarios);
-                string usuario = DatatableUsuarios.Rows[0]["MontoMaximo"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimo"].ToString();
+                string usuario = DatatableUsuarios.Rows[0]["MontoMaximoDolares"].ToString() + "," + DatatableUsuarios.Rows[0]["MontoMinimoDolares"].ToString();
                 return usuario;
             }
             catch (Exception ex)
@@ -419,6 +424,7 @@ namespace BancoCK
         {
             try
             {
+                abrirConexion();
                 comando = new SqlCommand("devolverTasaDolares", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
@@ -426,7 +432,7 @@ namespace BancoCK
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
                 adaptador.Fill(DatatableUsuarios);
-                float tasa = float.Parse(DatatableUsuarios.Rows[0]["Tasa"].ToString());
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["TasaDolares"].ToString());
                 return tasa;
             }
             catch (Exception ex)
@@ -439,20 +445,20 @@ namespace BancoCK
             }
         }
 
-        public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
+       public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
         {
             try
             {
-                return (tasaInteres * prestamo) / (Math.Pow(1 + tasaInteres,-1*años));
+                double tasaInteresCredito = tasaInteres / 100;
+                años = años * 12 * -1;
+                double resultado = (prestamo * tasaInteresCredito) / (1 - ((Math.Pow(1+tasaInteresCredito, años))));
+                return resultado;
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
             }
-            finally
-            {
-                cerrarConexion();
-            }
+            
         }
     }
 }

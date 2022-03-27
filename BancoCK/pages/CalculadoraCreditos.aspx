@@ -10,7 +10,7 @@
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <h3>Moneda</h3>
                     <div class="contenedorFlexible_contenido_subcontenido_row">
-                        <asp:Button runat="server" id="btnDolaresMoneda" text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
+                        <asp:Button runat="server" id="btnDolaresMoneda"  text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
                         <asp:Button runat="server" id="btnColonesMoneda" CssClass="btnColones" name="btnColones" Text="Colones" OnClick="btnColones_Click"></asp:Button>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <label>Plazo en años</label>
-                    <input type="range" class="rango" id="txtRangoAñosPrestamo" runat="server" min="1" max="30" />
+                    <input type="number"  id="txtRangoAñosPrestamo" runat="server" max="30"  min="1"/>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <label>Tasa %</label>
@@ -29,8 +29,10 @@
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                        <label>Monto mensual</label>
-                           <input type="text" runat="server" id="txtMontoMensual" readonly="readonly" />
-                           <asp:LinkButton Text="text" ID="btnCalcular"onclick="CalcularCuota" runat="server"></asp:LinkButton>
+                       <div class="cajaIconoCalcular">
+                            <input type="text" runat="server" id="txtMontoMensual" readonly="readonly" />
+                           <asp:LinkButton Text="text" ID="btnCalcular"  runat="server" OnClick="btnCalcular_Click"><i class='fa fa-calculator fa-2x icono'></i></asp:LinkButton>
+                       </div>   
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido_row">
                     <button class="btnAtras">Atras</button>
@@ -41,7 +43,7 @@
             <div class="contenedorFlexible_contenido_imagen">
                   <div class="contenedorFlexible_contenido_subcontenido margen">
                      <div class="select is-danger">
-                    <asp:DropDownList runat="server" id="cbxComboPrestamo" OnSelectedIndexChanged="cbxComboPrestamo_SelectedIndexChanged">
+                    <asp:DropDownList runat="server" id="cbxComboPrestamo" OnSelectedIndexChanged="cbxComboPrestamo_SelectedIndexChanged" AutoPostBack="true">
                     </asp:DropDownList>
 
                 </div>

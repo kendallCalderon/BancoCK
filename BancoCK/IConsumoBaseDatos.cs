@@ -30,7 +30,7 @@ namespace BancoCK
         void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono,string rol);
 
         [OperationContract]
-        void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto);
+        void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
 
         [OperationContract]
 
