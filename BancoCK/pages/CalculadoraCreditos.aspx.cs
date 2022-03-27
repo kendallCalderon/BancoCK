@@ -10,7 +10,8 @@ namespace BancoCK
     public partial class Formulario_web14 : System.Web.UI.Page
     {
         ConsumoBaseDatos metodos = new ConsumoBaseDatos();
-        string script = "",tipoPrestamo = "", montosPermitidos="",formato = "";
+        string script = "",tipoPrestamo = "", montosPermitidos="",valor1 = "", valor2 = "";
+        decimal numero = 0;
         float tasaInteres = 0;
         string[] vector = new string[2];
         decimal temp;
@@ -95,16 +96,20 @@ namespace BancoCK
 
         private void ponerDecimales()
         {
-            temp = 0;
-            formato = vector[0];
-            decimal.TryParse(formato, out temp);
-            formato = temp.ToString("N2");
-            vector[0] = formato.ToString();
-            temp = 0;
-            formato = vector[1];
-            decimal.TryParse(formato, out temp);
-            formato = temp.ToString("N2");
-            vector[1] = formato.ToString();
+            Session["montoMayor"] = vector[0];
+            Session["montoMenor"] = vector[1];
+            numero = Decimal.Parse(vector[0]);
+            valor1 = String.Format("{0:C}",numero);
+            vector[0] = valor1;
+            numero = Decimal.Parse(vector[1]);
+            valor2 = String.Format("{0:C}",numero);
+            vector[1] = valor2;
+
+        }
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/Prestamos.aspx");
         }
 
         protected void cbxComboPrestamo_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,7 +149,8 @@ namespace BancoCK
                 }
                 else
                 {
-                    if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMaximo"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMinimo"].ToString()))
+ 
+                    if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMayor"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMenor"].ToString()))
                     {
                         script = string.Format("javascript:notificacion('{0}')", "El monto ingresado no esta entre el monto minimo y maximo, favor cambiarlo");
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
@@ -152,14 +158,14 @@ namespace BancoCK
                     else
                     {
                         double resultado = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAñosPrestamo.Value.ToString()), float.Parse(txtTasa.Value.ToString()));
-                        decimal temp = 0;
-                        string formato = resultado.ToString();
-                        decimal.TryParse(formato, out temp);
-                        formato = temp.ToString("N2");
-                        txtMontoMensual.Value = formato.ToString();
+                        string cadena = string.Format("{0:N2}", resultado);
+                        numero = Decimal.Parse(cadena);
+                        valor1 = String.Format("{0:C}", numero);
+                        txtMontoMensual.Value = valor1;
                         Session["PresionoBotonMoneda"] = null;
                         txtMonto.Value = "";
                         txtRangoAñosPrestamo.Value = "";
+                        
                     }
 
                 }

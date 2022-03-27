@@ -9,7 +9,7 @@
             <div class="contenedorFlexible_contenido_formulario">
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <h3>Moneda</h3>
-                    <div class="contenedorFlexible_contenido_subcontenido_row">
+                    <div class="contenedorFlexible_contenido_subcontenido_row_botones">
                         <asp:Button runat="server" id="btnDolaresMoneda"  text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
                         <asp:Button runat="server" id="btnColonesMoneda" CssClass="btnColones" name="btnColones" Text="Colones" OnClick="btnColones_Click"></asp:Button>
                     </div>
@@ -34,9 +34,9 @@
                            <asp:LinkButton Text="text" ID="btnCalcular"  runat="server" OnClick="btnCalcular_Click"><i class='fa fa-calculator fa-2x icono'></i></asp:LinkButton>
                        </div>   
                 </div>
-                <div class="contenedorFlexible_contenido_subcontenido_row">
-                    <button class="btnAtras">Atras</button>
-                    <button class="btnTramitador">Tramitador</button>
+                <div class="contenedorFlexible_contenido_subcontenido_row_botones">
+                    <asp:Button runat="server" id="btnAtras" CssClass="btnColones" Text="Atras" OnClick="btnAtras_Click"></asp:Button>
+                    <asp:Button runat="server" id="btnTramitar"  text="Tramitar" CssClass="btnDolares"></asp:Button>
                 </div>
 
             </div>
@@ -49,7 +49,7 @@
                 </div>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
-                     <img class="img-imagenFondo" src="/img/bank.gif"></img>
+                     <img class="img-imagenFondo" src="/img/bank.gif" />
                 </div>
             </div>
         </div>

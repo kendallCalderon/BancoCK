@@ -449,9 +449,9 @@ namespace BancoCK
         {
             try
             {
-                double tasaInteresCredito = tasaInteres / 100;
+                float tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
-                double resultado = (prestamo * tasaInteresCredito) / (1 - ((Math.Pow(1+tasaInteresCredito, años))));
+                double resultado = (prestamo * tasaInteresCredito) / (1 - (Math.Pow(tasaInteresCredito+1, años)));
                 return resultado;
             }
             catch (Exception ex)
