@@ -31,6 +31,7 @@ namespace BancoCK.pages
         protected void btnAtras_Click1(object sender, EventArgs e)
         {
             Response.Redirect("/pages/Prestamos.aspx");
+            
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace BancoCK.pages
                 else
                 {
                     string fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
+                    metodos.registrarPrestamoClienteOriginal(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     string Rol = "Cliente";
                     string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);
                     metodos.enviarCorreo(Correo);

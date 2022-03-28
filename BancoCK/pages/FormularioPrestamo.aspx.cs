@@ -39,6 +39,7 @@ namespace BancoCK.pages
             {
                 float tasaPrestamo = 0;
                 double cuotaMensual = 0;
+                
                 if (txtIdentificacion.Value.ToString().Equals("") || txtNombre.Value.ToString().Equals("") || txtApellido1.Value.ToString().Equals("") || txtApellido2.Value.ToString().Equals("") || txtCorreo.Value.ToString().Equals("") || txtTelefono.Value.ToString().Equals("") || txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
                 {
                     script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
