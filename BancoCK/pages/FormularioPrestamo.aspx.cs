@@ -9,7 +9,7 @@ namespace BancoCK.pages
 {
     public partial class FormularioPrestamo : System.Web.UI.Page
     {
-        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+    ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
         string script = "";
 
         protected void Page_Load(object sender, EventArgs e)

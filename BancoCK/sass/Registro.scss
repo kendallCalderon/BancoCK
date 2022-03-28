@@ -13,6 +13,7 @@
     all: unset !important;
     color: var(--rojo) !important;
     display: block !important;
+    
     margin-top: 15px !important;
 }
 
@@ -87,13 +88,15 @@ h1 {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
-    margin: 60px auto !important;
+    margin: 0px auto !important;
+    margin-top:50px !important;
 }
 
 #UpdatePanel1{
     
     width:230px;
     margin:0px auto;
+    text-align:center;
 }
 
 .btnConfirmar:hover {

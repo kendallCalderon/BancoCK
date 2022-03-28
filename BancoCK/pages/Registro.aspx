@@ -73,7 +73,7 @@
              <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                  <ContentTemplate>
              <asp:Button CssClass="btnConfirmar" OnClick="btnConfirmar_Click" Text="Confirmar" runat="server" />
-                     <asp:Label ID="lblPass" CssClass="lblError"  Text="Usuario y/o Contraseña incorrecta" runat="server"></asp:Label>
+                     <asp:Label ID="lblPass" CssClass="lblError"  Text="El usuario ya existe" runat="server"></asp:Label>
                      </ContentTemplate>
            </asp:UpdatePanel> 
          </div>
