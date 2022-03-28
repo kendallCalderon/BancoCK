@@ -41,6 +41,9 @@ namespace BancoCK.pages
             if (validarExistencia == false)
             {
                 iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Contraseña.Value, ddlTipoCedula.Text);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "QuitarRequired", "QuitarRequired();", true);
+
+                ModalExito.Show();
             }
             else
             {
@@ -50,9 +53,7 @@ namespace BancoCK.pages
            
                 
 
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "QuitarRequired", "QuitarRequired();",  true);
-
-            ModalExito.Show();
+          
             
         }
 
