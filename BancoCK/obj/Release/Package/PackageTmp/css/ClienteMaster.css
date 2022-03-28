@@ -1,0 +1,72 @@
+﻿:root {
+    --rojo: #D03737;
+    --azul: #0C1248;
+}
+
+body {
+}
+
+.headerr{
+    height:93px;
+}
+
+.head{
+    background-color: var(--rojo);
+    height:30px;
+    
+}
+
+.navcolor {
+    background-color: #fff !important;
+}
+
+.navmenu {
+    display: flex;
+    justify-content: center;
+}
+
+.navmenu_items {
+    margin:0 15px;
+    text-align:center;
+    color:#888;
+}
+
+    .navmenu_items:hover {
+        color: #000;
+        text-decoration:none;
+    }
+
+.footerdiv{
+    width:830px !important;
+    display:flex;
+    flex-direction:row;
+}
+
+.divcontactos{
+    display:inline-flex;
+    flex-direction:column;
+    margin-right:120px;
+
+}
+
+.divinformacion {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.navcase{
+    height:80px !important;
+}
+
+.Contenedor_hijo{
+    display:flex;
+    flex-direction:column;
+}
+
+.foter{
+    background-color: var(--rojo) !important;
+}
+
+
+
+

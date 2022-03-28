@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cliente.master.cs" Inherits="BancoCK.Cliente" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/css/ClienteMaster.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link rel="stylesheet" href="/fontawesome/css/all.css">
+  <link rel="stylesheet" href="/bulma/css/bulma.css">
+ <link rel="stylesheet" href="/Foundation/css/foundation.css">
+    <link rel="stylesheet" href="/uikit/css/uikit.css">
+     <%--   <link rel="stylesheet" href="/Foundation/css/app.css">
+    <link rel="stylesheet" href="/Foundation/css/foundation.min.css">
+       <script type="text/javascript" src="/Foundation/js/app.js"></script>
+      <script type="text/javascript" src="/Foundation/js/vendor/foundation.js"></script>
+    <script type="text/javascript" src="/Foundation/js/vendor/foundation.min.js"></script>
+    <script type="text/javascript" src="/Foundation/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="/Foundation/js/vendor/what-input.js"></script>--%>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="headerr">
+
+            <div class="navbar-fixed ">
+                <nav class="navcase ">
+                    <div class="head"></div>
+                    <div class="nav-wrapper navcolor  ">
+                        <img class="brand-logo" src="/img/logoBanco.png" />
+                        <div class="navmenu">
+                            <a class="navmenu_items" href="sass.html">Pagina inicio</a>
+                            <a class="navmenu_items" href="badges.html">Préstamos</a>
+                            <a class="navmenu_items" href="collapsible.html">Contactos</a>
+                            <a class="navmenu_items" href="collapsible.html">Historia</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="Contenedor_hijo">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="page-footer foter">
+            <div class="container">
+                <div class="row footerdiv">
+                    <div class="col l6 s12">
+                        <img src="/img/logoBanco.png" />
+                    </div>
+                    <div class="divcontactos">
+                        <h5 class="white-text">Contactos</h5>
+                        <ul>
+                            <li class="grey-text text-lighten-3">Correo</li>
+                            <li class="grey-text text-lighten-3">bck@hotmail.com</li>
+                            <li class="grey-text text-lighten-3">Teléfono: 22715566</li>
+                        </ul>
+                    </div>
+                    <div class="divinformacion">
+                        <h5 class="white-text">Información</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tipo de cambio</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Calculadora</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">¿Quiénes somos?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2022 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+    </form>
+</body>
+</html>
