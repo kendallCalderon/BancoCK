@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace BancoCK.pages
 {
     public partial class Registro : System.Web.UI.Page
@@ -50,11 +51,12 @@ namespace BancoCK.pages
 
             }
             
-           
-                
+           metodos.devolverPrestamosClientesssss()
 
-          
-            
+
+
+
+
         }
 
         protected void btnOk_Click(object sender, EventArgs e)

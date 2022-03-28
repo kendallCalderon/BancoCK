@@ -78,6 +78,40 @@ namespace BancoCK
             return DatatableUsuarios;
         }
 
+
+
+
+        [WebMethod]
+        public DataTable devolverPrestamosClientessss()
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerPrestamos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar los requisitos del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return DatatableUsuarios;
+        }
+
+
+
+
+
+
+
+
         [WebMethod]
         public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, string rol)
         {

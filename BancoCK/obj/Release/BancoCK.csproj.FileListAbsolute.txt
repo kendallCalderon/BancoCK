@@ -1,0 +1,2 @@
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Release\BancoCK.csproj.AssemblyReference.cache
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Release\BancoCK.csproj.CoreCompileInputs.cache
