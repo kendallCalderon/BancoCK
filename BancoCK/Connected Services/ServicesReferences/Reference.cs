@@ -67,10 +67,17 @@ namespace BancoCK.ServicesReferences {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/registrarPrestamoCliente", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
+        void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/registrarPrestamoCliente", ReplyAction="*")]
-        System.Threading.Tasks.Task registrarPrestamoClienteAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
+        System.Threading.Tasks.Task registrarPrestamoClienteAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/registrarPrestamoClienteOriginal", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void registrarPrestamoClienteOriginal(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/registrarPrestamoClienteOriginal", ReplyAction="*")]
+        System.Threading.Tasks.Task registrarPrestamoClienteOriginalAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CredencialesUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -142,6 +149,13 @@ namespace BancoCK.ServicesReferences {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarCorreo", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> enviarCorreoAsync(string receptor);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarCorreoNoLogueado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool enviarCorreoNoLogueado(string receptor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarCorreoNoLogueado", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> enviarCorreoNoLogueadoAsync(string receptor);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerCorreo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string ObtenerCorreo(string Identificacion, string Rol);
@@ -176,6 +190,20 @@ namespace BancoCK.ServicesReferences {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/calcularCuotaMensual", ReplyAction="*")]
         System.Threading.Tasks.Task<double> calcularCuotaMensualAsync(float prestamo, int años, float tasaInteres);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devolverTasaDolaresUsuarioNoLogeado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devolverTasaDolaresUsuarioNoLogeado", ReplyAction="*")]
+        System.Threading.Tasks.Task<float> devolverTasaDolaresUsuarioNoLogeadoAsync(string tipoPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devolverTasaColonesUsuarioNoLogeado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        float devolverTasaColonesUsuarioNoLogeado(string tipoPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devolverTasaColonesUsuarioNoLogeado", ReplyAction="*")]
+        System.Threading.Tasks.Task<float> devolverTasaColonesUsuarioNoLogeadoAsync(string tipoPrestamo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -261,12 +289,20 @@ namespace BancoCK.ServicesReferences {
             return base.Channel.mostrarRequisitosAsync(tipoPrestamo);
         }
         
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
             base.Channel.registrarPrestamoCliente(identificacion, fechaCredito, estadoCredito, monto, plazoAños, cuotaMensual, salarioNeto, añosLaborando, salarioBruto, tipoPrestamo);
         }
         
-        public System.Threading.Tasks.Task registrarPrestamoClienteAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
+        public System.Threading.Tasks.Task registrarPrestamoClienteAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
             return base.Channel.registrarPrestamoClienteAsync(identificacion, fechaCredito, estadoCredito, monto, plazoAños, cuotaMensual, salarioNeto, añosLaborando, salarioBruto, tipoPrestamo);
+        }
+        
+        public void registrarPrestamoClienteOriginal(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
+            base.Channel.registrarPrestamoClienteOriginal(identificacion, fechaCredito, estadoCredito, monto, plazoAños, cuotaMensual, salarioNeto, añosLaborando, salarioBruto, tipoPrestamo);
+        }
+        
+        public System.Threading.Tasks.Task registrarPrestamoClienteOriginalAsync(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo) {
+            return base.Channel.registrarPrestamoClienteOriginalAsync(identificacion, fechaCredito, estadoCredito, monto, plazoAños, cuotaMensual, salarioNeto, añosLaborando, salarioBruto, tipoPrestamo);
         }
         
         public string CredencialesUsuario(string Identificacion, string password) {
@@ -349,6 +385,14 @@ namespace BancoCK.ServicesReferences {
             return base.Channel.enviarCorreoAsync(receptor);
         }
         
+        public bool enviarCorreoNoLogueado(string receptor) {
+            return base.Channel.enviarCorreoNoLogueado(receptor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> enviarCorreoNoLogueadoAsync(string receptor) {
+            return base.Channel.enviarCorreoNoLogueadoAsync(receptor);
+        }
+        
         public string ObtenerCorreo(string Identificacion, string Rol) {
             return base.Channel.ObtenerCorreo(Identificacion, Rol);
         }
@@ -387,6 +431,22 @@ namespace BancoCK.ServicesReferences {
         
         public System.Threading.Tasks.Task<double> calcularCuotaMensualAsync(float prestamo, int años, float tasaInteres) {
             return base.Channel.calcularCuotaMensualAsync(prestamo, años, tasaInteres);
+        }
+        
+        public float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo) {
+            return base.Channel.devolverTasaDolaresUsuarioNoLogeado(tipoPrestamo);
+        }
+        
+        public System.Threading.Tasks.Task<float> devolverTasaDolaresUsuarioNoLogeadoAsync(string tipoPrestamo) {
+            return base.Channel.devolverTasaDolaresUsuarioNoLogeadoAsync(tipoPrestamo);
+        }
+        
+        public float devolverTasaColonesUsuarioNoLogeado(string tipoPrestamo) {
+            return base.Channel.devolverTasaColonesUsuarioNoLogeado(tipoPrestamo);
+        }
+        
+        public System.Threading.Tasks.Task<float> devolverTasaColonesUsuarioNoLogeadoAsync(string tipoPrestamo) {
+            return base.Channel.devolverTasaColonesUsuarioNoLogeadoAsync(tipoPrestamo);
         }
     }
 }

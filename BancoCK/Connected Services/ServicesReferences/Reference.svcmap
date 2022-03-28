@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="25e0a806-e87d-4c85-9cbb-430e4cbd5d65" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="203a23ae-27c4-4e77-aa74-ed5bc78b0b65" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://localhost:44341/serviciosPrueba.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="serviciosPrueba.wsdl" MetadataType="Wsdl" ID="442d4132-d931-4cac-90cd-c5ff83d0180c" SourceId="1" SourceUrl="https://localhost:44341/serviciosPrueba.asmx?wsdl" />
-    <MetadataFile FileName="serviciosPrueba.disco" MetadataType="Disco" ID="c9994282-d836-47ca-ad2d-c218455d17d6" SourceId="1" SourceUrl="https://localhost:44341/serviciosPrueba.asmx?disco" />
+    <MetadataFile FileName="serviciosPrueba.wsdl" MetadataType="Wsdl" ID="ba69e96d-f52a-409a-93bc-e72f60a798b7" SourceId="1" SourceUrl="https://localhost:44341/serviciosPrueba.asmx?wsdl" />
+    <MetadataFile FileName="serviciosPrueba.disco" MetadataType="Disco" ID="8f117c82-484b-4479-9a2f-43ee755ca829" SourceId="1" SourceUrl="https://localhost:44341/serviciosPrueba.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

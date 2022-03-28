@@ -156,9 +156,10 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+       
 
         [WebMethod]
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo)
+        public void registrarPrestamoClienteOriginal(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo)
         {
             try
             {
@@ -187,6 +188,7 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+
 
 
         [WebMethod]
@@ -426,6 +428,8 @@ namespace BancoCK
 
         }
 
+       
+
         [WebMethod]
         public bool enviarCorreo(string receptor)
         {
@@ -466,6 +470,49 @@ namespace BancoCK
                 return false;
             }
         }
+
+
+        [WebMethod]
+        public bool enviarCorreoNoLogueado(string receptor)
+        {
+            string to = receptor;
+            string from = "bancock.control.interno@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            string cuerpo = "Muchas gracias por escogernos, le informamos que tu solicitud de crédito será revisada por el banco, favor estar atento a tu correo.";
+            string titulo = "Notificación de BancoCK";
+
+
+            string body = @"<html lang=""en""><head><meta charset=""UTF-8""><meta http-equiv = ""X-UA-Compatible"" content=""IE=edge"" ><meta name=""viewport"" content=""width=device-width, initial-scale=1.0""><title> Document </title><body><style type=""text/css"">body{font-family: 'Poppins', sans-serif;}.cabecera {border: 3px solid #27292d;border-radius: 10px;background-color: #27292d;width: 500px;}.title{font-weight: 700;color: #D03737;text-align: center;}h2{text-align: center;color: white;}a{background-color: #D03737; border: 3px solid #6846ec;border-radius: 5px;color: #fff!important;text-decoration: none;font-weight: 600;padding: 8px; margin-bottom: 20px;}a:hover {background-color: #6846ec;color: white;border-color: #6846ec;}</style></head><body><div class=""cabecera""><h1 class=""title"">Control de recepción de solicitud de créditos</h1><h2>Hola, hemos recibido su solicitud, la estaremos evaluando, pronto recibirá respuesta del estado</h2></div><p>" + cuerpo + @"</p><a href=""https://tiusr2pl.cuc-carrera-ti.ac.cr/BancoCK/pages/Home.aspx""> Ir al sistema</a> </body></html>";
+
+            string mailbody = body;
+            message.Subject = titulo;
+            message.Body = body;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+
+            System.Net.NetworkCredential basicCredential1 = new
+            System.Net.NetworkCredential(from, "BancoCKinterno");
+
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = basicCredential1;
+            try
+            {
+                Thread.Sleep(1000);
+                client.Send(message);
+
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
+        }
+
 
         [WebMethod]
         public string ObtenerCorreo(string Identificacion, string Rol)
@@ -570,9 +617,8 @@ namespace BancoCK
         {
             try
             {
-                float tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
-                double resultado = (prestamo * tasaInteresCredito) / (1 - (Math.Pow(tasaInteresCredito + 1, años)));
+                double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12),años));
                 return resultado;
             }
             catch (Exception ex)
@@ -608,10 +654,30 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public float devolverTasaColonesUsuarioNoLogeado(string tipoPrestamo)
         {
-            float valor = 0;
-            return valor;
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("devolverTasaUsuarioNoLogeadoColones", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["TasaDolares"].ToString());
+                return tasa;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
         }
     }
 }
