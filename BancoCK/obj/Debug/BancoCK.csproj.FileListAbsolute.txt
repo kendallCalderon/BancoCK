@@ -57,3 +57,7 @@ C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.c
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.dll
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
