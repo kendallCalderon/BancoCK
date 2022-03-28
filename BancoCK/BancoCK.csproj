@@ -78,13 +78,6 @@
     <Content Include="bulma\css\bulma-rtl.min.css" />
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
-    <None Include="Connected Services\ServicesReferences\serviciosPrueba.disco" />
-    <None Include="Connected Services\ServicesReferences\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicesReferences\configuration.svcinfo" />
-    <None Include="Connected Services\ServicesReferences\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1961,11 +1954,6 @@
     <Compile Include="ClienteAutenticado.Master.designer.cs">
       <DependentUpon>ClienteAutenticado.Master</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServicesReferences\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2169,7 +2157,6 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
-    <None Include="Connected Services\ServicesReferences\serviciosPrueba.wsdl" />
     <None Include="packages.config" />
     <Content Include="sass\Home.scss" />
     <Content Include="sass\Registro.scss" />
@@ -2183,9 +2170,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServicesReferences\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -629,6 +629,12 @@ namespace BancoCK
         }
 
         [WebMethod]
+        public string Mundo()
+        {
+            return "Como estan todos";
+        }
+
+        [WebMethod]
         public float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo)
         {
             try

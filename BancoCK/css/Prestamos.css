@@ -70,11 +70,11 @@
     margin:40px;
     box-shadow: 8px 8px 12px #777;
     
-}    
+}
 
-.card{
-    margin-top:0px !important;
-    margin-bottom:0px;
+.card {
+    margin-top: 0px !important;
+    margin-bottom: 0px;
 }
 
 
@@ -85,10 +85,13 @@
     justify-content: center;
 }
 
-.contenido_card{
-    
-    display:flex;
-   
+.contenido_card {
+    display: flex;
+    height: 580px !important;
+}
+
+.card-content {
+    height: 580px !important;
 }
 
 .btnSolicitar {
