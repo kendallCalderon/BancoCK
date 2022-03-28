@@ -51,7 +51,7 @@ namespace BancoCK.pages
 
             }
             
-           metodos.devolverPrestamosClientesssss()
+           
 
 
 
