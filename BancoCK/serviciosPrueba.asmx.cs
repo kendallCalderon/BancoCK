@@ -581,6 +581,38 @@ namespace BancoCK
             }
 
         }
+
+        [WebMethod]
+        public float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("devolverTasaUsuarioNoLogeadoDolares", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["TasaDolares"].ToString());
+                return tasa;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public float devolverTasaColonesUsuarioNoLogeado(string tipoPrestamo)
+        {
+            float valor = 0;
+            return valor;
+        }
     }
 }
 

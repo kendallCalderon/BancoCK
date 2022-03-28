@@ -24,13 +24,13 @@ namespace BancoCK.pages
 
                 if(Session["Login"] == null)
                 {
-                Session["tipoPrestamo"] = "Vivienda";
+                Session["tipoPrestamo"] = "Préstamo Vivienda";
                 Response.Redirect("/pages/FormularioPrestamo.aspx");
 
                 }
                 else
                 {
-                    Session["tipoPrestamo"] = "Vivienda";
+                    Session["tipoPrestamo"] = "Préstamo Vivienda";
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -48,12 +48,12 @@ namespace BancoCK.pages
             {
                 if(Session["Login"]== null)
                 {
-                    Session["tipoPrestamo"] = "Personal";
+                    Session["tipoPrestamo"] = "Préstamo Personal";
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
-                    Session["tipoPrestamo"] = "Personal";
+                    Session["tipoPrestamo"] = "Préstamo Personal";
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -73,12 +73,12 @@ namespace BancoCK.pages
             {
                 if (Session["Login"] == null)
                 {
-                    Session["tipoPrestamo"] = "Vehiculo";
+                    Session["tipoPrestamo"] = "Préstamo vehiculo";
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
-                    Session["tipoPrestamo"] = "Vehiculo";
+                    Session["tipoPrestamo"] = "Préstamo vehiculo";
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
