@@ -2,22 +2,39 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading;
+using System.Web;
+using System.Web.Services;
 
 namespace BancoCK
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ConsumoBaseDatos" en el código, en svc y en el archivo de configuración a la vez.
-    // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ConsumoBaseDatos.svc o ConsumoBaseDatos.svc.cs en el Explorador de soluciones e inicie la depuración.
-    public class ConsumoBaseDatos : IConsumoBaseDatos
+    /// <summary>
+    /// Descripción breve de serviciosPrueba
+    /// </summary>
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [System.ComponentModel.ToolboxItem(false)]
+    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
+    // [System.Web.Script.Services.ScriptService]
+    public class serviciosPrueba : System.Web.Services.WebService
     {
+
+        [WebMethod]
+        public string HelloWorld()
+        {
+            return "Hola a todos";
+        }
+
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataAdapter adaptador;
         DataTable DatatableUsuarios = null;
         public string comboBoxItem;
 
+        [WebMethod]
         public void abrirConexion()
         {
             try
@@ -31,12 +48,13 @@ namespace BancoCK
                 throw new Exception("Error al abrir la conexion con la base de datos, detalles: " + ex.Message);
             }
         }
-
+        [WebMethod]
         public void cerrarConexion()
         {
             conexion.Close();
         }
 
+        [WebMethod]
         public DataTable devolverPrestamosClientes()
         {
             try
@@ -60,7 +78,8 @@ namespace BancoCK
             return DatatableUsuarios;
         }
 
-        public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono,string rol)
+        [WebMethod]
+        public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, string rol)
         {
             try
             {
@@ -86,7 +105,7 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
-
+        [WebMethod]
         public string mostrarDescripcion(string tipoPrestamo)
         {
             try
@@ -112,6 +131,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public string mostrarRequisitos(string tipoPrestamo)
         {
             try
@@ -137,7 +157,8 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,float cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto, string tipoPrestamo)
+        [WebMethod]
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, float cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo)
         {
             try
             {
@@ -147,13 +168,13 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Identificacion", identificacion);
                 comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
                 comando.Parameters.AddWithValue("@EstadoCredito", estadoCredito);
-                comando.Parameters.AddWithValue("@TipoPrestamo",tipoPrestamo);
-                comando.Parameters.AddWithValue("@Monto",monto);
-                comando.Parameters.AddWithValue("@PlazoAños",plazoAños);
-                comando.Parameters.AddWithValue("@CuotaMensual",cuotaMensual);
-                comando.Parameters.AddWithValue("@SalarioNeto",salarioNeto);
-                comando.Parameters.AddWithValue("@AñosLaborando",añosLaborando);
-                comando.Parameters.AddWithValue("@SalarioBruto",salarioBruto);
+                comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Monto", monto);
+                comando.Parameters.AddWithValue("@PlazoAños", plazoAños);
+                comando.Parameters.AddWithValue("@CuotaMensual", cuotaMensual);
+                comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
+                comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
+                comando.Parameters.AddWithValue("@SalarioBruto", salarioBruto);
                 comando.ExecuteNonQuery();
 
             }
@@ -168,7 +189,7 @@ namespace BancoCK
         }
 
 
-
+        [WebMethod]
         public string CredencialesUsuario(string Identificacion, string password)
         {
             abrirConexion();
@@ -190,8 +211,8 @@ namespace BancoCK
             }
         }
 
-
-        public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono,  string Password, string TipoCedula)
+        [WebMethod]
+        public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string Password, string TipoCedula)
 
         {
             try
@@ -209,6 +230,8 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Telefono", Convert.ToInt32(Telefono));
                 comando.Parameters.AddWithValue("@Contraseña", Password);
                 comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
+
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -220,6 +243,7 @@ namespace BancoCK
 
         }
 
+        [WebMethod]
         public void asignarAnalista(string identificacion, int idPrestamo)
         {
 
@@ -244,6 +268,7 @@ namespace BancoCK
 
         }
 
+        [WebMethod]
         public DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula)
         {
             try
@@ -269,6 +294,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public DataTable devolverPrestamos_tipoPrestamo(string tipoPrestamo)
         {
             try
@@ -293,6 +319,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public void cambiarEstadoPrestamoSolicitud(int idPrestamo)
         {
             try
@@ -314,6 +341,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public string devolverCedulaAnalista(string nombre, string apellido1, string apellido2)
         {
 
@@ -343,8 +371,8 @@ namespace BancoCK
 
         }
 
-
-       public bool ValidarExistenciaUsuario(string Identificacion)
+        [WebMethod]
+        public bool ValidarExistenciaUsuario(string Identificacion)
         {
             try
             {
@@ -356,7 +384,7 @@ namespace BancoCK
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
 
-                if(dt.Rows.Count==0 || dt.Rows[0][0].ToString().Equals(""))
+                if (dt.Rows.Count == 0 || dt.Rows[0][0].ToString().Equals(""))
                 {
                     return false;
                 }
@@ -371,6 +399,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public float devolverTasaTipoPrestamo(string tipoPrestamo)
         {
             try
@@ -378,7 +407,7 @@ namespace BancoCK
                 abrirConexion();
                 comando = new SqlCommand("devolverTasa", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -397,11 +426,11 @@ namespace BancoCK
 
         }
 
-
+        [WebMethod]
         public bool enviarCorreo(string receptor)
         {
-            string to = receptor;   
-            string from = "bancock.control.interno@gmail.com"; 
+            string to = receptor;
+            string from = "bancock.control.interno@gmail.com";
             MailMessage message = new MailMessage(from, to);
             string cuerpo = "Muchas gracias por escogernos, le invitamos a ingresar a nuestro sitio, para visualizar nuestros diferentes servicios";
             string titulo = "Notificación de BancoCK";
@@ -414,12 +443,12 @@ namespace BancoCK
             message.Body = body;
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
-           
+
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-           
+
             System.Net.NetworkCredential basicCredential1 = new
             System.Net.NetworkCredential(from, "BancoCKinterno");
-           
+
             client.EnableSsl = true;
             client.UseDefaultCredentials = true;
             client.Credentials = basicCredential1;
@@ -427,7 +456,7 @@ namespace BancoCK
             {
                 Thread.Sleep(1000);
                 client.Send(message);
-               
+
                 return true;
             }
 
@@ -438,8 +467,8 @@ namespace BancoCK
             }
         }
 
-
-        public string ObtenerCorreo(string Identificacion,string Rol)
+        [WebMethod]
+        public string ObtenerCorreo(string Identificacion, string Rol)
         {
 
 
@@ -457,6 +486,7 @@ namespace BancoCK
 
         }
 
+        [WebMethod]
         public string devolverLimiteMontoPrestamo(string tipoPrestamo)
         {
             try
@@ -464,7 +494,7 @@ namespace BancoCK
                 abrirConexion();
                 comando = new SqlCommand("monto_Maximo_Minimo_préstamo", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@tipoPrestamo",tipoPrestamo);
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -483,6 +513,7 @@ namespace BancoCK
 
         }
 
+        [WebMethod]
         public string devolverLimiteMontoPrestamoDolares(string tipoPrestamo)
         {
             try
@@ -508,6 +539,7 @@ namespace BancoCK
             }
         }
 
+        [WebMethod]
         public float devolverTasaTipoPrestamoDolares(string tipoPrestamo)
         {
             try
@@ -532,21 +564,23 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+        [WebMethod]
 
-       public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
+        public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
         {
             try
             {
                 float tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
-                double resultado = (prestamo * tasaInteresCredito) / (1 - (Math.Pow(tasaInteresCredito+1, años)));
+                double resultado = (prestamo * tasaInteresCredito) / (1 - (Math.Pow(tasaInteresCredito + 1, años)));
                 return resultado;
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
             }
-            
+
         }
     }
 }
+

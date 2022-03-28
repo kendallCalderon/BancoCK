@@ -36,7 +36,7 @@
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido_row_botones">
                     <asp:Button runat="server" id="btnAtras" CssClass="btnColones" Text="Atras" OnClick="btnAtras_Click"></asp:Button>
-                    <asp:Button runat="server" id="btnTramitar"  text="Tramitar" CssClass="btnDolares"></asp:Button>
+                    <asp:Button runat="server" id="btnTramitar"  text="Tramitar" CssClass="btnDolares" OnClick="btnTramitar_Click"></asp:Button>
                 </div>
 
             </div>

@@ -29,7 +29,7 @@
                 </div>
                 <label>Ingrese cedula del Analista</label>
                 <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista"  runat="server" id="txtCedulaAnalista"/>
-                <asp:Button  runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
+                <asp:Button   runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
 
             <div class="ContenedorFormulario_image">

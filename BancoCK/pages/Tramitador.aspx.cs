@@ -10,7 +10,8 @@ namespace BancoCK
 {
     public partial class Formulario_web12 : System.Web.UI.Page
     {
-       ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+   ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+     
         string script;
 
 
@@ -30,7 +31,8 @@ namespace BancoCK
             {
                 
                 DataTable detalles = new DataTable();
-                
+
+
                 if (!IsPostBack)
                 {
                     detalles = metodos.devolverPrestamosClientes();

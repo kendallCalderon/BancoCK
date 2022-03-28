@@ -9,7 +9,7 @@ namespace BancoCK
 {
     public partial class Formulario_web14 : System.Web.UI.Page
     {
-        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+        ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
         string script = "",tipoPrestamo = "", montosPermitidos="",valor1 = "", valor2 = "";
         decimal numero = 0;
         float tasaInteres = 0;
@@ -110,6 +110,18 @@ namespace BancoCK
         protected void btnAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/Prestamos.aspx");
+        }
+
+        protected void btnTramitar_Click(object sender, EventArgs e)
+        {
+            if (Session["Login"] == null)
+            {
+                Response.Redirect("/pages/formularioPrestamo.aspx");
+            }
+            else
+            {
+                 Response.Redirect("/pages/FormularioAutenticado.aspx");
+            }
         }
 
         protected void cbxComboPrestamo_SelectedIndexChanged(object sender, EventArgs e)
