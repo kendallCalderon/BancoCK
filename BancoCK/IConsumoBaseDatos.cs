@@ -89,7 +89,74 @@ namespace BancoCK
         [OperationContract]
         float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo);
 
-       
+
+
+
+
+        [OperationContract]
+        void registrarIndicadorPrestamoClickUsuarioNoAutenticado(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha);
+        [OperationContract]
+        void registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha);
+        [OperationContract]
+        void registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha);
+        [OperationContract]
+        DataTable devolverInformacionPrestamos(string tipoPrestamo);
+        [OperationContract]
+        void registrarIndicadorPrestamoClickAutenticado(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha);
+        [OperationContract]
+        DataTable devolverFechasIndicadores();
+        [OperationContract]
+        int indicadorAutenticadoVivienda(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorAutenticadoPersonal(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorAutenticadoApoyoNegocio(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorAutenticadoEducacion(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorAutenticadoDeudas(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorAutenticadoVehiculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int indicadorNoAutenticadoVehiculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosDeudas(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosEducacion(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosApoyoNegocio(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosPersonal(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosVivienda(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadosApoyoNegocioPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadoViviendaPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadoEducacionPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresNoAutenticadoDeudasPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+
+        int devolverIndicadoresNoAutenticadoVehiculoPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoVehiculoPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoDeudasPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoEducacionPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoViviendaPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoApoyoNegocioPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+        [OperationContract]
+        int devolverIndicadoresAutenticadoPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
+      
+
+        
 
     }
 }
