@@ -78,6 +78,7 @@
     <Content Include="bulma\css\bulma-rtl.min.css" />
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
+    <Content Include="ConsumoBaseDatos.svc" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1953,6 +1954,10 @@
     <Compile Include="ClienteAutenticado.Master.designer.cs">
       <DependentUpon>ClienteAutenticado.Master</DependentUpon>
     </Compile>
+    <Compile Include="ConsumoBaseDatos.svc.cs">
+      <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IConsumoBaseDatos.cs" />
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,8 +10,8 @@ namespace BancoCK
 {
     public partial class Formulario_web12 : System.Web.UI.Page
     {
-   ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
-     
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+
         string script;
 
 
