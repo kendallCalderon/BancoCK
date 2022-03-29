@@ -49,7 +49,8 @@
     <ul class="uk-subnav uk-subnav-pill Encabezado" uk-switcher="animation: uk-animation-fade">
         <li><a class="browser-default a a-after" href="#">Autenticados</a></li>
         <li><a class="browser-default a a-after" href="#">No Autenticados</a></li>
-        <li><a class="browser-default a a-after" href="#">Item</a></li>
+        <li><a class="browser-default a a-after" href="#">Clics</a></li>
+        <li><a class="browser-default a a-after" href="#">Posicionamiento de 5 segundos</a></li>
     </ul>
 
     <ul class="uk-switcher uk-margin">
@@ -273,6 +274,115 @@
 
         </li>
         <li>
+
+
+             <div class="contenedorTarjetas">
+        <div class="contenedorTarjetas_contenido">
+            <div class="contenedorTarjetas_contenido1">
+                <div class="row">
+                    <div>
+                        <div class="card cartaUno">
+
+                            <div>
+                                <span class="card-title">Apoyo Negocio</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    38
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card cartaDos">
+
+                            <div>
+                                <span class="card-title">Préstamo Personal</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    40
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card cartaTres">
+
+                            <div>
+                                <span class="card-title">Préstamo Educación</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    20
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedorTarjetas_contenido1">
+                <div class="row">
+                    <div>
+                        <div class="card cartaCuatro">
+
+                            <div>
+                                <span class="card-title">Refundir mis deudas</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    23
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card cartaCinco">
+
+                            <div>
+                                <span class="card-title">Préstamo Vehículo</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    56
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card cartaSeis">
+
+                            <div>
+                                <span class="card-title">Préstamo Vivienda</span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    45
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+        </li>
+         <li>
 
 
              <div class="contenedorTarjetas">
