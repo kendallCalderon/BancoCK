@@ -56,45 +56,16 @@
 
             <div class="Descripciones">
                 <h2 class="titulo2">Información del préstamo</h2>
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    tempore veritatis, repellendus reiciendis? Illum dolorum 
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                </div>
+                <div class="parrafo" id="contenido1" runat="server">
 
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
                 </div>
 
 
                 <h2 class="titulo2">Requisitos del préstamo</h2>
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                </div>
 
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
+
+                <div class="parrafo" id="contenido3" runat="server">
+
                 </div>
 
 

@@ -10,7 +10,7 @@ namespace BancoCK.pages
 {
     public partial class Home :  System.Web.UI.Page 
     {
-        ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+        WBSMetodos.WBSmetodosClient  metodos = new WBSMetodos.WBSmetodosClient();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,9 +27,9 @@ namespace BancoCK.pages
         {
             string username = tbxUsuario.Value;
             string password = tbxPassword.Value;
-            string validar  =    metodos.CredencialesUsuario(tbxUsuario.Value, tbxPassword.Value);
+             string validar  =    metodos.CredencialesUsuario(tbxUsuario.Value, tbxPassword.Value);
 
-            if (validar.Equals("0"))
+             if (validar.Equals("0"))
             {
                 lblPass.Visible = true;
             }
@@ -67,7 +67,7 @@ namespace BancoCK.pages
                 Response.Redirect("/pages/Analista.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
                 
-            }
+            } 
            
         }
 

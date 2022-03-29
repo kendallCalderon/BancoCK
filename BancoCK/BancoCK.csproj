@@ -78,6 +78,13 @@
     <Content Include="bulma\css\bulma-rtl.min.css" />
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
+    <None Include="Connected Services\WBSMetodos\WBSMetodos.disco" />
+    <None Include="Connected Services\WBSMetodos\configuration91.svcinfo" />
+    <None Include="Connected Services\WBSMetodos\configuration.svcinfo" />
+    <None Include="Connected Services\WBSMetodos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1930,6 +1937,7 @@
     <Content Include="uikit\js\uikit-icons.min.js" />
     <Content Include="uikit\js\uikit.js" />
     <Content Include="uikit\js\uikit.min.js" />
+    <Content Include="WBSMetodos.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1954,6 +1962,12 @@
     <Compile Include="ClienteAutenticado.Master.designer.cs">
       <DependentUpon>ClienteAutenticado.Master</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WBSMetodos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="IWBSMetodos.cs" />
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2028,6 +2042,10 @@
     <Compile Include="serviciosPrueba.asmx.cs">
       <DependentUpon>serviciosPrueba.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Temporal.cs" />
+    <Compile Include="WBSMetodos.svc.cs">
+      <DependentUpon>WBSMetodos.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2157,6 +2175,16 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\WBSMetodos\WBSmetodos.wsdl" />
+    <None Include="Connected Services\WBSMetodos\WBSMetodos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WBSMetodos\WBSMetodos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WBSMetodos\WBSMetodos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="sass\Home.scss" />
     <Content Include="sass\Registro.scss" />
@@ -2170,6 +2198,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WBSMetodos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

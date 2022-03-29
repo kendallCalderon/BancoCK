@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -12,12 +13,15 @@ namespace BancoCK.pages
 {
     public partial class FormularioPrestamo : System.Web.UI.Page
     {
-    ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+        WBSMetodos.WBSmetodosClient  metodos = new WBSMetodos.WBSmetodosClient();
         string script = "";
+        DataTable tabla = new DataTable();
+        Temporal temp = new Temporal();
+        string descripcion = "", requisitos = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           /* if (!IsPostBack)
+            if (!IsPostBack)
             {
                 if (Session["Login"] == null)
                 {
@@ -25,7 +29,15 @@ namespace BancoCK.pages
                 }
 
 
-            }*/
+            }
+
+            tabla = temp.devolverInformacionPrestamos(Session["tipoPrestamo"].ToString());
+            descripcion = tabla.Rows[0]["Descripcion"].ToString();
+            requisitos = tabla.Rows[0]["Requisito"].ToString();
+
+            contenido1.InnerText = descripcion;
+            contenido3.InnerText = requisitos;
+
         }
 
         protected void btnTramitar_Click(object sender, EventArgs e)
@@ -35,7 +47,7 @@ namespace BancoCK.pages
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
                 float tasaPrestamo = 0;
                 double cuotaMensual = 0;
@@ -62,7 +74,6 @@ namespace BancoCK.pages
                     metodos.registrarPrestamoClienteOriginal( txtIdentificacion.Value.ToString(), fecha,"espera",float.Parse(txtMonto.Value.ToString()),int.Parse(txtRangoAños.Value.ToString()),cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()),int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
-                    Session["tipoPrestamo"] = null;
                     metodos.enviarCorreo(txtCorreo.Value.ToString());
                 }
             }
@@ -71,7 +82,7 @@ namespace BancoCK.pages
                 script = string.Format("javascript:alerta('{0}')", "Error al guardar la informacion del cliente en la BD, favor revisar la bd del sistema bancario");
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", script, true);
-            }
+            } 
         }
 
 

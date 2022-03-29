@@ -4,38 +4,24 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
+using System.Runtime.Serialization;
+using System.ServiceModel;
 using System.Text;
 using System.Threading;
-using System.Web;
-using System.Web.Services;
 
 namespace BancoCK
 {
-    /// <summary>
-    /// Descripción breve de serviciosPrueba
-    /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-    [System.ComponentModel.ToolboxItem(false)]
-    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-    // [System.Web.Script.Services.ScriptService]
-    public class serviciosPrueba : System.Web.Services.WebService
-    {
-
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
-
+	// NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "WBSmetodos" en el código, en svc y en el archivo de configuración a la vez.
+	// NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione WBSmetodos.svc o WBSmetodos.svc.cs en el Explorador de soluciones e inicie la depuración.
+	public class WBSmetodos : IWBSmetodos
+	{
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataAdapter adaptador;
         DataTable DatatableUsuarios = null;
-        public string comboBoxItem;
+        string comboBoxItem;
 
-        [WebMethod]
-        public void abrirConexion()
+       public void abrirConexion()
         {
             try
             {
@@ -48,13 +34,12 @@ namespace BancoCK
                 throw new Exception("Error al abrir la conexion con la base de datos, detalles: " + ex.Message);
             }
         }
-        [WebMethod]
+
         public void cerrarConexion()
         {
             conexion.Close();
         }
 
-        [WebMethod]
         public DataTable devolverPrestamosClientes()
         {
             try
@@ -78,7 +63,6 @@ namespace BancoCK
             return DatatableUsuarios;
         }
 
-        [WebMethod]
         public void guardarInformacionClienteNoAutenticado(string cedula, string nombre, string apellido1, string apellido2, string correo, int telefono, string rol)
         {
             try
@@ -105,7 +89,7 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
-        [WebMethod]
+
         public string mostrarDescripcion(string tipoPrestamo)
         {
             try
@@ -130,8 +114,32 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+        
+        public void registrarIndicadorPrestamoClickUsuarioNoAutenticado(string tipoPrestamo,int contador,string tipoIndicador,string fecha)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarIndicador_tipoPrestamoNoAutenticados", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string usuario = DatatableUsuarios.Rows[0]["Descripcion"].ToString();
+             
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
 
-        [WebMethod]
         public string mostrarRequisitos(string tipoPrestamo)
         {
             try
@@ -156,9 +164,7 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
-       
 
-        [WebMethod]
         public void registrarPrestamoClienteOriginal(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo)
         {
             try
@@ -190,8 +196,6 @@ namespace BancoCK
         }
 
 
-
-        [WebMethod]
         public string CredencialesUsuario(string Identificacion, string password)
         {
             abrirConexion();
@@ -213,7 +217,6 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
         public void RegistrarUsuario(string Identificacion, string Nombre, string Rol, string PrimerApellido, string SegundoApellido, string Correo, string Telefono, string Password, string TipoCedula)
 
         {
@@ -245,7 +248,6 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
         public void asignarAnalista(string identificacion, int idPrestamo)
         {
 
@@ -270,8 +272,7 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
-        public DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula)
+        public  DataTable devolverPrestamos_nombre_cedula(string tipoPrestamo, string cedula)
         {
             try
             {
@@ -296,7 +297,6 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
         public DataTable devolverPrestamos_tipoPrestamo(string tipoPrestamo)
         {
             try
@@ -321,7 +321,6 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
         public void cambiarEstadoPrestamoSolicitud(int idPrestamo)
         {
             try
@@ -343,7 +342,6 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
         public string devolverCedulaAnalista(string nombre, string apellido1, string apellido2)
         {
 
@@ -373,7 +371,6 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
         public bool ValidarExistenciaUsuario(string Identificacion)
         {
             try
@@ -401,7 +398,6 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
         public float devolverTasaTipoPrestamo(string tipoPrestamo)
         {
             try
@@ -428,9 +424,6 @@ namespace BancoCK
 
         }
 
-       
-
-        [WebMethod]
         public bool enviarCorreo(string receptor)
         {
             string to = receptor;
@@ -471,10 +464,46 @@ namespace BancoCK
             }
         }
 
+        public bool enviarCorreoNoLogueado(string receptor)
+        {
+            string to = receptor;
+            string from = "bancock.control.interno@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            string cuerpo = "Muchas gracias por escogernos, le informamos que tu solicitud de crédito será revisada por el banco, favor estar atento a tu correo.";
+            string titulo = "Notificación de BancoCK";
 
-       
 
-        [WebMethod]
+            string body = @"<html lang=""en""><head><meta charset=""UTF-8""><meta http-equiv = ""X-UA-Compatible"" content=""IE=edge"" ><meta name=""viewport"" content=""width=device-width, initial-scale=1.0""><title> Document </title><body><style type=""text/css"">body{font-family: 'Poppins', sans-serif;}.cabecera {border: 3px solid #27292d;border-radius: 10px;background-color: #27292d;width: 500px;}.title{font-weight: 700;color: #D03737;text-align: center;}h2{text-align: center;color: white;}a{background-color: #D03737; border: 3px solid #6846ec;border-radius: 5px;color: #fff!important;text-decoration: none;font-weight: 600;padding: 8px; margin-bottom: 20px;}a:hover {background-color: #6846ec;color: white;border-color: #6846ec;}</style></head><body><div class=""cabecera""><h1 class=""title"">Control de recepción de solicitud de créditos</h1><h2>Hola, hemos recibido su solicitud, la estaremos evaluando, pronto recibirá respuesta del estado</h2></div><p>" + cuerpo + @"</p><a href=""https://tiusr2pl.cuc-carrera-ti.ac.cr/BancoCK/pages/Home.aspx""> Ir al sistema</a> </body></html>";
+
+            string mailbody = body;
+            message.Subject = titulo;
+            message.Body = body;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+
+            System.Net.NetworkCredential basicCredential1 = new
+            System.Net.NetworkCredential(from, "BancoCKinterno");
+
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = true;
+            client.Credentials = basicCredential1;
+            try
+            {
+                Thread.Sleep(1000);
+                client.Send(message);
+
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
+        }
+
         public string ObtenerCorreo(string Identificacion, string Rol)
         {
 
@@ -493,7 +522,6 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
         public string devolverLimiteMontoPrestamo(string tipoPrestamo)
         {
             try
@@ -520,7 +548,6 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
         public string devolverLimiteMontoPrestamoDolares(string tipoPrestamo)
         {
             try
@@ -545,8 +572,6 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
-
-        [WebMethod]
         public float devolverTasaTipoPrestamoDolares(string tipoPrestamo)
         {
             try
@@ -571,14 +596,13 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
-        [WebMethod]
 
         public double calcularCuotaMensual(float prestamo, int años, float tasaInteres)
         {
             try
             {
                 años = años * 12 * -1;
-                double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12),años));
+                double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12), años));
                 return resultado;
             }
             catch (Exception ex)
@@ -588,13 +612,6 @@ namespace BancoCK
 
         }
 
-        [WebMethod]
-        public string Mundo()
-        {
-            return "Como estan todos";
-        }
-
-        [WebMethod]
         public float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo)
         {
             try
@@ -620,7 +637,7 @@ namespace BancoCK
             }
         }
 
-        [WebMethod]
+
         public float devolverTasaColonesUsuarioNoLogeado(string tipoPrestamo)
         {
             try
@@ -645,6 +662,6 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+
     }
 }
-

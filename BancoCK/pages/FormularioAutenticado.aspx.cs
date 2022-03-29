@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,8 +10,12 @@ namespace BancoCK.pages
 {
     public partial class FormularioAutenticado : System.Web.UI.Page
     {
-    ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+        WBSMetodos.WBSmetodosClient  metodos = new WBSMetodos.WBSmetodosClient();
         string script = "";
+        Temporal temp = new Temporal();
+        string descripcion = "", requisitos = "";
+        DataTable tabla = new DataTable();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +28,13 @@ namespace BancoCK.pages
 
 
             }
+
+            tabla = temp.devolverInformacionPrestamos(Session["tipoPrestamo"].ToString());
+            descripcion = tabla.Rows[0]["Descripcion"].ToString();
+            requisitos = tabla.Rows[0]["Requisito"].ToString();
+
+            contenido1.InnerText = descripcion;
+            contenido3.InnerText = requisitos;
         }
 
       
@@ -45,13 +57,13 @@ namespace BancoCK.pages
                 }
                 else
                 {
-                    string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                     string fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarPrestamoClienteOriginal(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     string Rol = "Cliente";
                     string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);
                     metodos.enviarCorreo(Correo);
                     script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true); 
                   
 
                 }
