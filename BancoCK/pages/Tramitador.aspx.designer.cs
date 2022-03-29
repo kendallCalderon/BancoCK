@@ -51,6 +51,33 @@ namespace BancoCK
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
+        /// Control btnObservarCreditos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnObservarCreditos;
+
+        /// <summary>
+        /// Control btnObservarCreditosPendientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnObservarCreditosPendientes;
+
+        /// <summary>
+        /// Control btnObservarHistorialCreditos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnObservarHistorialCreditos;
+
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>

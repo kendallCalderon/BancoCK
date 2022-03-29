@@ -5,34 +5,34 @@
     --azul-oscuro: #0C1228;
     --gris: #444;
 }
+
 body {
-    font-family:Poppins;
+    font-family: Poppins;
 }
 
-.contenedorFlexible{
-    display:flex;
-    flex-wrap:wrap-reverse;
-    justify-content:center;
-    margin:10px 0;
-
+.contenedorFlexible {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .contenedorFlexible_contenido_formulario {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:column;
+    flex-direction: column;
     background-color: var(--azul);
-    width:450px;
-    justify-content:center;
-    padding:10px;
-
+    width: 450px;
+    justify-content: center;
+    padding: 10px;
 }
+
 .contenedorFlexible_contenido_subcontenido {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items:center;
-    margin-top:10px;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .contenedorFlexible_contenido_subcontenido_row {
@@ -41,14 +41,14 @@ body {
     width: 100%;
     justify-content: center;
     gap: 50px;
-    margin:20px 0;
+    margin: 20px 0;
 }
 
 
-h3{
-    text-align:center !important;
-    margin-top:10px;
-    color:white;
+h3 {
+    text-align: center !important;
+    margin-top: 10px;
+    color: white;
 }
 
 label {
@@ -71,8 +71,6 @@ input {
 
 
 .btnDolares {
-  
-  
     margin: 30px auto !important;
     width: initial !important;
     width: 150px !important;
@@ -173,43 +171,39 @@ input {
     width: 100%;
 }
 
-.contenedorFlexible_contenido_imagen{
-    width:650px;
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    padding:10px;
-    padding-left:0;
-    padding-right:0;
-    margin:10px 0;
-
+.contenedorFlexible_contenido_imagen {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px 0;
 }
 
 .select.is-danger select {
-    
     color: var(--rojo) !important;
 }
 
-.marginMensaje{
-    margin:10px 0;
-    color:var(--rojo);
-    font-size:14px;
-    text-align:center;
+.marginMensaje {
+    margin: 10px 0;
+    color: var(--rojo);
+    font-size: 14px;
+    text-align: center;
 }
 
-#txtMontoMensual{
-    margin-right:10px !important;
-    
+#txtMontoMensual {
+    margin-right: 10px !important;
 }
 
-.cajaIconoCalcular{
-    
+.cajaIconoCalcular {
 }
 
-.icono{
-    margin-top:6px !important;
-    position:absolute;
-    margin-left:7px;
+.icono {
+    margin-top: 6px !important;
+    position: absolute;
+    margin-left: 7px;
 }
 
 
@@ -226,7 +220,6 @@ input {
 
 .contenedorFlexible_contenido_subcontenido_Calculadora {
     margin: 20px 0;
-    width:100%;
-    text-align:center;
-
+    width: 100%;
+    text-align: center;
 }

@@ -9,14 +9,14 @@ namespace BancoCK
 {
     public partial class Formulario_web14 : System.Web.UI.Page
     {
-        ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
-        string script = "",tipoPrestamo = "", montosPermitidos="",valor1 = "", valor2 = "";
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+        string script = "", tipoPrestamo = "", montosPermitidos = "", valor1 = "", valor2 = "";
         decimal numero = 0;
         float tasaInteres = 0;
         string[] vector = new string[2];
         decimal temp;
 
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -43,7 +43,7 @@ namespace BancoCK
 
                 if (Session["tipoPrestamo"] != null)
                 {
-                    if(Session["tipoPrestamo"].ToString().Equals(cbxComboPrestamo.SelectedValue.ToString())== false)
+                    if (Session["tipoPrestamo"].ToString().Equals(cbxComboPrestamo.SelectedValue.ToString()) == false)
                     {
                         tipoPrestamo = cbxComboPrestamo.SelectedValue;
                         Session["MonedaEscogida"] = "Colones";
@@ -80,17 +80,17 @@ namespace BancoCK
                         Session["MontoMinimo"] = vector[1];
                     }
                     Session["MonedaEscogida"] = null;
-                   
+
 
                 }
-               
+
 
             }
             catch (Exception ex)
             {
                 script = string.Format("javascript:error('{0}')", "Ocurrio un error en el evento carga de la pantalla calculadora de crédito");
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
-            }  
+            }
 
         }
 
@@ -99,14 +99,12 @@ namespace BancoCK
             Session["montoMayor"] = vector[0];
             Session["montoMenor"] = vector[1];
             numero = Decimal.Parse(vector[0]);
-            valor1 = String.Format("{0:C}",numero);
+            valor1 = String.Format("{0:C}", numero);
             vector[0] = valor1;
             numero = Decimal.Parse(vector[1]);
-            valor2 = String.Format("{0:C}",numero);
+            valor2 = String.Format("{0:C}", numero);
             vector[1] = valor2;
-
         }
-
         protected void btnAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/Prestamos.aspx");
@@ -120,7 +118,7 @@ namespace BancoCK
             }
             else
             {
-                 Response.Redirect("/pages/FormularioAutenticado.aspx");
+                Response.Redirect("/pages/FormularioAutenticado.aspx");
             }
         }
 
@@ -161,7 +159,7 @@ namespace BancoCK
                 }
                 else
                 {
- 
+
                     if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMayor"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMenor"].ToString()))
                     {
                         script = string.Format("javascript:notificacion('{0}')", "El monto ingresado no esta entre el monto minimo y maximo, favor cambiarlo");
@@ -177,7 +175,7 @@ namespace BancoCK
                         Session["PresionoBotonMoneda"] = null;
                         txtMonto.Value = "";
                         txtRangoAñosPrestamo.Value = "";
-                        
+
                     }
 
                 }
@@ -191,6 +189,6 @@ namespace BancoCK
             }
         }
 
-
     }
+
 }

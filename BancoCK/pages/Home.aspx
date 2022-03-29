@@ -97,9 +97,8 @@
                             <span class="card-title">Apoyo negocio</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Cumple tu sueño de
-                                    emprender un nuevo negocio
+                            <p class="parr_carta">
+                                Préstamo comercial puedes obtener financiamiento para expandir tu negocio y refinanciar tus deudas. Además, te ofrecemos la alternativa de obtener financiamiento con garantía gubernamental. 
                             </p>
                         </div>
                     </div>
@@ -114,9 +113,9 @@
                             <span class="card-title">Préstamo Personal</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Consigue tu prestamo
-                                 para tus metas personales
+                            <p class="parr_carta">
+                                Sus necesidades cambian a lo largo de su vida y por supuesto, sus sueños también.
+                            Tenemos un crédito que se adapta a cada momento, con las mejores condiciones y pensado para usted.
                             </p>
                         </div>
                     </div>
@@ -132,9 +131,8 @@
                             <span class="card-title">Préstamo Educación</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Te préstamos para 
-                                  tu educación
+                            <p class="parr_carta">
+                               Ofrecemos a todos los estudiantes que requieran financiamiento. Abarcando desde la compra de equipo, materiales, libros hasta la carrera universitaria completa. 
                             </p>
                         </div>
                     </div>
@@ -153,9 +151,9 @@
                             <span class="card-title">Préstamo Vivienda</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Cumple tu sueño de
-                                    casa propia
+                            <p class="parr_carta">
+                                ¡Lo suyo es estrenar o remodelar su casa y lo nuestro es hacer realidad sus sueños!
+                                Le tenemos las mejores condiciones y beneficios de lograr tus metas.
                             </p>
                         </div>
                     </div>
@@ -171,9 +169,11 @@
                             <span class="card-title">Refundir mis deudas</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Cancele sus deudas,
-                                    nosotros te prestamos
+                            <p class="parr_carta">
+                                ¿Sus deudas se salieron de control?
+                              Gane paz y liquidez al unificar sus deudas con BancoCK cuota única.
+                              Una sola cuota y ¡muy atractiva!
+                              Con garantía hipotecaria.
                             </p>
                         </div>
                     </div>
@@ -189,9 +189,11 @@
                             <span class="card-title">Préstamo Vehiculo</span>
                         </div>
                         <div class="card-content">
-                            <p>
-                                Consigue tu auto propio
-                                     con nosotros
+                            <p class="parr_carta">
+                                ¡Nada como el olor a carro nuevo!
+                           Elija el vehículo que se ajusta a sus necesidades y nosotros lo hacemos realidad.
+                           Variedad de garantías: prendaria
+                           (responde el mismo vehículo, estando asegurado).
                             </p>
                         </div>
                     </div>
