@@ -114,7 +114,7 @@
         </asp:GridView>
             </div>
 
-        <div class="contenedorCartas">
+       <%-- <div class="contenedorCartas">
             <h2>Opciones analista</h2>
             <div class="contenedorCartas_item">
                 <div class="row">
@@ -163,7 +163,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
     </div>
 

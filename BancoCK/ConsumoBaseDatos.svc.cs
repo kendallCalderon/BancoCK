@@ -404,7 +404,7 @@ namespace BancoCK
             string to = receptor;   
             string from = "bancock.control.interno@gmail.com"; 
             MailMessage message = new MailMessage(from, to);
-            string cuerpo = "Muchas gracias por escogernos, le invitamos a ingresar a nuestro sitio, para visualizar nuestros diferentes servicios";
+            string cuerpo = "Muchas gracias por escogernos, le invitamos a ingresar a nuestro sitio, para visualizar nuestros diferentes servicios.";
             string titulo = "Notificación de BancoCK";
 
 
@@ -426,7 +426,7 @@ namespace BancoCK
             client.Credentials = basicCredential1;
             try
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 client.Send(message);
                
                 return true;

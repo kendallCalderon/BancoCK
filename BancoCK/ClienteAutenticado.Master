@@ -32,7 +32,7 @@
                     <div class="nav-wrapper navcolor  ">
                         <img class="brand-logo" src="/img/logoBanco.png" />
                         <div class="navmenu">
-                            <a class="navmenu_items" href="sass.html">Pagina inicio</a>
+                            <a class="navmenu_items" href="/pages/Home.aspx">Pagina inicio</a>
                             <a class="navmenu_items" href="/pages/Prestamos.aspx">Préstamos</a>
                             <a class="navmenu_items" href="collapsible.html">Contactos</a>
                             <a class="navmenu_items" href="collapsible.html">Historia</a>
