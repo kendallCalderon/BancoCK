@@ -137,7 +137,7 @@ namespace BancoCK
             }
         }
 
-        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,float cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto, string tipoPrestamo)
+        public void registrarPrestamoCliente(string identificacion, string fechaCredito, string estadoCredito,float monto,int plazoAños,double cuotaMensual,float salarioNeto,int añosLaborando,float salarioBruto, string tipoPrestamo)
         {
             try
             {
@@ -209,6 +209,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Telefono", Convert.ToInt32(Telefono));
                 comando.Parameters.AddWithValue("@Contraseña", Password);
                 comando.Parameters.AddWithValue("@TipoCedula", TipoCedula);
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -547,6 +548,63 @@ namespace BancoCK
                 throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
             }
             
+        }
+
+
+        public void registrarPrestamoClienteOriginal(string identificacion, string fechaCredito, string estadoCredito, float monto, int plazoAños, double cuotaMensual, float salarioNeto, int añosLaborando, float salarioBruto, string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarPrestamo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", identificacion);
+                comando.Parameters.AddWithValue("@FechaCredito", fechaCredito);
+                comando.Parameters.AddWithValue("@EstadoCredito", estadoCredito);
+                comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Monto", monto);
+                comando.Parameters.AddWithValue("@PlazoAños", plazoAños);
+                comando.Parameters.AddWithValue("@CuotaMensual", cuotaMensual);
+                comando.Parameters.AddWithValue("@SalarioNeto", salarioNeto);
+                comando.Parameters.AddWithValue("@AñosLaborando", añosLaborando);
+                comando.Parameters.AddWithValue("@SalarioBruto", salarioBruto);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar los requisitos del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+
+        public float devolverTasaDolaresUsuarioNoLogeado(string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("devolverTasaUsuarioNoLogeadoDolares", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                float tasa = float.Parse(DatatableUsuarios.Rows[0]["TasaDolares"].ToString());
+                return tasa;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
         }
     }
 }

@@ -52,7 +52,7 @@
                         <label>Monto</label>
                         <input type="text" runat="server" id="txtMonto" />
                         <label>Plazo en años</label>
-                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños" />
+                        <input type="number" class="browser-default rango" runat="server" id="txtRangoAños" required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Moneda</label>
@@ -66,7 +66,11 @@
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
                     <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click"/>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
                     <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click"/>
+                               </ContentTemplate>
+                        </asp:UpdatePanel>
                 </div>
 
 

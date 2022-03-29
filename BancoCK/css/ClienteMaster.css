@@ -1,9 +1,18 @@
-﻿:root {
+﻿
+
+:root {
     --rojo: #D03737;
     --azul: #0C1248;
 }
 
 body {
+
+}
+
+a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .headerr{

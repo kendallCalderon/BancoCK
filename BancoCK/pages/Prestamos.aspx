@@ -23,8 +23,8 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                               Cumple tu sueño de
-                                    casa propia
+                              ¡Lo suyo es estrenar o remodelar su casa y lo nuestro es hacer realidad sus sueños!
+                                Le tenemos las mejores condiciones y beneficios de lograr tus metas.
                         </p>
                     </div>
                     <div class="card-action">
@@ -43,8 +43,9 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                            Consigue tu prestamo
-                                 para tus metas personales
+                            Sus necesidades cambian a lo largo de su vida y por supuesto, sus sueños también.
+                            Tenemos un crédito que se adapta a cada momento, con las mejores condiciones y pensado para usted.
+                            
                         </p>
                     </div>
                     <div class="card-action">
@@ -66,8 +67,10 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                          Consigue tu auto propio
-                                     con nosotros
+                          ¡Nada como el olor a carro nuevo!
+                           Elija el vehículo que se ajusta a sus necesidades y nosotros lo hacemos realidad.
+                           Variedad de garantías: prendaria
+                           (responde el mismo vehículo, estando asegurado).
                         </p>
                     </div>
                     <div class="card-action">
@@ -87,8 +90,10 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                             Cancele sus deudas,
-                                    nosotros te prestamos
+                            ¿Sus deudas se salieron de control?
+                              Gane paz y liquidez al unificar sus deudas con BancoCK cuota única.
+                              Una sola cuota y ¡muy atractiva!
+                              Con garantía hipotecaria.
                         </p>
                     </div>
                     <div class="card-action">
@@ -106,8 +111,8 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                          Cumple tu sueño de
-                                    emprender un nuevo negocio
+                              Préstamo comercial puedes obtener financiamiento para expandir tu negocio y refinanciar tus deudas. Además, te ofrecemos la alternativa de obtener financiamiento con garantía gubernamental. 
+                         
                         </p>
                     </div>
                     <div class="card-action">
@@ -125,8 +130,7 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                           Te préstamos para 
-                                  tu educación
+                           Ofrecemos a todos los estudiantes que requieran financiamiento. Abarcando desde la compra de equipo, materiales, libros hasta la carrera universitaria completa. 
                         </p>
                     </div>
                     <div class="card-action">

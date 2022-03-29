@@ -37,6 +37,8 @@ namespace BancoCK.pages
         {
             try
             {
+                float tasaPrestamo = 0;
+                double cuotaMensual = 0;
                 if (txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
                 {
                     script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
@@ -45,13 +47,24 @@ namespace BancoCK.pages
                 else
                 {
                     string fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
+                    if (txtCombo.SelectedIndex == 0)
+                    {
+                        tasaPrestamo = metodos.devolverTasaTipoPrestamoDolares(Session["tipoPrestamo"].ToString());
+                        cuotaMensual = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), tasaPrestamo);
+                    }
+                    else
+                    {
+                        tasaPrestamo = metodos.devolverTasaTipoPrestamo(Session["tipoPrestamo"].ToString());
+                        cuotaMensual = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), tasaPrestamo);
+                    }
+                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     string Rol = "Cliente";
                     string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);
                     metodos.enviarCorreo(Correo);
                     script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
-                  
+                    Session["tipoPrestamo"] = null;
+
 
                 }
             }
