@@ -165,8 +165,9 @@ input {
     padding:10px;
 }
 
-.rango{
-    background-color: var(--rojo) !important;
-    border:none !important;
-    
+.rango {
+    border: none !important;
+    outline: none !important;
+    border-radius: 4px;
+    color: var(--rojo);
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,12 +9,8 @@ namespace BancoCK.pages
 {
     public partial class FormularioAutenticado : System.Web.UI.Page
     {
-        WBSMetodos.WBSmetodosClient  metodos = new WBSMetodos.WBSmetodosClient();
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
         string script = "";
-        Temporal temp = new Temporal();
-        string descripcion = "", requisitos = "";
-        DataTable tabla = new DataTable();
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,13 +23,6 @@ namespace BancoCK.pages
 
 
             }
-
-            tabla = temp.devolverInformacionPrestamos(Session["tipoPrestamo"].ToString());
-            descripcion = tabla.Rows[0]["Descripcion"].ToString();
-            requisitos = tabla.Rows[0]["Requisito"].ToString();
-
-            contenido1.InnerText = descripcion;
-            contenido3.InnerText = requisitos;
         }
 
       
@@ -43,13 +31,14 @@ namespace BancoCK.pages
         protected void btnAtras_Click1(object sender, EventArgs e)
         {
             Response.Redirect("/pages/Prestamos.aspx");
-            
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             try
             {
+                float tasaPrestamo = 0;
+                double cuotaMensual = 0;
                 if (txtSalarioNeto.Value.ToString().Equals("") || txtAñosLaborando.Value.ToString().Equals("") || txtSalarioBruto.Value.ToString().Equals(""))
                 {
                     script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
@@ -57,14 +46,25 @@ namespace BancoCK.pages
                 }
                 else
                 {
-                     string fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarPrestamoClienteOriginal(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), 2344, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
+                    string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                    if (txtCombo.SelectedIndex == 0)
+                    {
+                        tasaPrestamo = metodos.devolverTasaTipoPrestamoDolares(Session["tipoPrestamo"].ToString());
+                        cuotaMensual = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), tasaPrestamo);
+                    }
+                    else
+                    {
+                        tasaPrestamo = metodos.devolverTasaTipoPrestamo(Session["tipoPrestamo"].ToString());
+                        cuotaMensual = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), tasaPrestamo);
+                    }
+                    metodos.registrarPrestamoCliente(Session["Login"].ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString());
                     string Rol = "Cliente";
                     string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);
                     metodos.enviarCorreo(Correo);
                     script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true); 
-                  
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    Session["tipoPrestamo"] = null;
+
 
                 }
             }

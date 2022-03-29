@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/Tramitador.css" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
@@ -86,6 +87,60 @@
                 </Columns>
 
             </asp:GridView>
+        </div>
+
+
+
+         <div class="contenedorCartas">
+            <h2>Opciones Tramitador</h2>
+            <div class="contenedorCartas_item">
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/graficoana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Comparativa Créditos</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditos" OnClick="btnObservarCreditos_Click" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/creditosana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Créditos pendientes</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/historialana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Historial créditos</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

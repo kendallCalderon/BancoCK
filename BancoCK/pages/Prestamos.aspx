@@ -23,7 +23,8 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                                Le tenemos las mejores condiciones y beneficios de lograr tus metas, Tasa cómoda.
+                              ¡Lo suyo es estrenar o remodelar su casa y lo nuestro es hacer realidad sus sueños!
+                                Le tenemos las mejores condiciones y beneficios de lograr tus metas.
                         </p>
                     </div>
                     <div class="card-action">
@@ -42,7 +43,9 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
+                            Sus necesidades cambian a lo largo de su vida y por supuesto, sus sueños también.
                             Tenemos un crédito que se adapta a cada momento, con las mejores condiciones y pensado para usted.
+                            
                         </p>
                     </div>
                     <div class="card-action">
@@ -64,8 +67,10 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                          
-                           Crédito que se ajusta a sus necesidades con cuota atractiva.
+                          ¡Nada como el olor a carro nuevo!
+                           Elija el vehículo que se ajusta a sus necesidades y nosotros lo hacemos realidad.
+                           Variedad de garantías: prendaria
+                           (responde el mismo vehículo, estando asegurado).
                         </p>
                     </div>
                     <div class="card-action">
@@ -85,8 +90,10 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                              Gane paz y liquidez al unificar sus deudas con banco CK Cuota Única.
-                              Una sola cuota y muy atractiva.
+                            ¿Sus deudas se salieron de control?
+                              Gane paz y liquidez al unificar sus deudas con BancoCK cuota única.
+                              Una sola cuota y ¡muy atractiva!
+                              Con garantía hipotecaria.
                         </p>
                     </div>
                     <div class="card-action">
@@ -104,8 +111,8 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                          Préstamo comercial puedes obtener financiamiento para expandir tu negocio y refinanciar tus deudas.
-                          
+                              Préstamo comercial puedes obtener financiamiento para expandir tu negocio y refinanciar tus deudas. Además, te ofrecemos la alternativa de obtener financiamiento con garantía gubernamental. 
+                         
                         </p>
                     </div>
                     <div class="card-action">
@@ -123,7 +130,7 @@
                     </div>
                     <div class="card-content contenido_card">
                         <p>
-                           El Banco CK le ofrece diferentes opciones de financiamiento de acuerdo con sus necesidades.
+                           Ofrecemos a todos los estudiantes que requieran financiamiento. Abarcando desde la compra de equipo, materiales, libros hasta la carrera universitaria completa. 
                         </p>
                     </div>
                     <div class="card-action">

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,15 +10,10 @@ namespace BancoCK.pages
     public partial class Prestamos : System.Web.UI.Page
     {
         string script;
-        WBSMetodos.WBSmetodosClient metodos = new WBSMetodos.WBSmetodosClient();
-        Temporal temp = new Temporal();
-        string fecha;
-        DataTable tabla = new DataTable();
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+         
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -30,18 +24,13 @@ namespace BancoCK.pages
 
                 if(Session["Login"] == null)
                 {
-
                 Session["tipoPrestamo"] = "Préstamo Vivienda";
-                fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
                 Response.Redirect("/pages/FormularioPrestamo.aspx");
-                
+
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Vivienda";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -59,17 +48,12 @@ namespace BancoCK.pages
             {
                 if(Session["Login"]== null)
                 {
-                    
                     Session["tipoPrestamo"] = "Préstamo Personal";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Personal";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -90,15 +74,11 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -120,15 +100,11 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Refundir mis deudas";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Refundir mis deudas";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -150,15 +126,11 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Apoyo Negocio";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Apoyo Negocio";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 
@@ -179,15 +151,11 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Financiar Educación";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Financiar Educación";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    temp.registrarIndicadorPrestamoClickAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 

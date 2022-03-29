@@ -217,6 +217,31 @@ p {
     margin-bottom: 10px;
 }
 
+.Encabezado{
+    display:flex;
+    justify-content:center;
+
+}
+
+.a{
+    all:inherit !important;
+}
+
+.a-after {
+    font-family: Poppins;
+    transition-duration: 0.2s;
+    background-color: none !important;
+    cursor: pointer !important;
+    color: var(--azul) !important;
+    font-weight: 500 !important;
+}
+
+    .a-after:focus {
+        color: var(--azul) !important;
+        transform: scale(1.2) !important;
+        background-color: none !important;
+        font-weight:600 !important;
+    }
 
 
 
