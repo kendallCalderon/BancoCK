@@ -36,6 +36,7 @@
 .iconoo {
     margin-left: 18px;
     height: 31px;
+    position:absolute;
     transition-duration: 0.1s;
     filter: drop-shadow(1px 1px 1px var(--azul)) drop-shadow(1px 1px 1px var(--azul));
 }

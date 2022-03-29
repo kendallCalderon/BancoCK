@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
-  height: 790px;
+  height: 990px;
   padding: 10px;
   padding-bottom: 10px;
 }
@@ -38,13 +38,13 @@
 .flexible2 {
   display: flex;
   flex-wrap: wrap;
-  height: 385px;
+  height: 585px;
 }
 
 .flexible3 {
   display: flex;
   flex-wrap: wrap;
-  height: 385px;
+  height: 585px;
 }
 
 .vid {
@@ -61,8 +61,7 @@
 
 .img-cartas {
   width: 428px;
-  height: 220px !important;
-  margin-bottom: 10px;
+  height: 240px !important;
   object-fit: cover;
   object-position: center;
   transition-duration: 0.5s;
@@ -75,6 +74,14 @@
 .card {
   width: 270px;
   box-shadow: 8px 8px 12px #777;
+  width: 320px !important;
+  max-height: 430px !important;
+  min-height: 430px !important;
+}
+
+.parr_carta {
+  text-align: justify !important;
+  font-size: 15px;
 }
 
 .btnIngresar {
@@ -319,11 +326,14 @@
 }
 .card-content {
   text-align: center;
+  padding: 15px !important;
+  padding-top: 1px !important;
+  max-height: 144px !important;
 }
 
 .card-image {
   overflow: hidden;
-  max-height: 220px;
+  max-height: 240px !important;
 }
 
 .card-title {

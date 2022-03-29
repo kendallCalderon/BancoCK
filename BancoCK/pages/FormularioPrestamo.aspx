@@ -6,7 +6,7 @@
     <div class="Contenedor">
         <div class="contenidoPrincipal">
             <div class="contenidoPrincipal_formulario">
-
+                <asp:ScriptManager ID="ScriptManager1" runat="server" />
                 <h2 class="titulo">Información Personal</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
@@ -124,5 +124,5 @@
         </div>
 
     </div>
-     <asp:ScriptManager ID="ScriptManager1" runat="server" />
+     
 </asp:Content>
