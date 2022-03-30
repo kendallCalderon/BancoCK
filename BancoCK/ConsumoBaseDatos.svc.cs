@@ -540,14 +540,15 @@ namespace BancoCK
             {
                 double tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
-                double resultado = (prestamo * tasaInteresCredito) / (1 - ((Math.Pow(1+tasaInteresCredito, años))));
+                double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12), años));
                 return resultado;
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
             }
-            
+
+
         }
 
 
@@ -1654,7 +1655,7 @@ namespace BancoCK
 
         }
 
-
+       
 
 
 

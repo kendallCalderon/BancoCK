@@ -78,12 +78,12 @@ input {
     margin: 0 auto !important;
 }
 
-.contenidoPrincipal_formulario_Acomodo_Botones{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:0 20px;
-    
+.contenidoPrincipal_formulario_Acomodo_Botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+    margin-bottom: 10px;
 }
 
 .color{
@@ -114,7 +114,6 @@ input {
 }
 
 .btn1 {
-    
     width: 100px;
     height: 30px;
     border: none;
@@ -123,6 +122,7 @@ input {
     border-radius: 5px;
     box-shadow: 4px 4px 5px #111;
     color: #fff;
+    margin-top: 40px !important;
 }
 
     .btn1:hover {
@@ -135,7 +135,6 @@ input {
 
 
 .btn2 {
-    
     width: 100px;
     height: 30px;
     border: none;
@@ -146,6 +145,7 @@ input {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
+    margin-top: 40px !important;
 }
 
     .btn2:hover {

@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/graficaDatos.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.5/dist/js/uikit.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            right: 188px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -27,7 +32,7 @@
                 </div>
             </div>
             <div class="contenedor_formulario_item">
-                <button class="boton_aceptar">Aceptar</button>
+                <asp:Button runat="server" ID="mostrar" Text="Aceptar" cssClass="boton_aceptar" OnClick="mostrar_Click"></asp:Button>
             </div>
         </div>
 
@@ -479,14 +484,6 @@
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
 
 
         </li>

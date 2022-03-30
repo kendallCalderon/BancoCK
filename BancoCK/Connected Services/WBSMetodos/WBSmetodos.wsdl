@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WBSmetodos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost:44341/WBSMetodos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost:44341/WBSMetodos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:44341/WBSMetodos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWBSmetodos_abrirConexion_InputMessage">
+    <wsdl:part name="parameters" element="tns:abrirConexion" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_abrirConexion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:abrirConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_cerrarConexion_InputMessage">
+    <wsdl:part name="parameters" element="tns:cerrarConexion" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_cerrarConexion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cerrarConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamosClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamosClientes" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamosClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamosClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_guardarInformacionClienteNoAutenticado_InputMessage">
+    <wsdl:part name="parameters" element="tns:guardarInformacionClienteNoAutenticado" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_guardarInformacionClienteNoAutenticado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:guardarInformacionClienteNoAutenticadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_mostrarDescripcion_InputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarDescripcion" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_mostrarDescripcion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarDescripcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_mostrarRequisitos_InputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarRequisitos" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_mostrarRequisitos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mostrarRequisitosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_registrarPrestamoClienteOriginal_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPrestamoClienteOriginal" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_registrarPrestamoClienteOriginal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarPrestamoClienteOriginalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_CredencialesUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CredencialesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_CredencialesUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CredencialesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_RegistrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_RegistrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_asignarAnalista_InputMessage">
+    <wsdl:part name="parameters" element="tns:asignarAnalista" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_asignarAnalista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:asignarAnalistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamos_nombre_cedula_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamos_nombre_cedula" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamos_nombre_cedula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamos_nombre_cedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamos_tipoPrestamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamos_tipoPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverPrestamos_tipoPrestamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverPrestamos_tipoPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_cambiarEstadoPrestamoSolicitud_InputMessage">
+    <wsdl:part name="parameters" element="tns:cambiarEstadoPrestamoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_cambiarEstadoPrestamoSolicitud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cambiarEstadoPrestamoSolicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverCedulaAnalista_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverCedulaAnalista" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverCedulaAnalista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverCedulaAnalistaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_ValidarExistenciaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarExistenciaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_ValidarExistenciaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarExistenciaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaTipoPrestamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaTipoPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaTipoPrestamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaTipoPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_enviarCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:enviarCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_enviarCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:enviarCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_enviarCorreoNoLogueado_InputMessage">
+    <wsdl:part name="parameters" element="tns:enviarCorreoNoLogueado" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_enviarCorreoNoLogueado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:enviarCorreoNoLogueadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_ObtenerCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCorreo" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_ObtenerCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverLimiteMontoPrestamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverLimiteMontoPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverLimiteMontoPrestamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverLimiteMontoPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverLimiteMontoPrestamoDolares_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverLimiteMontoPrestamoDolares" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverLimiteMontoPrestamoDolares_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverLimiteMontoPrestamoDolaresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaTipoPrestamoDolares_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaTipoPrestamoDolares" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaTipoPrestamoDolares_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaTipoPrestamoDolaresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_calcularCuotaMensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:calcularCuotaMensual" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_calcularCuotaMensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calcularCuotaMensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaDolaresUsuarioNoLogeado_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaDolaresUsuarioNoLogeado" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaDolaresUsuarioNoLogeado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaDolaresUsuarioNoLogeadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaColonesUsuarioNoLogeado_InputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaColonesUsuarioNoLogeado" />
+  </wsdl:message>
+  <wsdl:message name="IWBSmetodos_devolverTasaColonesUsuarioNoLogeado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:devolverTasaColonesUsuarioNoLogeadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWBSmetodos">
+    <wsdl:operation name="abrirConexion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/abrirConexion" message="tns:IWBSmetodos_abrirConexion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/abrirConexionResponse" message="tns:IWBSmetodos_abrirConexion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cerrarConexion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/cerrarConexion" message="tns:IWBSmetodos_cerrarConexion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/cerrarConexionResponse" message="tns:IWBSmetodos_cerrarConexion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamosClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamosClientes" message="tns:IWBSmetodos_devolverPrestamosClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamosClientesResponse" message="tns:IWBSmetodos_devolverPrestamosClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="guardarInformacionClienteNoAutenticado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/guardarInformacionClienteNoAutenticado" message="tns:IWBSmetodos_guardarInformacionClienteNoAutenticado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/guardarInformacionClienteNoAutenticadoResponse" message="tns:IWBSmetodos_guardarInformacionClienteNoAutenticado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarDescripcion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/mostrarDescripcion" message="tns:IWBSmetodos_mostrarDescripcion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/mostrarDescripcionResponse" message="tns:IWBSmetodos_mostrarDescripcion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarRequisitos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/mostrarRequisitos" message="tns:IWBSmetodos_mostrarRequisitos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/mostrarRequisitosResponse" message="tns:IWBSmetodos_mostrarRequisitos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarPrestamoClienteOriginal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/registrarPrestamoClienteOriginal" message="tns:IWBSmetodos_registrarPrestamoClienteOriginal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/registrarPrestamoClienteOriginalResponse" message="tns:IWBSmetodos_registrarPrestamoClienteOriginal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CredencialesUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/CredencialesUsuario" message="tns:IWBSmetodos_CredencialesUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/CredencialesUsuarioResponse" message="tns:IWBSmetodos_CredencialesUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/RegistrarUsuario" message="tns:IWBSmetodos_RegistrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/RegistrarUsuarioResponse" message="tns:IWBSmetodos_RegistrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="asignarAnalista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/asignarAnalista" message="tns:IWBSmetodos_asignarAnalista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/asignarAnalistaResponse" message="tns:IWBSmetodos_asignarAnalista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamos_nombre_cedula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamos_nombre_cedula" message="tns:IWBSmetodos_devolverPrestamos_nombre_cedula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamos_nombre_cedulaResponse" message="tns:IWBSmetodos_devolverPrestamos_nombre_cedula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamos_tipoPrestamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamos_tipoPrestamo" message="tns:IWBSmetodos_devolverPrestamos_tipoPrestamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverPrestamos_tipoPrestamoResponse" message="tns:IWBSmetodos_devolverPrestamos_tipoPrestamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiarEstadoPrestamoSolicitud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/cambiarEstadoPrestamoSolicitud" message="tns:IWBSmetodos_cambiarEstadoPrestamoSolicitud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/cambiarEstadoPrestamoSolicitudResponse" message="tns:IWBSmetodos_cambiarEstadoPrestamoSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverCedulaAnalista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverCedulaAnalista" message="tns:IWBSmetodos_devolverCedulaAnalista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverCedulaAnalistaResponse" message="tns:IWBSmetodos_devolverCedulaAnalista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarExistenciaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/ValidarExistenciaUsuario" message="tns:IWBSmetodos_ValidarExistenciaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/ValidarExistenciaUsuarioResponse" message="tns:IWBSmetodos_ValidarExistenciaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaTipoPrestamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamo" message="tns:IWBSmetodos_devolverTasaTipoPrestamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamoResponse" message="tns:IWBSmetodos_devolverTasaTipoPrestamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/enviarCorreo" message="tns:IWBSmetodos_enviarCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/enviarCorreoResponse" message="tns:IWBSmetodos_enviarCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarCorreoNoLogueado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/enviarCorreoNoLogueado" message="tns:IWBSmetodos_enviarCorreoNoLogueado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/enviarCorreoNoLogueadoResponse" message="tns:IWBSmetodos_enviarCorreoNoLogueado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/ObtenerCorreo" message="tns:IWBSmetodos_ObtenerCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/ObtenerCorreoResponse" message="tns:IWBSmetodos_ObtenerCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverLimiteMontoPrestamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamo" message="tns:IWBSmetodos_devolverLimiteMontoPrestamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamoResponse" message="tns:IWBSmetodos_devolverLimiteMontoPrestamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverLimiteMontoPrestamoDolares">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamoDolares" message="tns:IWBSmetodos_devolverLimiteMontoPrestamoDolares_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamoDolaresResponse" message="tns:IWBSmetodos_devolverLimiteMontoPrestamoDolares_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaTipoPrestamoDolares">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamoDolares" message="tns:IWBSmetodos_devolverTasaTipoPrestamoDolares_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamoDolaresResponse" message="tns:IWBSmetodos_devolverTasaTipoPrestamoDolares_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calcularCuotaMensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/calcularCuotaMensual" message="tns:IWBSmetodos_calcularCuotaMensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/calcularCuotaMensualResponse" message="tns:IWBSmetodos_calcularCuotaMensual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaDolaresUsuarioNoLogeado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaDolaresUsuarioNoLogeado" message="tns:IWBSmetodos_devolverTasaDolaresUsuarioNoLogeado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaDolaresUsuarioNoLogeadoResponse" message="tns:IWBSmetodos_devolverTasaDolaresUsuarioNoLogeado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaColonesUsuarioNoLogeado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaColonesUsuarioNoLogeado" message="tns:IWBSmetodos_devolverTasaColonesUsuarioNoLogeado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWBSmetodos/devolverTasaColonesUsuarioNoLogeadoResponse" message="tns:IWBSmetodos_devolverTasaColonesUsuarioNoLogeado_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWBSmetodos" type="tns:IWBSmetodos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="abrirConexion">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/abrirConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cerrarConexion">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/cerrarConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamosClientes">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverPrestamosClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="guardarInformacionClienteNoAutenticado">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/guardarInformacionClienteNoAutenticado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarDescripcion">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/mostrarDescripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarRequisitos">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/mostrarRequisitos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarPrestamoClienteOriginal">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/registrarPrestamoClienteOriginal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CredencialesUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/CredencialesUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asignarAnalista">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/asignarAnalista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamos_nombre_cedula">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverPrestamos_nombre_cedula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverPrestamos_tipoPrestamo">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverPrestamos_tipoPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiarEstadoPrestamoSolicitud">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/cambiarEstadoPrestamoSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverCedulaAnalista">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverCedulaAnalista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarExistenciaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/ValidarExistenciaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaTipoPrestamo">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarCorreo">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/enviarCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarCorreoNoLogueado">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/enviarCorreoNoLogueado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCorreo">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/ObtenerCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverLimiteMontoPrestamo">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverLimiteMontoPrestamoDolares">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverLimiteMontoPrestamoDolares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaTipoPrestamoDolares">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverTasaTipoPrestamoDolares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calcularCuotaMensual">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/calcularCuotaMensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaDolaresUsuarioNoLogeado">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverTasaDolaresUsuarioNoLogeado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devolverTasaColonesUsuarioNoLogeado">
+      <soap:operation soapAction="http://tempuri.org/IWBSmetodos/devolverTasaColonesUsuarioNoLogeado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WBSmetodos">
+    <wsdl:port name="BasicHttpBinding_IWBSmetodos" binding="tns:BasicHttpBinding_IWBSmetodos">
+      <soap:address location="http://localhost:51075/WBSMetodos.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

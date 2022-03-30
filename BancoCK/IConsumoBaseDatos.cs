@@ -154,9 +154,7 @@ namespace BancoCK
         int devolverIndicadoresAutenticadoApoyoNegocioPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
         [OperationContract]
         int devolverIndicadoresAutenticadoPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
-      
 
-        
 
     }
 }
