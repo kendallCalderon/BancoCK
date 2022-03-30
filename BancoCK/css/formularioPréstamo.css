@@ -78,12 +78,12 @@ input {
     margin: 0 auto !important;
 }
 
-.contenidoPrincipal_formulario_Acomodo_Botones{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:0 20px;
-    
+.contenidoPrincipal_formulario_Acomodo_Botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 20px;
+    margin-bottom: 10px;
 }
 
 .color{

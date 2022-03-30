@@ -78,13 +78,13 @@
 
             <div class="Descripciones">
                 <h2 class="titulo2">Información del préstamo</h2>
-                <div class="parrafo" id="contenido1" runat="server">
+                <div class="parrafo" runat="server" id="contenido1">
 
                 </div>
 
 
                 <h2 class="titulo2">Requisitos del préstamo</h2>
-                <div class="parrafo" id="contenido3" runat="server">
+                <div class="parrafo" runat="server" id="contenido3">
 
                 </div>
 

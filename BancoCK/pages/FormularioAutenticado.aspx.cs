@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,8 @@ namespace BancoCK.pages
     {
         ConsumoBaseDatos metodos = new ConsumoBaseDatos();
         string script = "";
+        DataTable tabla = new DataTable();
+        string descripcion = "", requisitos = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +26,12 @@ namespace BancoCK.pages
 
 
             }
+            tabla = metodos.devolverInformacionPrestamos(Session["tipoPrestamo"].ToString());
+            descripcion = tabla.Rows[0]["Descripcion"].ToString();
+            requisitos = tabla.Rows[0]["Requisito"].ToString();
+
+            contenido1.InnerText = descripcion;
+            contenido3.InnerText = requisitos;
         }
 
       

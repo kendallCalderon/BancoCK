@@ -10,8 +10,8 @@ namespace BancoCK
 {
     public partial class Formulario_web12 : System.Web.UI.Page
     {
-         WBSMetodos.WBSmetodosClient  metodos = new WBSMetodos.WBSmetodosClient();
-     
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+
         string script;
 
 
@@ -27,7 +27,7 @@ namespace BancoCK
 
             }
 
-             try
+            try
             {
                 
                 DataTable detalles = new DataTable();
@@ -57,7 +57,7 @@ namespace BancoCK
             {
                 script = string.Format("javascript:notificacion('{0}')", "Ocurrio un error al cargar la tabla con informacion de BD");
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error",script, true);
-            } 
+            }
 
         }
 
@@ -65,7 +65,7 @@ namespace BancoCK
         {
             try
             {
-                 string idPrestamo = (sender as LinkButton).CommandArgument;
+                string idPrestamo = (sender as LinkButton).CommandArgument;
                 string []arreglo = new string[3];
                 arreglo = Session["opcionCombo"].ToString().Split(' ');
                 string cedulaAnalista = metodos.devolverCedulaAnalista(arreglo[0], arreglo[1], arreglo[2]);
@@ -74,7 +74,7 @@ namespace BancoCK
                 metodos.cambiarEstadoPrestamoSolicitud(int.Parse(idPrestamo));
                 Session["refrescar"] = "empezar";
                 script = string.Format("javascript:notificacion('{0}')", "Se ha asignado el prestamo al analista correctamente");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion",script, true); 
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion",script, true);
 
 
             }
@@ -94,7 +94,7 @@ namespace BancoCK
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 string prestamo = tipoPrestamo.Value.ToString();
                 string cedula = txtCedulaAnalista.Value.ToString();
@@ -134,7 +134,7 @@ namespace BancoCK
             {
                 script = string.Format("javascript:notificacion('{0}')", "Ocurrio un error al tratar de buscar por filtro");
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error",script, true);
-            } 
+            }
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

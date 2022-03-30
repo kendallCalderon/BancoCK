@@ -62,12 +62,9 @@
 
 
                 <h2 class="titulo2">Requisitos del préstamo</h2>
-
-
                 <div class="parrafo" id="contenido3" runat="server">
 
                 </div>
-
 
             </div>
         </div>
