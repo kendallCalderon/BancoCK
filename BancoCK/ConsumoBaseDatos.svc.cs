@@ -540,14 +540,15 @@ namespace BancoCK
             {
                 double tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
-                double resultado = (prestamo * tasaInteresCredito) / (1 - ((Math.Pow(1+tasaInteresCredito, años))));
+                double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12), años));
                 return resultado;
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al calcular la cuota mensual del prestamo, detalles:  " + ex.Message);
             }
-            
+
+
         }
 
 
@@ -606,5 +607,1057 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+
+
+        public void registrarIndicadorPrestamoClickUsuarioNoAutenticado(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarIndicador_tipoPrestamoNoAutenticados", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@contador", contador);
+                comando.Parameters.AddWithValue("@tipoIndicador", tipoIndicador);
+                comando.Parameters.AddWithValue("@fecha", fecha);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+
+        public void registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarIndicador_tipoPrestamoNoAutenticadosPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@contador", contador);
+                comando.Parameters.AddWithValue("@tipoIndicador", tipoIndicador);
+                comando.Parameters.AddWithValue("@fecha", fecha);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarIndicador_tipoPrestamoAutenticadosPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@contador", contador);
+                comando.Parameters.AddWithValue("@tipoIndicador", tipoIndicador);
+                comando.Parameters.AddWithValue("@fecha", fecha);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+        //devolverInformacionPrestamos
+
+        public DataTable devolverInformacionPrestamos(string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("devolverInformacionPrestamos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void registrarIndicadorPrestamoClickAutenticado(string tipoPrestamo, int contador, string tipoIndicador, DateTime fecha)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("registrarIndicador_tipoPrestamoAutenticados", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@contador", contador);
+                comando.Parameters.AddWithValue("@tipoIndicador", tipoIndicador);
+                comando.Parameters.AddWithValue("@fecha", fecha);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable devolverFechasIndicadores()
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("devolverFechasIndicadores", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+
+        public int indicadorAutenticadoVivienda(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosVivienda", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int indicadorAutenticadoPersonal(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosPersonal", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int indicadorAutenticadoApoyoNegocio(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosApoyoNegocio", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int indicadorAutenticadoEducacion(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosEducacion", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int indicadorAutenticadoDeudas(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosDeudas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int indicadorAutenticadoVehiculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosVehiculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int indicadorNoAutenticadoVehiculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosVehiculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresNoAutenticadosDeudas(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosDeudas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresNoAutenticadosEducacion(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosEducacion", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadosApoyoNegocio(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosApoyoNegocio", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresNoAutenticadosPersonal(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosPersonal", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadosVivienda(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosVivienda", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresNoAutenticadosPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosPersonalPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadosApoyoNegocioPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosApoyoNegocioPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadoViviendaPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosViviendaPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadoEducacionPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosEducacionPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadoDeudasPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosDeudasPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+        public int devolverIndicadoresNoAutenticadoVehiculoPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresNoAutenticadosVehiculoPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["NoAutenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoVehiculoPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadosVehiculoPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoDeudasPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadoDeudasPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoEducacionPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadoEducacionPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoViviendaPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadoViviendaPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoApoyoNegocioPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadoApoyoNegocioPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+
+        public int devolverIndicadoresAutenticadoPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal)
+        {
+
+            try
+            {
+                abrirConexion();
+                int numero = 0;
+                comando = new SqlCommand("devolverIndicadoresAutenticadoPersonalPrecalculo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicial", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Autenticados"].ToString();
+                if (cadena.Equals("") || cadena == null)
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = int.Parse(cadena);
+                }
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la cedula del analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+        }
+
+       
+
+
+
     }
 }

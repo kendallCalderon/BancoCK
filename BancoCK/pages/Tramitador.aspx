@@ -30,7 +30,7 @@
                 </div>
                 <label>Ingrese cedula del Analista</label>
                 <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista"  runat="server" id="txtCedulaAnalista"/>
-                <asp:Button  runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
+                <asp:Button   runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
 
             <div class="ContenedorFormulario_image">
@@ -38,8 +38,10 @@
             </div>
 
         </div>
+         <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 
+       
         <div class="contenedor_tabla">
             <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" >
                 <Columns>
@@ -76,7 +78,11 @@
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
+                            
+                                
                             <asp:LinkButton Text="text" runat="server" CommandArgument='<%# Eval("Préstamo #") %>' OnCommand="AsignarAnalista"><i class="fa-solid fa-circle-check icn"></i></asp:LinkButton>
+                                    
+                                
                         </ItemTemplate>
 
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
@@ -88,7 +94,7 @@
 
             </asp:GridView>
         </div>
-
+              
 
 
          <div class="contenedorCartas">
@@ -147,5 +153,5 @@
 
     </div>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+       
 </asp:Content>

@@ -10,7 +10,7 @@ namespace BancoCK.pages
 {
     public partial class Home :  System.Web.UI.Page 
     {
-        ConsumoBaseDatos iConsumoBaseDatos= new ConsumoBaseDatos();
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,7 +27,7 @@ namespace BancoCK.pages
         {
             string username = tbxUsuario.Value;
             string password = tbxPassword.Value;
-            string validar  = iConsumoBaseDatos.CredencialesUsuario(tbxUsuario.Value, tbxPassword.Value);
+            string validar  =    metodos.CredencialesUsuario(tbxUsuario.Value, tbxPassword.Value);
 
             if (validar.Equals("0"))
             {

@@ -10,7 +10,7 @@ namespace BancoCK
     public partial class Formulario_web14 : System.Web.UI.Page
     {
         ConsumoBaseDatos metodos = new ConsumoBaseDatos();
-        string script = "", tipoPrestamo = "", montosPermitidos = "", valor1 = "", valor2 = "";
+        string script = "", tipoPrestamo = "", montosPermitidos = "", valor1 = "", valor2 = "", fecha="";
         decimal numero = 0;
         float tasaInteres = 0;
         string[] vector = new string[2];
@@ -133,14 +133,14 @@ namespace BancoCK
         {
             Session["MonedaEscogida"] = "Dolares";
             Session["PresionoBotonMoneda"] = "presionado";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            
         }
 
         protected void btnColones_Click(object sender, EventArgs e)
         {
             Session["MonedaEscogida"] = "Colones";
             Session["PresionoBotonMoneda"] = "presionado";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+           
         }
 
         protected void btnCalcular_Click(object sender, EventArgs e)
@@ -175,6 +175,18 @@ namespace BancoCK
                         Session["PresionoBotonMoneda"] = null;
                         txtMonto.Value = "";
                         txtRangoAñosPrestamo.Value = "";
+
+
+                        if (Session["Login"] == null)
+                        {
+                            fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                            metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                        }
+                        else
+                        {
+                            fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                            metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                        }
 
                     }
 

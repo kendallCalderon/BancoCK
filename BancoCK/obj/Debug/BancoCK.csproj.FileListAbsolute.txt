@@ -1,3 +1,5 @@
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\BancoCK.dll.config
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\BancoCK.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\BancoCK.pdb
@@ -53,8 +55,65 @@ C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\AjaxControlToolkit.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
-C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
+C:\Users\camil\Desktop\recibido\BancoCK\bin\BancoCK.dll.config
+C:\Users\camil\Desktop\recibido\BancoCK\bin\BancoCK.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\BancoCK.pdb
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csc.exe
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csc.exe.config
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csc.rsp
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csi.exe
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csi.exe.config
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\csi.rsp
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.AppContext.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Console.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.IO.Compression.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Net.Http.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Net.Sockets.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.ValueTuple.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Xml.XPath.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\vbc.exe
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\vbc.exe.config
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\vbc.rsp
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\VBCSCompiler.exe
+C:\Users\camil\Desktop\recibido\BancoCK\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\camil\Desktop\recibido\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\camil\Desktop\recibido\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\camil\Desktop\recibido\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
+C:\Users\camil\Desktop\recibido\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
+C:\Users\camil\Desktop\recibido\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
+C:\Users\camil\Desktop\recibido\BancoCK\obj\Debug\BancoCK.dll
+C:\Users\camil\Desktop\recibido\BancoCK\obj\Debug\BancoCK.pdb
