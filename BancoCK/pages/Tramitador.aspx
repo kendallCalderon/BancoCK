@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/Tramitador.css" />
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
@@ -37,8 +38,10 @@
             </div>
 
         </div>
+         <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 
+       
         <div class="contenedor_tabla">
             <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" >
                 <Columns>
@@ -75,7 +78,11 @@
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
+                            
+                                
                             <asp:LinkButton Text="text" runat="server" CommandArgument='<%# Eval("Préstamo #") %>' OnCommand="AsignarAnalista"><i class="fa-solid fa-circle-check icn"></i></asp:LinkButton>
+                                    
+                                
                         </ItemTemplate>
 
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
@@ -87,10 +94,64 @@
 
             </asp:GridView>
         </div>
+              
+
+
+         <div class="contenedorCartas">
+            <h2>Opciones Tramitador</h2>
+            <div class="contenedorCartas_item">
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/graficoana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Comparativa Créditos</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditos" OnClick="btnObservarCreditos_Click" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/creditosana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Créditos pendientes</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="imgs" src="/img/historialana.jpg">
+                            </div>
+                            <div>
+                                <span class="card-title">Historial créditos</span>
+                            </div>
+                            <div class="card-content">
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
     </div>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+       
 </asp:Content>

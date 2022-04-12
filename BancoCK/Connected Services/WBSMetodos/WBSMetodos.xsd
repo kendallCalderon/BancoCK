@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="abrirConexion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abrirConexionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cerrarConexion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cerrarConexionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamosClientes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamosClientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverPrestamosClientesResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="guardarInformacionClienteNoAutenticado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" type="xs:int" />
+        <xs:element minOccurs="0" name="rol" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="guardarInformacionClienteNoAutenticadoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mostrarDescripcion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mostrarDescripcionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mostrarDescripcionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mostrarRequisitos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mostrarRequisitosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mostrarRequisitosResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPrestamoClienteOriginal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaCredito" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estadoCredito" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="monto" type="xs:float" />
+        <xs:element minOccurs="0" name="plazoAños" type="xs:int" />
+        <xs:element minOccurs="0" name="cuotaMensual" type="xs:double" />
+        <xs:element minOccurs="0" name="salarioNeto" type="xs:float" />
+        <xs:element minOccurs="0" name="añosLaborando" type="xs:int" />
+        <xs:element minOccurs="0" name="salarioBruto" type="xs:float" />
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarPrestamoClienteOriginalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CredencialesUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CredencialesUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CredencialesUsuarioResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Rol" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoCedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="asignarAnalista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idPrestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="asignarAnalistaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamos_nombre_cedula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamos_nombre_cedulaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverPrestamos_nombre_cedulaResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamos_tipoPrestamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverPrestamos_tipoPrestamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverPrestamos_tipoPrestamoResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cambiarEstadoPrestamoSolicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPrestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cambiarEstadoPrestamoSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverCedulaAnalista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverCedulaAnalistaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverCedulaAnalistaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarExistenciaUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarExistenciaUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarExistenciaUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaTipoPrestamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaTipoPrestamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverTasaTipoPrestamoResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enviarCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="receptor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enviarCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enviarCorreoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enviarCorreoNoLogueado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="receptor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enviarCorreoNoLogueadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enviarCorreoNoLogueadoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCorreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Rol" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCorreoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerCorreoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverLimiteMontoPrestamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverLimiteMontoPrestamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverLimiteMontoPrestamoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverLimiteMontoPrestamoDolares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverLimiteMontoPrestamoDolaresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverLimiteMontoPrestamoDolaresResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaTipoPrestamoDolares">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaTipoPrestamoDolaresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverTasaTipoPrestamoDolaresResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="calcularCuotaMensual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="prestamo" type="xs:float" />
+        <xs:element minOccurs="0" name="años" type="xs:int" />
+        <xs:element minOccurs="0" name="tasaInteres" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="calcularCuotaMensualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="calcularCuotaMensualResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaDolaresUsuarioNoLogeado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaDolaresUsuarioNoLogeadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverTasaDolaresUsuarioNoLogeadoResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaColonesUsuarioNoLogeado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoPrestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="devolverTasaColonesUsuarioNoLogeadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="devolverTasaColonesUsuarioNoLogeadoResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -6,7 +6,7 @@
     <div class="Contenedor">
         <div class="contenidoPrincipal">
             <div class="contenidoPrincipal_formulario">
-
+                <asp:ScriptManager ID="ScriptManager1" runat="server" />
                 <h2 class="titulo">Información Personal</h2>
                 <div class="contenidoPrincipal_formulario_Acomodo">
                     <div class="contenidoPrincipal_formulario_elementoDoble">
@@ -52,7 +52,7 @@
                         <label>Monto</label>
                         <input type="text" runat="server" id="txtMonto" />
                         <label>Plazo en años</label>
-                        <input type="range" class="browser-default rango"  min="1" max="30" runat="server" id="txtRangoAños" />
+                        <input type="number" class="browser-default rango" runat="server" id="txtRangoAños" required="required" />
                     </div>
                     <div class="contenidoPrincipal_formulario_elementoDoble">
                         <label>Moneda</label>
@@ -66,7 +66,11 @@
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
                     <asp:Button class="btn1" Text="Atras" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click"/>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
                     <asp:Button class="btn2" Text="Tramitar" runat="server" ID="btnAtras" OnClick="btnAtras_Click"/>
+                               </ContentTemplate>
+                        </asp:UpdatePanel>
                 </div>
 
 
@@ -74,45 +78,14 @@
 
             <div class="Descripciones">
                 <h2 class="titulo2">Información del préstamo</h2>
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    tempore veritatis, repellendus reiciendis? Illum dolorum 
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                </div>
+                <div class="parrafo" runat="server" id="contenido1">
 
-                 <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
                 </div>
 
 
                 <h2 class="titulo2">Requisitos del préstamo</h2>
-                <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                </div>
+                <div class="parrafo" runat="server" id="contenido3">
 
-                 <div class="parrafo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Similique repudiandae, consequatur vitae at eum expedita
-                    fugiat odio voluptatibus incidunt harum tenetur ullam
-                    tempore veritatis, repellendus reiciendis? Illum dolorum
-                    consequuntur, iure dolores atque reiciendis tempore delectus
-                    consequuntur, iure dolores atque reiciendis tempore delectus
                 </div>
 
 
@@ -120,5 +93,5 @@
         </div>
 
     </div>
-     <asp:ScriptManager ID="ScriptManager1" runat="server" />
+     
 </asp:Content>

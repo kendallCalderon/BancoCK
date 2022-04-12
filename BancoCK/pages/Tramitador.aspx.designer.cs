@@ -42,6 +42,15 @@ namespace BancoCK
         protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// Control GridView1.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,30 @@ namespace BancoCK
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control btnObservarCreditos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Button btnObservarCreditos;
+
+        /// <summary>
+        /// Control btnObservarCreditosPendientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnObservarCreditosPendientes;
+
+        /// <summary>
+        /// Control btnObservarHistorialCreditos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnObservarHistorialCreditos;
     }
 }

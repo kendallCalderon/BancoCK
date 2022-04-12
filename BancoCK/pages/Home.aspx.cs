@@ -10,7 +10,7 @@ namespace BancoCK.pages
 {
     public partial class Home :  System.Web.UI.Page 
     {
-        ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
 

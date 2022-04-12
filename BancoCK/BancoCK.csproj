@@ -2027,7 +2027,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="serviciosPrueba.asmx.cs">
       <DependentUpon>serviciosPrueba.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

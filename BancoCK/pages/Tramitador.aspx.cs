@@ -10,8 +10,8 @@ namespace BancoCK
 {
     public partial class Formulario_web12 : System.Web.UI.Page
     {
-   ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
-     
+        ConsumoBaseDatos metodos = new ConsumoBaseDatos();
+
         string script;
 
 
@@ -33,24 +33,14 @@ namespace BancoCK
                 DataTable detalles = new DataTable();
 
 
-                if (!IsPostBack)
-                {
+                
+                
                     detalles = metodos.devolverPrestamosClientes();
                     detalles.Columns["idPrestamos"].ColumnName = "Préstamo #";
                     GridView1.DataSource = detalles;
                     GridView1.DataBind();
-                }
-                else
-                {
-                    if (Session["refrescar"] != null)
-                    {
-                        detalles = metodos.devolverPrestamosClientes();
-                        detalles.Columns["idPrestamos"].ColumnName = "Préstamo #";
-                        GridView1.DataSource = detalles;
-                        GridView1.DataBind();
-                        Session["refrescar"] = null;
-                    }
-                }
+                
+               
 
             }
             catch (Exception ex)
@@ -72,10 +62,9 @@ namespace BancoCK
                 metodos.asignarAnalista(cedulaAnalista, int.Parse(idPrestamo));
                 Session["opcionCombo"] = null;
                 metodos.cambiarEstadoPrestamoSolicitud(int.Parse(idPrestamo));
-                Session["refrescar"] = "empezar";
                 script = string.Format("javascript:notificacion('{0}')", "Se ha asignado el prestamo al analista correctamente");
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion",script, true);
-
+                Response.Redirect("/pages/Tramitador.aspx");
 
             }
             catch (Exception ex)
@@ -155,6 +144,21 @@ namespace BancoCK
                
             }
            
+        }
+
+        protected void btnObservarCreditos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/graficaDatos.aspx");
+        }
+
+        protected void btnObservarCreditosPendientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnObservarHistorialCreditos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

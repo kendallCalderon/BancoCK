@@ -9,7 +9,7 @@ namespace BancoCK.pages
 {
     public partial class Registro : System.Web.UI.Page
     {
-        ServicesReferences.serviciosPruebaSoapClient metodos = new ServicesReferences.serviciosPruebaSoapClient();
+        ConsumoBaseDatos iConsumoBaseDatos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
             lblPass.Visible = false;
@@ -36,24 +36,24 @@ namespace BancoCK.pages
             string Rol = "Cliente";
             bool validarExistencia = false;
 
-            validarExistencia =   metodos.ValidarExistenciaUsuario(Identificacion.Value);
+            validarExistencia = iConsumoBaseDatos.ValidarExistenciaUsuario(Identificacion.Value);
 
             if (validarExistencia == false)
             {
-                metodos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Contraseña.Value, ddlTipoCedula.Text);
+                iConsumoBaseDatos.RegistrarUsuario(Identificacion.Value, Nombre.Value, Rol, PrimerApellido.Value, SegundoApellido.Value, Correo.Value, Telefono.Value, Contraseña.Value, ddlTipoCedula.Text);
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "QuitarRequired", "QuitarRequired();", true);
+
                 ModalExito.Show();
             }
             else
             {
                 lblPass.Visible = true;
-
             }
             
            
                 
 
-          
+         
             
         }
 
