@@ -78,6 +78,7 @@
     <Content Include="bulma\css\bulma-rtl.min.css" />
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
+    <Content Include="ConsumoBaseDatos.svc" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1921,7 +1922,6 @@
     <Content Include="sass\Registro.min.css">
       <DependentUpon>Registro.css</DependentUpon>
     </Content>
-    <Content Include="serviciosPrueba.asmx" />
     <Content Include="uikit\css\uikit-rtl.css" />
     <Content Include="uikit\css\uikit-rtl.min.css" />
     <Content Include="uikit\css\uikit.css" />
@@ -1954,6 +1954,10 @@
     <Compile Include="ClienteAutenticado.Master.designer.cs">
       <DependentUpon>ClienteAutenticado.Master</DependentUpon>
     </Compile>
+    <Compile Include="ConsumoBaseDatos.svc.cs">
+      <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IConsumoBaseDatos.cs" />
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2025,9 +2029,6 @@
       <DependentUpon>Tramitador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="serviciosPrueba.asmx.cs">
-      <DependentUpon>serviciosPrueba.asmx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cliente.Master" />
