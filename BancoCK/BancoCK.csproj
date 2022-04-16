@@ -79,9 +79,13 @@
     <Content Include="bulma\css\bulma.css" />
     <Content Include="bulma\css\bulma.min.css" />
     <Content Include="ConsumoBaseDatos.svc" />
+    <Content Include="css\AdminAnalistas.css" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
+    <Content Include="css\Configuraciones.css" />
+    <Content Include="css\ConfiguracionesMaster.css" />
+    <Content Include="css\dashboard.css" />
     <Content Include="css\FormularioAutenticado.css" />
     <Content Include="css\formularioPréstamo.css" />
     <Content Include="css\graficaDatos.css" />
@@ -1885,6 +1889,7 @@
     <Content Include="img\bank.jpg" />
     <Content Include="img\ahorros.jpg" />
     <Content Include="img\creditosana.jpg" />
+    <Content Include="img\Configuracion.svg" />
     <Content Include="img\Deudagr.jpg" />
     <Content Include="img\DosManos.jpg" />
     <Content Include="img\Edugr.jpg" />
@@ -1900,8 +1905,10 @@
     <Content Include="img\logoBanco.png" />
     <Content Include="img\Viviendagr.jpg" />
     <Content Include="js\modals.js" />
+    <Content Include="pages\AminAnalistas.aspx" />
     <Content Include="pages\Analista.aspx" />
     <Content Include="pages\CalculadoraCreditos.aspx" />
+    <Content Include="pages\Configuraciones.aspx" />
     <Content Include="pages\FormularioAutenticado.aspx" />
     <Content Include="pages\FormularioPrestamo.aspx" />
     <Content Include="pages\graficaDatos.aspx" />
@@ -1954,10 +1961,24 @@
     <Compile Include="ClienteAutenticado.Master.designer.cs">
       <DependentUpon>ClienteAutenticado.Master</DependentUpon>
     </Compile>
+    <Compile Include="Configuraciones.Master.cs">
+      <DependentUpon>Configuraciones.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuraciones.Master.designer.cs">
+      <DependentUpon>Configuraciones.Master</DependentUpon>
+    </Compile>
     <Compile Include="ConsumoBaseDatos.svc.cs">
       <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
     </Compile>
     <Compile Include="IConsumoBaseDatos.cs" />
+    <Compile Include="pages\AminAnalistas.aspx.cs">
+      <DependentUpon>AminAnalistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AminAnalistas.aspx.designer.cs">
+      <DependentUpon>AminAnalistas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1971,6 +1992,13 @@
     </Compile>
     <Compile Include="pages\CalculadoraCreditos.aspx.designer.cs">
       <DependentUpon>CalculadoraCreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Configuraciones.aspx.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Configuraciones.aspx.designer.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\FormularioAutenticado.aspx.cs">
       <DependentUpon>FormularioAutenticado.aspx</DependentUpon>
@@ -2157,6 +2185,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="Configuraciones.Master" />
     <None Include="packages.config" />
     <Content Include="sass\Home.scss" />
     <Content Include="sass\Registro.scss" />

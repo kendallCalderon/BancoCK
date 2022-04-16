@@ -151,14 +151,21 @@ namespace BancoCK
             Response.Redirect("/pages/graficaDatos.aspx");
         }
 
-        protected void btnObservarCreditosPendientes_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         protected void btnObservarHistorialCreditos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAdministrarAnalistas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnObservarCreditosPendientes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/pages/Configuraciones.aspx");
         }
     }
 }

@@ -279,6 +279,8 @@ input {
 
 
 .btnObservar {
+    all:inherit;
+    padding:0px;
     margin: 0 auto !important;
     margin-top: 30px !important;
     width: 130px !important;
@@ -288,7 +290,7 @@ input {
     border-bottom: solid 4px #910000;
     border-radius: 5px;
     box-shadow: 4px 4px 5px #999;
-    font-size: 15px;
+    font-size: 15px !important;
     color: #fff;
     transition-duration: 0.1s;
 }
@@ -305,4 +307,62 @@ h2 {
     font-weight: 700;
     letter-spacing: .15em;
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa, -4px 8px 1px #bbb, -4px 8px 1px #ccc, -4px 8px 1px #ddd;
+}
+
+.ddwnConfiguraciones {
+    background-color: var(--rojo) !important;
+    border:none !important;
+    margin-top:35px;
+    border-radius:8px !important;
+}
+
+
+
+.ddwnConfiguraciones_header {
+    background-color: var(--rojo) !important;
+    color: #fff;
+    border: none !important;
+    border-radius: 8px !important;
+    
+}
+
+.ddwnConfiguraciones_header:hover {
+    background-color: var(--rojo-orcuro) !important;
+    
+}
+
+.ddwnConfiguraciones_header:focus {
+        background-color: var(--rojo-orcuro) !important;
+}
+
+.ddwnConfiguraciones_body {
+    border: none;
+    border-radius: 8px !important;
+    height:50px !important;
+    padding:12px 0px;
+    text-align:center;
+    
+    
+}
+
+    .ddwnConfiguraciones_body:hover {
+        background-color: var(--rojo-orcuro) !important;
+    }
+
+.btnAdministrarAnalistas{
+    
+    background-color:transparent !important;
+    border:none !important;
+    color:#fff;
+    font-size:18px;
+}
+
+   
+    .ddwnAdminAnalista_Contenido {
+    background-color: var(--rojo);
+}
+
+.sideConfiguraciones {
+    background-color: var(--rojo) !important;
+    filter: opacity(0.9);
 }

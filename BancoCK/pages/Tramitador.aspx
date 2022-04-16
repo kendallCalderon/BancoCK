@@ -2,13 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/Tramitador.css" />
-   
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
         <div class="ImagenInicial">
             <img class="ImagenInicial_Fondo" src="/img/trabaner.gif" />
         </div>
+
+       
+
+            </div>
+      
+
+
+
+
         <div class="Titulo">
             <h1>Tramitador</h1>
         </div>
@@ -19,7 +29,7 @@
                 <h2 class="subtitulo">Solicitudes de préstamos</h2>
                 <label>Ingrese tipo Préstamo</label>
                 <div class="select is-danger">
-                    <select AutoPostBack="True" runat="server" id="tipoPrestamo">
+                    <select autopostback="True" runat="server" id="tipoPrestamo">
                         <option>Vehiculo</option>
                         <option>Vivienda</option>
                         <option>Refundir deudas</option>
@@ -29,8 +39,8 @@
                     </select>
                 </div>
                 <label>Ingrese cedula del Analista</label>
-                <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista"  runat="server" id="txtCedulaAnalista"/>
-                <asp:Button   runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
+                <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista" runat="server" id="txtCedulaAnalista" />
+                <asp:Button runat="server" ID="btnBuscar" CssClass="btnBuscar" Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
 
             <div class="ContenedorFormulario_image">
@@ -38,12 +48,12 @@
             </div>
 
         </div>
-         <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 
-       
+
         <div class="contenedor_tabla">
-            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" >
+            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound">
                 <Columns>
 
                     <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Préstamo #" HeaderText="Préstamo #">
@@ -58,31 +68,30 @@
                     </asp:BoundField>
 
 
-                    <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Nombre Analista">
+                    <asp:TemplateField ItemStyle-CssClass="tabla_item" HeaderText="Nombre Analista">
 
-                           <ItemTemplate>
+                        <ItemTemplate>
 
-                               <asp:DropDownList  ID="ddlNombreAnalistas" CssClass=" browser-default cbxCombo" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
-
-                               </asp:DropDownList>
-                              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource> 
+                            <asp:DropDownList ID="ddlNombreAnalistas" CssClass=" browser-default cbxCombo" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         </ItemTemplate>
-                        
-                           <HeaderStyle CssClass="tabla_header"></HeaderStyle>
+
+                        <HeaderStyle CssClass="tabla_header"></HeaderStyle>
 
                     </asp:TemplateField>
 
 
 
-                    <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Acciones">
+                    <asp:TemplateField ItemStyle-CssClass="tabla_item" HeaderText="Acciones">
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
-                            
-                                
+
+
                             <asp:LinkButton Text="text" runat="server" CommandArgument='<%# Eval("Préstamo #") %>' OnCommand="AsignarAnalista"><i class="fa-solid fa-circle-check icn"></i></asp:LinkButton>
-                                    
-                                
+
+
                         </ItemTemplate>
 
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
@@ -94,10 +103,10 @@
 
             </asp:GridView>
         </div>
-              
 
 
-         <div class="contenedorCartas">
+
+        <div class="contenedorCartas">
             <h2>Opciones Tramitador</h2>
             <div class="contenedorCartas_item">
                 <div class="row">
@@ -111,7 +120,7 @@
                             </div>
                             <div class="card-content">
                                 <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditos" OnClick="btnObservarCreditos_Click" />
-                                
+
                             </div>
                         </div>
                     </div>
@@ -123,10 +132,13 @@
                                 <img class="imgs" src="/img/creditosana.jpg">
                             </div>
                             <div>
-                                <span class="card-title">Créditos pendientes</span>
+                                <span class="card-title">Configuraciones</span>
                             </div>
                             <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+
+                                
+                                <asp:Button class=" btnObservar browser-default" Text="Observar" runat="server" id="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+
                             </div>
                         </div>
                     </div>
@@ -141,61 +153,7 @@
                                 <span class="card-title">Historial créditos</span>
                             </div>
                             <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-         <div class="contenedorCartas">
-            <h2>Opciones Tramitador</h2>
-            <div class="contenedorCartas_item">
-                <div class="row">
-                    <div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img class="imgs" src="/img/graficoana.jpg">
-                            </div>
-                            <div>
-                                <span class="card-title">Comparativa Créditos</span>
-                            </div>
-                            <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditos" OnClick="btnObservarCreditos_Click" />
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img class="imgs" src="/img/creditosana.jpg">
-                            </div>
-                            <div>
-                                <span class="card-title">Créditos pendientes</span>
-                            </div>
-                            <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img class="imgs" src="/img/historialana.jpg">
-                            </div>
-                            <div>
-                                <span class="card-title">Historial créditos</span>
-                            </div>
-                            <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click"/>
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click" />
                             </div>
                         </div>
                     </div>
@@ -207,5 +165,5 @@
 
     </div>
 
-       
+
 </asp:Content>
