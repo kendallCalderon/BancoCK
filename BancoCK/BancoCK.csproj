@@ -1873,6 +1873,7 @@
     <Content Include="fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
+    <Content Include="pages\HistorialCreditos.aspx" />
     <Content Include="Foundation\css\app.css" />
     <Content Include="Foundation\css\foundation.css" />
     <Content Include="Foundation\css\foundation.min.css" />
@@ -1956,6 +1957,13 @@
     </Compile>
     <Compile Include="ConsumoBaseDatos.svc.cs">
       <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="pages\HistorialCreditos.aspx.cs">
+      <DependentUpon>HistorialCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\HistorialCreditos.aspx.designer.cs">
+      <DependentUpon>HistorialCreditos.aspx</DependentUpon>
     </Compile>
     <Compile Include="IConsumoBaseDatos.cs" />
     <Compile Include="pages\Analista.aspx.cs">

@@ -23,6 +23,7 @@ namespace BancoCK
             {
                 if (!IsPostBack)
                 {
+                    //Llenamos el combo box
                     cbxComboPrestamo.Items.Add("Préstamo vehiculo");
                     cbxComboPrestamo.Items.Add("Préstamo Vivienda");
                     cbxComboPrestamo.Items.Add("Refundir mis deudas");
@@ -31,16 +32,18 @@ namespace BancoCK
                     cbxComboPrestamo.Items.Add("Apoyo Negocio");
                     tipoPrestamo = Session["tipoPrestamo"].ToString();
                     cbxComboPrestamo.SelectedValue = tipoPrestamo;
+                    //Obtenemos la tasa de interes
                     tasaInteres = metodos.devolverTasaTipoPrestamo(tipoPrestamo);
                     txtTasa.Value = tasaInteres.ToString();
+                    //obtenemos el monto Maximo y minimo
                     montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                     vector = montosPermitidos.Split(',');
                     ponerDecimales();
-                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
 
                 }
 
-
+                //preguntamos si se eligio un tipo de prestamo
                 if (Session["tipoPrestamo"] != null)
                 {
                     if (Session["tipoPrestamo"].ToString().Equals(cbxComboPrestamo.SelectedValue.ToString()) == false)
@@ -54,7 +57,7 @@ namespace BancoCK
                     }
 
                 }
-
+                //mostramos el mensaje con el monto máximo y minimo
                 if (Session["MonedaEscogida"] != null)
                 {
                     if (Session["MonedaEscogida"].ToString().Equals("Dolares"))
@@ -64,9 +67,10 @@ namespace BancoCK
                         montosPermitidos = metodos.devolverLimiteMontoPrestamoDolares(tipoPrestamo);
                         vector = montosPermitidos.Split(',');
                         ponerDecimales();
-                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '$') + ",  Monto Minimo: " + vector[1].Replace('₡', '$');
                         Session["MontoMaximo"] = vector[0];
                         Session["MontoMinimo"] = vector[1];
+                        Session["MonedaSigno"] = '$';
                     }
                     else
                     {
@@ -75,9 +79,10 @@ namespace BancoCK
                         montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                         vector = montosPermitidos.Split(',');
                         ponerDecimales();
-                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
                         Session["MontoMaximo"] = vector[0];
                         Session["MontoMinimo"] = vector[1];
+                        Session["MonedaSigno"] = '₡';
                     }
                     Session["MonedaEscogida"] = null;
 
@@ -171,8 +176,11 @@ namespace BancoCK
                         string cadena = string.Format("{0:N2}", resultado);
                         numero = Decimal.Parse(cadena);
                         valor1 = String.Format("{0:C}", numero);
+                        String signo = Session["MonedaSigno"].ToString();
+                        valor1 = valor1.Replace('₡', char.Parse(Session["MonedaSigno"].ToString()));
                         txtMontoMensual.Value = valor1;
                         Session["PresionoBotonMoneda"] = null;
+                        Session["MonedaSigno"] = null;
                         txtMonto.Value = "";
                         txtRangoAñosPrestamo.Value = "";
 

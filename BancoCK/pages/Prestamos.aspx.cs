@@ -20,8 +20,6 @@ namespace BancoCK.pages
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
 
-
-
             try
             {
 
@@ -203,14 +201,14 @@ namespace BancoCK.pages
             {
                 if (Session["Login"] == null)
                 {
-                    Session["tipoPrestamo"] = "Financiar Educación";
+                    Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
-                    Session["tipoPrestamo"] = "Financiar Educación";
+                    Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");

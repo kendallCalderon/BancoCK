@@ -11,7 +11,7 @@ namespace BancoCK
 {
 
 
-    public partial class Formulario_web1
+    public partial class Formulario_web11
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace BancoCK
         protected global::System.Web.UI.HtmlControls.HtmlSelect tipoPrestamo;
 
         /// <summary>
-        /// Control filtro.
+        /// Control tipoBusqueda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText filtro;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoBusqueda;
 
         /// <summary>
         /// Control fechaFinal.
@@ -51,13 +51,22 @@ namespace BancoCK
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaFinal;
 
         /// <summary>
-        /// Control tipoBusqueda.
+        /// Control estadoCredito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoBusqueda;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect estadoCredito;
+
+        /// <summary>
+        /// Control filtro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText filtro;
 
         /// <summary>
         /// Control btnBuscar.
@@ -76,5 +85,14 @@ namespace BancoCK
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
     }
 }

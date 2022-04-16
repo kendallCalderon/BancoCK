@@ -57,7 +57,7 @@ h1 {
     flex-grow: 2;
     margin: 10px;
     border-radius: 7px;
-    height:400px;
+    height:480px;
     align-self:center;
     justify-content:center;
 }
@@ -68,7 +68,7 @@ h1 {
     height: 500px;
     margin: 10px;
     justify-content: center;
-    height: 400px;
+    height: 480px;
     align-items:center;
 }
 
@@ -188,7 +188,7 @@ input {
     width: 265px !important;
     height: 40px !important;
     background-color: white !important;
-    margin: 0 auto ;
+    margin: 0 auto !important ;
     outline:none;
 }
 
@@ -303,4 +303,16 @@ h2 {
     font-weight: 700;
     letter-spacing: .15em;
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa, -4px 8px 1px #bbb, -4px 8px 1px #ccc, -4px 8px 1px #ddd;
+}
+
+.columna2 {
+    display: flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.columna2-item{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
 }
