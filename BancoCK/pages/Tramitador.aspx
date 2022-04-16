@@ -2,13 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/Tramitador.css" />
-   
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
         <div class="ImagenInicial">
             <img class="ImagenInicial_Fondo" src="/img/trabaner.gif" />
         </div>
+
+       
+
+            </div>
+      
+
+
+
+
         <div class="Titulo">
             <h1>Tramitador</h1>
         </div>
@@ -34,6 +44,8 @@
             </div>
 
         </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
 
 
         <div class="contenedor_tabla">
@@ -67,7 +79,7 @@
                     </asp:BoundField>
 
 
-                    <asp:TemplateField ItemStyle-CssClass="tabla_item"   HeaderText="Acciones">
+                    <asp:TemplateField ItemStyle-CssClass="tabla_item" HeaderText="Acciones">
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
@@ -86,7 +98,7 @@
 
 
 
-         <div class="contenedorCartas">
+        <div class="contenedorCartas">
             <h2>Opciones Tramitador</h2>
             <div class="contenedorCartas_item">
                 <div class="row">
@@ -100,7 +112,7 @@
                             </div>
                             <div class="card-content">
                                 <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditos" OnClick="btnObservarCreditos_Click" />
-                                
+
                             </div>
                         </div>
                     </div>
@@ -112,10 +124,13 @@
                                 <img class="imgs" src="/img/creditosana.jpg">
                             </div>
                             <div>
-                                <span class="card-title">Créditos pendientes</span>
+                                <span class="card-title">Configuraciones</span>
                             </div>
                             <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+
+                                
+                                <asp:Button class=" btnObservar browser-default" Text="Observar" runat="server" id="btnObservarCreditosPendientes" OnClick="btnObservarCreditosPendientes_Click" />
+
                             </div>
                         </div>
                     </div>
@@ -130,7 +145,7 @@
                                 <span class="card-title">Historial créditos</span>
                             </div>
                             <div class="card-content">
-                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click"/>
+                                <asp:Button Text="Observar" runat="server" class="btnObservar browser-default" ID="btnObservarHistorialCreditos" OnClick="btnObservarHistorialCreditos_Click" />
                             </div>
                         </div>
                     </div>

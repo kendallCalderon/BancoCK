@@ -6,12 +6,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
         <div class="contenedorFlexible">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <div class="contenedorFlexible_contenido_formulario">
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <h3>Moneda</h3>
                     <div class="contenedorFlexible_contenido_subcontenido_row_botones">
+                        
+                    
                         <asp:Button runat="server" id="btnDolaresMoneda"  text="Dolares" name="btnDolares" CssClass="btnDolares" OnClick="btnDolares_Click"></asp:Button>
                         <asp:Button runat="server" id="btnColonesMoneda" CssClass="btnColones" name="btnColones" Text="Colones" OnClick="btnColones_Click"></asp:Button>
+                        
                     </div>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
@@ -30,8 +34,10 @@
                 <div class="contenedorFlexible_contenido_subcontenido">
                        <label>Monto mensual</label>
                        <div class="cajaIconoCalcular">
+                           
                             <input type="text" runat="server" id="txtMontoMensual" readonly="readonly" />
                            <asp:LinkButton Text="text" ID="btnCalcular"  runat="server" OnClick="btnCalcular_Click"><i class='fa fa-calculator fa-2x icono'></i></asp:LinkButton>
+                                 
                        </div>   
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido_row_botones">

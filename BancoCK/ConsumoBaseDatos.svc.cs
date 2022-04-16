@@ -661,6 +661,7 @@ namespace BancoCK
         {
             try
             {
+                double tasaInteresCredito = tasaInteres / 100;
                 años = años * 12 * -1;
                 double resultado = (prestamo * (tasaInteres / 100 / 12)) / (1 - Math.Pow(1 + (tasaInteres / 100 / 12), años));
                 return resultado;

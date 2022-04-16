@@ -138,14 +138,14 @@ namespace BancoCK
         {
             Session["MonedaEscogida"] = "Dolares";
             Session["PresionoBotonMoneda"] = "presionado";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            
         }
 
         protected void btnColones_Click(object sender, EventArgs e)
         {
             Session["MonedaEscogida"] = "Colones";
             Session["PresionoBotonMoneda"] = "presionado";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+           
         }
 
         protected void btnCalcular_Click(object sender, EventArgs e)

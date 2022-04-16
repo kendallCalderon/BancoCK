@@ -203,14 +203,14 @@ namespace BancoCK.pages
                 {
                     Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Financiar Educación", 1, "clicks", DateTime.Parse(fecha));
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
                     Response.Redirect("/pages/FormularioAutenticado.aspx");
                 }
 

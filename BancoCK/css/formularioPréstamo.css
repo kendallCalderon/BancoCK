@@ -1,4 +1,6 @@
-﻿:root {
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
     --rojo: #D03737;
     --azul: #0C1248;
     --gris: #181818;
@@ -114,7 +116,6 @@ input {
 }
 
 .btn1 {
-    
     width: 100px;
     height: 30px;
     border: none;
@@ -123,6 +124,7 @@ input {
     border-radius: 5px;
     box-shadow: 4px 4px 5px #111;
     color: #fff;
+    margin-top: 40px !important;
 }
 
     .btn1:hover {
@@ -135,7 +137,6 @@ input {
 
 
 .btn2 {
-    
     width: 100px;
     height: 30px;
     border: none;
@@ -146,6 +147,7 @@ input {
     font-size: 15px;
     color: #fff;
     transition-duration: 0.1s;
+    margin-top: 40px !important;
 }
 
     .btn2:hover {
