@@ -80,6 +80,7 @@
     <Content Include="bulma\css\bulma.min.css" />
     <Content Include="ConsumoBaseDatos.svc" />
     <Content Include="css\AdminAnalistas.css" />
+    <Content Include="css\AdminTramitadores.css" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
     <Content Include="css\ClienteMaster.css" />
@@ -1905,7 +1906,8 @@
     <Content Include="img\logoBanco.png" />
     <Content Include="img\Viviendagr.jpg" />
     <Content Include="js\modals.js" />
-    <Content Include="pages\AminAnalistas.aspx" />
+    <Content Include="pages\AdmnAnalistas.aspx" />
+    <Content Include="pages\AdmnTramitadores.aspx" />
     <Content Include="pages\Analista.aspx" />
     <Content Include="pages\CalculadoraCreditos.aspx" />
     <Content Include="pages\Configuraciones.aspx" />
@@ -1972,12 +1974,19 @@
       <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
     </Compile>
     <Compile Include="IConsumoBaseDatos.cs" />
-    <Compile Include="pages\AminAnalistas.aspx.cs">
-      <DependentUpon>AminAnalistas.aspx</DependentUpon>
+    <Compile Include="pages\AdmnAnalistas.aspx.cs">
+      <DependentUpon>AdmnAnalistas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\AminAnalistas.aspx.designer.cs">
-      <DependentUpon>AminAnalistas.aspx</DependentUpon>
+    <Compile Include="pages\AdmnAnalistas.aspx.designer.cs">
+      <DependentUpon>AdmnAnalistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\AdmnTramitadores.aspx.cs">
+      <DependentUpon>AdmnTramitadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AdmnTramitadores.aspx.designer.cs">
+      <DependentUpon>AdmnTramitadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Analista.aspx.cs">
       <DependentUpon>Analista.aspx</DependentUpon>

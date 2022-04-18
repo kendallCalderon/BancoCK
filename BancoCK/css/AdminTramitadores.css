@@ -14,22 +14,18 @@
     width: 950px;
     margin-left: 300px;
     text-align: center;
-    border:solid 2px var(--rojo);
+    border: solid 2px var(--rojo);
     box-shadow: 5px 5px 10px #222;
-    font-family:Poppins;
-    
+    font-family: Poppins;
 }
 
-.tabla_item_header{
-    background-color:var(--rojo);
-    color:#fff;
-    
-    
-    
+.tabla_item_header {
+    background-color: var(--rojo);
+    color: #fff;
 }
 
 .btnInsertar {
-    margin-left:300px;
+    margin-left: 300px;
     margin-top: 70px !important;
     width: initial !important;
     width: 180px !important;
@@ -42,9 +38,7 @@
     font-size: 18px;
     color: #fff;
     transition-duration: 0.1s;
-    font-family:Poppins;
-   
-
+    font-family: Poppins;
 }
 
     .btnInsertar:hover {
@@ -60,9 +54,9 @@
 
 
 
-.iedit:hover {
-    transform: scale(1.2);
-}
+    .iedit:hover {
+        transform: scale(1.2);
+    }
 
 
 .itrash {
@@ -74,47 +68,38 @@
         transform: scale(1.2);
     }
 
-    .ContenedorInsertar{
-        width:500px;
-        height:500px;
-        background-color:var(--rojo);
-        display:flex !important;
-        flex-direction:row !important;
-        flex-wrap:wrap;
-        align-items:center;
-        margin-left:250px;
-        border-radius:8px;
-        
-        
-        
-    }
+.ContenedorInsertar {
+    width: 500px;
+    height: 500px;
+    background-color: var(--rojo);
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 250px;
+    border-radius: 8px;
+}
 
-.icnAtras{
-   
-    color:var(--azul);
+.icnAtras {
+    color: var(--azul);
 }
 
 
 
 .btnicon {
-   
     position: absolute;
     top: 10px;
     margin-left: 10px;
     transition-duration: 0.2s;
-    
-    
-    
-        
 }
 
     .btnicon:hover {
         transform: scale(1.2);
     }
 
-    .t{
-        margin-top:17px;
-    }
+.t {
+    margin-top: 17px;
+}
 
 .ContenedorInsertar_item {
     width: 200px !important;
@@ -134,20 +119,17 @@
     background-color: var(--azul);
     width: 30%;
     height: 40px;
-    margin-left:30px;
-    text-align:center;
-    padding-top:8px;
-    margin-left:170px;
-    text-decoration:none !important;
-    
-    
-    
+    margin-left: 30px;
+    text-align: center;
+    padding-top: 8px;
+    margin-left: 170px;
+    text-decoration: none !important;
 }
 
-.btnModal:hover {
-    box-shadow: 4px 4px 5px var(--azul);
-    transform: scaleX(1.07);
-}
+    .btnModal:hover {
+        box-shadow: 4px 4px 5px var(--azul);
+        transform: scaleX(1.07);
+    }
 
 .BackgroundModal {
     backdrop-filter: blur(4px);

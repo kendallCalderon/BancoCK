@@ -155,6 +155,28 @@ namespace BancoCK
         [OperationContract]
         int devolverIndicadoresAutenticadoPersonalPrecalculo(DateTime fechaInicio, DateTime fechaFinal);
 
+        [OperationContract]
+        DataTable ObtenerAnalistas();
 
+        [OperationContract]
+        void InsertarAnalista( string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña);
+
+        [OperationContract]
+        void ModificarAnalista(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono);
+
+        [OperationContract]
+        void EliminarAnalista(string Identificacion);
+
+        [OperationContract]
+        void InsertarTramitador(string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña);
+
+        [OperationContract]
+        void ModificarTramitador(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono);
+
+        [OperationContract]
+        void EliminarTramitador(string Identificacion);
+
+        [OperationContract]
+        DataTable ObtenerTramitadores();
     }
 }
