@@ -8,6 +8,19 @@
     --gris: #444;
 }
 
+h1 {
+    color: var(--azul);
+    margin-left: 100px;
+    margin-top: 28px;
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa;
+}
+
+.contenedor-header{
+    display:flex;
+    flex-direction:row;
+    
+}
+
 
 .tabla {
     margin-top: 20px;

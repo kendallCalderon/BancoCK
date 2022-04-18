@@ -8,7 +8,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class="contenedor-header">   
     <asp:Button ID="btnInsertar" CssClass="btnInsertar" Text="Insertar" runat="server" OnClick="btnInsertar_Click1" />
+    <h1>Administración de Analistas</h1>
+        </div>
 
     <asp:GridView CssClass="tabla centered responsive-table" AllowPaging="True" PageSize="5"  OnPageIndexChanging="gvAnalistas_PageIndexChanging"  ID="gvAnalistas" runat="server"  OnRowCommand="gvAnalistas_RowCommand" AutoGenerateColumns="False">
         <Columns>

@@ -5,8 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    <div class="contenedor-header">
     <asp:Button ID="btnInsertar" CssClass="btnInsertar" Text="Insertar" runat="server" OnClick="btnInsertar_Click1" />
+        <h1>Administración de Tramitadores</h1>
+        </div>
 
     <asp:GridView CssClass="tabla centered responsive-table" AllowPaging="True" PageSize="5"  OnPageIndexChanging="gvTramitadores_PageIndexChanging"  ID="gvTramitadores" runat="server"  OnRowCommand="gvTramitadores_RowCommand" AutoGenerateColumns="False">
         <Columns>
