@@ -94,7 +94,7 @@
     <Content Include="css\home.css" />
     <Content Include="css\Prestamos.css" />
     <Content Include="css\style.css" />
-    <Content Include="css\tasas.css" />
+    <Content Include="css\Tasas.css" />
     <Content Include="css\Tramitador.css" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />

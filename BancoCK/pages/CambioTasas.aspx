@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Configuraciones.Master" AutoEventWireup="true" CodeBehind="CambioTasas.aspx.cs" Inherits="BancoCK.Formulario_web2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link rel="stylesheet" href="/css/Configuraciones.css" />
+        <link rel="stylesheet" href="/css/Tasas.css" />
     <script src="/js/modals.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="ContenedorFormulario">
-        <h1 class="tituloConfiguracion2">Mantenimiento Roles</h1>
+        <h1 class="tituloConfiguracion2">Administración de Tasas</h1>
         <div class="contenedor_tabla">
-            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView class="centered responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False">
                 <Columns>
 
                     <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Nombre Préstamo" HeaderText="Nombre Préstamo">

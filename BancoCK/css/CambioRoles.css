@@ -1,4 +1,7 @@
 ﻿.tabla {
+
+    width: 990px;
+    margin-left: 300px;
     text-align: center;
     border: solid 2px var(--rojo);
     box-shadow: 5px 5px 10px #222;
@@ -35,6 +38,7 @@
     border-radius: 7px;
     height: 280px;
     margin: 0 auto;
+    margin-left:550px;
 }
 
 
@@ -116,7 +120,7 @@
 }
 
 .contenedor_tabla {
-    margin: 50px 0px;
+    margin-top:10px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -183,8 +187,7 @@
 h1 {
     color: var(--azul);
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa;
-    font-family: Poppins;
-    margin-left: 420px;
+    margin-left: 550px !important;
     margin-top: 25px;
 }
 

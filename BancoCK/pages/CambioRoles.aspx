@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <h1 class="browser-default">Administración de Roles</h1>
+        <h1 >Administración de Roles</h1>
         <div class="ContenedorFormulario_contenido1">
 
             <div class="columna2">
@@ -101,7 +101,7 @@
         </div>
 
 
-    <button data-target="login" class="btn modal-trigger">Modal</button>
+   
 
 
 
