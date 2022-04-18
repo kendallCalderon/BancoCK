@@ -155,13 +155,13 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompleto(arreglo[1], arreglo[2], arreglo[3], estadoCrédito,tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreCompleto(arreglo[0], arreglo[1], arreglo[2], estadoCrédito,tipoPrestamo.Value.ToString());
                         }
                         else if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[2];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreconApellido(arreglo[1], arreglo[2], estadoCrédito, tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreconApellido(arreglo[0], arreglo[1], estadoCrédito, tipoPrestamo.Value.ToString());
                         }
                         else
                         {
@@ -174,7 +174,7 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompleto(arreglo[1], arreglo[2], arreglo[3], estadoCrédito, tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreCompleto(arreglo[0], arreglo[1], arreglo[2], estadoCrédito, tipoPrestamo.Value.ToString());
 
                         }
                         else if (contadorEspacios == 1)

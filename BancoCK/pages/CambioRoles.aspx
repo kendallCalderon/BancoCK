@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Configuraciones.Master" AutoEventWireup="true" CodeBehind="CambioRoles.aspx.cs" Inherits="BancoCK.Formulario_web13" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/css/Configuraciones.css" />
+    <link rel="stylesheet" href="/css/CambioRoles.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -42,7 +42,7 @@
 
 
         <div class="contenedor_tabla">
-            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView  OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="tabla centered responsive-table"  ID="GridView1" runat="server" AutoGenerateColumns="False"  AllowPaging="True" PageSize="5">
                 <Columns>
 
                     <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Identificación" HeaderText="Identificación">
@@ -184,8 +184,8 @@
 
                 </div>
             </div>
-
-            <div id="informe" class="modal">
+             <asp:Panel ID="PanelInforme" runat="server">
+                  <div id="informe" class="modal">
                 <h5 class="modal-close">&#10005;</h5>
                 <div class="modal-content center">
                     <h4 class="tituloModal">Banco CK</h4>
@@ -195,6 +195,9 @@
 
                 </div>
             </div>
+             </asp:Panel>
+
+           
 
 
             <script language="javascript">
@@ -228,8 +231,7 @@
             <script language="javascript">
                 function abrirModalAviso() {
                     $('#informe').modal();
-                    $('#informe').modal('open');
-                    
+                    $('#informe').modal('open');        
                 }
             </script>
 

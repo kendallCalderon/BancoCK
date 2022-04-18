@@ -15,9 +15,9 @@ namespace BancoCK
         {
             try
             {
+                DataTable tabla2 = new DataTable();
                 if (!IsPostBack)
                 {
-                    DataTable tabla2 = new DataTable();
                     tabla2 = metodos.traerRoles();
                     tabla2.Columns["Apellido1"].ColumnName = "Primer Apellido";
                     tabla2.Columns["Apellido2"].ColumnName = "Segundo Apellido";
@@ -27,6 +27,8 @@ namespace BancoCK
                     GridView1.DataBind();
 
                 }
+               
+                
 
 
             }catch(Exception ex)
@@ -141,7 +143,6 @@ namespace BancoCK
                 {
                     if (filtro.Rows.Count == 0)
                     {
-                        GridView1 = null;
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                     }
                     else
@@ -171,6 +172,7 @@ namespace BancoCK
             try
             {
                 DataTable filtro = new DataTable();
+                bool paso = false;
                 switch (tipoFiltro)
                 {
                     case "Nombre":
@@ -228,6 +230,7 @@ namespace BancoCK
                 if (filtro.Rows.Count == 0)
                 {
                     GridView1 = null;
+                    paso = true;
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
                 else
@@ -236,16 +239,14 @@ namespace BancoCK
                     filtro.Columns["Apellido1"].ColumnName = "Primer Apellido";
                     filtro.Columns["Apellido2"].ColumnName = "Segundo Apellido";
                     filtro.Columns["Telefono"].ColumnName = "Teléfono";
-                    DataColumn column;
-                    column = new DataColumn();
-                    column.DataType = System.Type.GetType("System.String");
-                    column.AllowDBNull = true;
-                    column.ColumnName = "Identificación";
-                    filtro.Columns.Add(column);
-
-                    GridView1 = null;
+                    filtro.Columns["Identificacion"].ColumnName = "Identificación";
                     GridView1.DataSource = filtro;
                     GridView1.DataBind();
+                }
+
+                if (paso)
+                {
+                     Response.Redirect("/pages/CambioRoles.aspx");
                 }
             }
 
@@ -279,6 +280,11 @@ namespace BancoCK
            
         }
 
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
 
+        }
     }
 }

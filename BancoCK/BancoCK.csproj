@@ -80,8 +80,10 @@
     <Content Include="bulma\css\bulma.min.css" />
     <Content Include="ConsumoBaseDatos.svc" />
     <Content Include="css\AdminAnalistas.css" />
+    <Content Include="css\AdminTramitadores.css" />
     <Content Include="css\analista.css" />
     <Content Include="css\Calculadora.css" />
+    <Content Include="css\CambioRoles.css" />
     <Content Include="css\ClienteMaster.css" />
     <Content Include="css\Configuraciones.css" />
     <Content Include="css\ConfiguracionesMaster.css" />
@@ -92,6 +94,7 @@
     <Content Include="css\home.css" />
     <Content Include="css\Prestamos.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\tasas.css" />
     <Content Include="css\Tramitador.css" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1877,8 +1880,10 @@
     <Content Include="fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
-    <Content Include="CambioRoles.aspx" />
-    <Content Include="CambioTasas.aspx" />
+    <Content Include="pages\AdmnAnalistas.aspx" />
+    <Content Include="pages\AdmnTramitadores.aspx" />
+    <Content Include="pages\CambioRoles.aspx" />
+    <Content Include="pages\CambioTasas.aspx" />
     <Content Include="js\jquery-1.12.1.min.js" />
     <Content Include="js\materialize.js" />
     <Content Include="js\materialize.min.js" />
@@ -1977,18 +1982,32 @@
     <Compile Include="ConsumoBaseDatos.svc.cs">
       <DependentUpon>ConsumoBaseDatos.svc</DependentUpon>
     </Compile>
-    <Compile Include="CambioRoles.aspx.cs">
+    <Compile Include="pages\AdmnAnalistas.aspx.cs">
+      <DependentUpon>AdmnAnalistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AdmnAnalistas.aspx.designer.cs">
+      <DependentUpon>AdmnAnalistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\AdmnTramitadores.aspx.cs">
+      <DependentUpon>AdmnTramitadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AdmnTramitadores.aspx.designer.cs">
+      <DependentUpon>AdmnTramitadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\CambioRoles.aspx.cs">
       <DependentUpon>CambioRoles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CambioRoles.aspx.designer.cs">
+    <Compile Include="pages\CambioRoles.aspx.designer.cs">
       <DependentUpon>CambioRoles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CambioTasas.aspx.cs">
+    <Compile Include="pages\CambioTasas.aspx.cs">
       <DependentUpon>CambioTasas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CambioTasas.aspx.designer.cs">
+    <Compile Include="pages\CambioTasas.aspx.designer.cs">
       <DependentUpon>CambioTasas.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\HistorialCreditos.aspx.cs">
