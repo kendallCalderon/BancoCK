@@ -2356,6 +2356,167 @@ namespace BancoCK
                 throw new Exception("Error al traer el prestamo por apellido del cliente, detalles:  " + ex.Message);
             }
         }
+        public DataTable ObtenerAnalistas()
+        {
+            abrirConexion();
+            comando = new SqlCommand("ObtenerAnalistas", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataAdapter adp = new SqlDataAdapter(comando);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            return dt;
+
+        }
+
+        public DataTable ObtenerTramitadores()
+        {
+            abrirConexion();
+            comando = new SqlCommand("ObtenerTramitador", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataAdapter adp = new SqlDataAdapter(comando);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            return dt;
+
+        }
+
+
+        public void InsertarAnalista(string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña) {
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("InsertarAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
+                comando.Parameters.AddWithValue("@Rol", Rol);
+                comando.Parameters.AddWithValue("@Apellido1", Apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", Apellido2);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@Telefono",Convert.ToInt32(Telefono));
+                comando.Parameters.AddWithValue("@Contraseña", Contraseña);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar un analista, detalles: " + ex.Message);
+            }
+
+        }
+
+        
+        public void ModificarAnalista(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono){
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("ModificarAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
+                comando.Parameters.AddWithValue("@Apellido1", Apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", Apellido2);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@Telefono",Convert.ToInt32( Telefono));
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar un analista, detalles: " + ex.Message);
+            }
+
+
+        }
+
+        
+        public void EliminarAnalista(string Identificacion){
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("EliminarAnalista", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar un Analista, detalles: " + ex.Message);
+            }
+
+
+        }
+
+        
+        public void InsertarTramitador(string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña){
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("InsertarTramitador", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
+                comando.Parameters.AddWithValue("@Rol", Rol);
+                comando.Parameters.AddWithValue("@Apellido1", Apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", Apellido2);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@Telefono", Convert.ToInt32(Telefono));
+                comando.Parameters.AddWithValue("@Contraseña", Contraseña);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar un Tramitador, detalles: " + ex.Message);
+            }
+
+        }
+
+        
+        public void ModificarTramitador(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono){
+
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("ModificarTramitador", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
+                comando.Parameters.AddWithValue("@Apellido1", Apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", Apellido2);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@Telefono",Convert.ToInt32( Telefono));
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar un Tramitador, detalles: " + ex.Message);
+            }
+
+        }
+
+        
+        public void EliminarTramitador(string Identificacion){
+
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("EliminarTramitador", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar un Tramitador, detalles: " + ex.Message);
+            }
+
+        }
+
+
 
         public DataTable traePrestamoxCorreo(string correo, string estadoCredito,string tipoPrestamo)
         {

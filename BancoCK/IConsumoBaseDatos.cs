@@ -245,6 +245,17 @@ namespace BancoCK
         DataTable traePrestamoxApellidosFechasAnalistas(string apellido1,string apellido2, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
 
         [OperationContract]
+        DataTable ObtenerAnalistas();
+
+        [OperationContract]
+        void InsertarAnalista( string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña);
+
+        [OperationContract]
+        void ModificarAnalista(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono);
+
+        [OperationContract]
+        void EliminarAnalista(string Identificacion);
+        [OperationContract]
         DataTable traePrestamoxApellidoFechasAnalistas(string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo);
 
         [OperationContract]
@@ -343,5 +354,16 @@ namespace BancoCK
 
         [OperationContract]
         void cambioTasas(float tasaColones, float tasaDolares,string nombrePrestamo);
+        [OperationContract]
+        void InsertarTramitador(string Identificacion, string Nombre, string Rol, string Apellido1, string Apellido2, string Correo, string Telefono, string Contraseña);
+
+        [OperationContract]
+        void ModificarTramitador(string Identificacion, string Nombre, string Apellido1, string Apellido2, string Correo, string Telefono);
+
+        [OperationContract]
+        void EliminarTramitador(string Identificacion);
+
+        [OperationContract]
+        DataTable ObtenerTramitadores();
     }
 }

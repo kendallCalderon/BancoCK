@@ -25,56 +25,61 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <input type="checkbox" id="check">
-       <header class="headerr">
+        <header class="headerr">
             <div class="navbar-fixed">
                 <nav class="navcase">
                     <div class="head"></div>
                     <div class="nav-wrapper navcolor">
                         <img class="brand-logo" src="/img/logoBanco.png" />
                         <div class="navmenu">
-                            <asp:LinkButton OnClick="Unnamed_Click" class="navmenu_items"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
+                            <asp:LinkButton OnClick="Unnamed_Click" class="navmenu_items" runat="server">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
                         </div>
                     </div>
                 </nav>
             </div>
-     
+
         </header>
 
-        
-    <!--header area start-->
-   
-     
+
+        <!--header area start-->
 
 
-         <div class="sidebar">
-                   
-      <label for="check">
-        <i class="fas fa-bars btnclose" id="sidebar_btn"></i>
-      </label>
-             
-      <div class="section_icon">
-          <i class="fa-solid fa-sliders fa-5x icon"></i>
-          
-      </div>
-       
-      <a href="/Pages/Profesor/NotasEstudiantes"><i class="fa-solid fa-user"></i><span>Administrar Analistas</span></a>
-             <a href="/Pages/Profesor/NotasEstudiantes"><i class="fa-solid fa-user-tie"></i><span>Administrar Tramitadores</span></a>
-             <a href="/Pages/Profesor/NotasEstudiantes"><i class="fa-solid fa-square-poll-vertical"></i><span>Administrar tasas</span></a>
-   
-    </div>
 
 
-       <script type="text/javascript">
-    $(document).ready(function(){
-      $('.nav_btn').click(function(){
-        $('.mobile_nav_items').toggleClass('active');
-      });
-    });
-       </script>
+        <div class="sidebar">
+
+            <label for="check">
+                <i class="fas fa-bars btnclose" id="sidebar_btn"></i>
+            </label>
+
+            <div class="section_icon">
+                <i class="fa-solid fa-sliders fa-5x icon"></i>
+
+            </div>
+
+            <a class="redirecciones" href="/pages/AdmnAnalistas.aspx"><i class="fa-solid fa-user"></i><span>Administrar Analistas</span></a>
+            <a class="redirecciones" href="/pages/AdmnTramitadores.aspx""><i class="fa-solid fa-user-tie"></i><span>Administrar Tramitadores</span></a>
+            <a class="redirecciones" href="/Pages/Profesor/NotasEstudiantes"><i class="fa-solid fa-square-poll-vertical"></i><span>Administrar tasas</span></a>
+
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.nav_btn').click(function () {
+                    $('.mobile_nav_items').toggleClass('active');
+                });
+            });
+        </script>
 
 
 
@@ -93,7 +98,7 @@
             </asp:ContentPlaceHolder>
         </div>
 
-       
+
     </form>
 </body>
 </html>
