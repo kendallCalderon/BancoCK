@@ -230,7 +230,7 @@ namespace BancoCK
 
         protected void btnObservarHistorialCreditos_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/pages/HistorialCreditos.aspx");
         }
 
         protected void btnAdministrarAnalistas_Click(object sender, EventArgs e)
@@ -241,7 +241,7 @@ namespace BancoCK
         protected void btnObservarCreditosPendientes_Click(object sender, EventArgs e)
         {
             Response.Redirect("/pages/Configuraciones.aspx");
-            Response.Redirect("/pages/HistorialCreditos.aspx");
+
         }
     }
 }

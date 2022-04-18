@@ -44,7 +44,6 @@
             </div>
 
         </div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 
 

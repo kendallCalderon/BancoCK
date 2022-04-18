@@ -289,5 +289,59 @@ namespace BancoCK
         string ObtenerCorreoSolicitudCliente(int idPrestamo);
         [OperationContract]
         void cambiarEstadoParaRechazarAnalista(int idPrestamo);
+
+        [OperationContract]
+        DataTable traerRoles();
+
+        [OperationContract]
+        DataTable informacionRolxNombreCompleto(string nombre, string apellido1, string apellido2,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxNombreApellido(string nombre, string apellido1,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxNombre(string nombre,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxApellidos(string apellido1,string apellido2,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxApellido(string apellido1,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxCorreo(string correo,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxTelefono(int telefono,string rol);
+
+        [OperationContract]
+        DataTable informacionRolxIdentificacion(string identificacion,string rol);
+
+        [OperationContract]
+        string traerRolUsuario(string identificacion);
+
+        [OperationContract]
+        DataTable traerRolesxrol(string rol);
+
+        [OperationContract]
+        List<string> traerAnalistas(string cedula);
+
+        [OperationContract]
+        void asignarPrestamos(string cedulaCambio, string cedula);
+
+        [OperationContract]
+        void cambioRol(string identificacion, string rol);
+
+        [OperationContract]
+        void cambioRolTramitador(string identificacion,string rol,string prestamoEncargo);
+
+        [OperationContract]
+        DataTable traerTasas();
+
+        [OperationContract]
+        string traerPrestamosxTasas(string prestamo);
+
+        [OperationContract]
+        void cambioTasas(float tasaColones, float tasaDolares,string nombrePrestamo);
     }
 }

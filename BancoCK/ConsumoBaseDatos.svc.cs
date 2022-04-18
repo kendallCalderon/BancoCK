@@ -3282,5 +3282,425 @@ namespace BancoCK
                 cerrarConexion();
             }
         }
+
+        public DataTable traerRoles()
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerRoles", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer los roles de los usuarios, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable informacionRolxNombreCompleto(string nombre, string apellido1, string apellido2,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxNombreCompleto", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre",nombre);
+                comando.Parameters.AddWithValue("@Apellido1",apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", apellido2);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable informacionRolxNombreApellido(string nombre, string apellido1,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxNombreApellido", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre", nombre);
+                comando.Parameters.AddWithValue("@Apellido1", apellido1);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable informacionRolxNombre(string nombre,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxNombre", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre", nombre);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public DataTable informacionRolxApellidos(string apellido1, string apellido2,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxApellidos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Apellido1",apellido1);
+                comando.Parameters.AddWithValue("@Apellido2", apellido2);
+                comando.Parameters.AddWithValue("@Rol", rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public DataTable informacionRolxApellido(string apellido1,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxApellido", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Apellido1", apellido1);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public DataTable informacionRolxCorreo(string correo,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxCorreo", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Correo",correo);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public DataTable informacionRolxTelefono(int telefono,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxTelefono", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Telefono",telefono);
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public DataTable informacionRolxIdentificacion(string identificacion,string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("informacionRolxIdentificacion", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion",identificacion);
+                comando.Parameters.AddWithValue("@Rol", rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer la informacion del usuario, detalles:  " + ex.Message);
+            }
+        }
+
+        public string traerRolUsuario(string identificacion)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerRolUsuario", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion",identificacion);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string cadena = DatatableUsuarios.Rows[0]["Rol"].ToString();
+                return cadena;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer el rol del usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable traerRolesxrol(string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerRolesxrol", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Rol",rol);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer el rol del usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public List<string> traerAnalistas(string cedula)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerAnalistas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion",cedula);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                for(int x=0; x< DatatableUsuarios.Rows.Count; x++)
+                {
+                    lista.Add(DatatableUsuarios.Rows[0]["Identificacion"].ToString());
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer los analistas, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void asignarPrestamos(string cedulaCambio, string cedula)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("asignarPrestamos", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@IdentificacionCambiar",cedulaCambio);
+                comando.Parameters.AddWithValue("@Identificacion",cedula);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al asignar los prestamos para el analista, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void cambioRol(string identificacion, string rol)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("cambioRol", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion",identificacion);
+                comando.Parameters.AddWithValue("@rol",rol);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cambiar de rol de un usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void cambioRolTramitador(string identificacion, string rol, string prestamoEncargo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("cambioRolTramitador", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion", identificacion);
+                comando.Parameters.AddWithValue("@rol", rol);
+                comando.Parameters.AddWithValue("@prestamoEncargado",prestamoEncargo);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cambiar de rol de un usuario, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable traerTasas()
+        {
+
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerTasas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer las tasas de interes, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public string traerPrestamosxTasas(string prestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerPrestamosxTasas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombre",prestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                string contenido = DatatableUsuarios.Rows[0]["Tasa"].ToString() + "," + DatatableUsuarios.Rows[0]["TasaDolares"].ToString();
+                return contenido;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer las tasas de interes, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void cambioTasas(float tasaColones, float tasaDolares, string nombrePrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("cambioTasas", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tasaColones",tasaColones);
+                comando.Parameters.AddWithValue("@tasaDolares",tasaDolares);
+                comando.Parameters.AddWithValue("@NombrePrestamo",nombrePrestamo);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
     }
 }
