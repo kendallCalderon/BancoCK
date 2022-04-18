@@ -29,6 +29,7 @@
         </Columns>
     </asp:GridView>
 
+<img class="imgAnalista" src="/img/TramitadorConf.gif" />
 
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -45,7 +46,7 @@
         <div class="ContenedorInsertar">
             <asp:LinkButton ID="btnicon" CssClass="btnicon browser-default" runat="server" OnClick="btnicon_Click"><i class="fa-solid fa-circle-arrow-left icnAtras"></i></asp:LinkButton>
             <div class="form__group field t">
-                <input runat="server" class="form__field browser-default " type="text" name="name" id="tbxId" placeholder=" Identificación" />
+                <input runat="server" class="form__field browser-default " type="text" name="name" id="tbxId" placeholder=" Identificación" required="required" />
                 <label for="Usuario" class="form__label">Identificación</label>
             </div>
             <div class="form__group field t">
@@ -94,7 +95,7 @@
                 <label for="Usuario" class="form__label">Nombre</label>
             </div>
             <div class="form__group field">
-                <input type="Text" value="Tramitador" id="tbxPrimerApellido" class="form__field browser-default " runat="server" readonly="Readonly" />
+                <input type="Text" value="Tramitador" id="tbxPrimerApellido" class="form__field browser-default " runat="server" required="required"  />
                 <label for="Usuario" class="form__label">1er Apellido</label>
             </div>
             <div class="form__group field">

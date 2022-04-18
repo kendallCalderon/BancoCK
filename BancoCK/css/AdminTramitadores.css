@@ -26,7 +26,7 @@
 
 .btnInsertar {
     margin-left: 300px;
-    margin-top: 70px !important;
+    margin-top: 40px !important;
     width: initial !important;
     width: 180px !important;
     height: 30px;
@@ -199,4 +199,13 @@
 /* reset input */
 .form__field:required, .form__field:invalid {
     box-shadow: none;
+}
+
+.imgAnalista {
+    height: 310px !important;
+    width: 960px;
+    margin-left: 300px;
+    margin-top:20px;
+    
+    
 }
