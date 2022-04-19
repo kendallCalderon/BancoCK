@@ -12,6 +12,48 @@ body {
     font-family: Poppins;
 }
 
+.modal {
+    overflow: hidden !important;
+    background-color: var(--azul) !important;
+    height: 290px !important;
+    color: white !important;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.datos {
+    height: 240px !important;
+    background-color: var(--rojo) !important;
+}
+
+.tituloModal {
+    color: white !important;
+}
+
+.btn {
+    margin-top: 30%;
+    text-align: center;
+    border: none;
+    background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+}
+
+    .btn:hover {
+        box-shadow: 4px 4px 5px var(--azul);
+        transform: scaleX(1.07);
+    }
+
 .contenedorFlexible {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -225,3 +267,18 @@ input {
     width: 100%;
     text-align: center;
 }
+
+.error {
+    margin-top: 30%;
+    text-align: center;
+    border: none;
+    background-color: var(--azul) !important;
+    border-bottom: solid 4px #910000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+    height: 30px;
+}
+

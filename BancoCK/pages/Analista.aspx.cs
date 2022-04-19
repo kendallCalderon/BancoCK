@@ -73,7 +73,6 @@ namespace BancoCK
                 }*/
 
 
-            }
 
             if(Session["cambio"] != null)
             {
@@ -88,6 +87,7 @@ namespace BancoCK
                 mostrarTabla(Session["tipoPrestamo"].ToString());
                 Session["tipoPrestamo"] = null;
                 
+            }
             }
             
         }
@@ -123,7 +123,8 @@ namespace BancoCK
                     arreglo = enviarCorreo.Split(',');
                     metodos.enviarCorreoClienteSolicitudCreditoRechazado(arreglo[4], arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[5]);
                     Session["denegado"] = "cambio";
-                    Response.Redirect("/pages/Analista.aspx");
+                    mostrarTabla(Session["tipoPrestamo"].ToString());
+                    //Response.Redirect("/pages/Analista.aspx");
                 }
                 else
                 {
@@ -171,7 +172,7 @@ namespace BancoCK
                         arreglo = enviarCorreo.Split(',');
                         metodos.enviarCorreoClienteSolicitudCredito(arreglo[4],arreglo[0],arreglo[1],arreglo[2],arreglo[3],arreglo[5]);
                         Session["cambio"] = "cambio";
-                        Response.Redirect("/pages/Analista.aspx");
+                    mostrarTabla(Session["tipoPrestamo"].ToString());
                 }
                 else
                 {
@@ -266,7 +267,7 @@ namespace BancoCK
                         for(int x=0; x < GridView1.Rows.Count; x++)
                         {
                             string nivelEndeudamiento = GridView1.Rows[x].Cells[11].Text.Replace(" %", "");
-                            if (float.Parse(nivelEndeudamiento) > 60 || (float.Parse(GridView1.Rows[x].Cells[5].Text) > float.Parse(GridView1.Rows[x].Cells[8].Text)))
+                            if (float.Parse(nivelEndeudamiento) > 70 || (float.Parse(GridView1.Rows[x].Cells[5].Text) > float.Parse(GridView1.Rows[x].Cells[8].Text)))
                             {
                                 GridView1.Rows[x].BackColor = System.Drawing.ColorTranslator.FromHtml("#D03737");
                             }

@@ -13,11 +13,12 @@ namespace BancoCK
         ConsumoBaseDatos metodos = new ConsumoBaseDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!Page.IsPostBack)
             {
-                DataTable tabla2 = new DataTable();
-                if (!IsPostBack)
+                try
                 {
+                    DataTable tabla2 = new DataTable();
+
                     tabla2 = metodos.traerRoles();
                     tabla2.Columns["Apellido1"].ColumnName = "Primer Apellido";
                     tabla2.Columns["Apellido2"].ColumnName = "Segundo Apellido";
@@ -26,15 +27,16 @@ namespace BancoCK
                     GridView1.DataSource = tabla2;
                     GridView1.DataBind();
 
+
+
+
+
                 }
-               
-                
-
-
-            }catch(Exception ex)
-            {
-                error.InnerText = "Ocurrio un error al llamar a la pantalla de cambio de roles, detalles: " + ex.Message;
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
+                catch (Exception ex)
+                {
+                    error.InnerText = "Ocurrio un error al llamar a la pantalla de cambio de roles, detalles: " + ex.Message;
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
+                }
             }
         }
 
@@ -132,11 +134,13 @@ namespace BancoCK
                 if (campoBusqueda.Equals(""))
                 {
                    filtro =  metodos.traerRolesxrol(rolUsuario);
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
                 else
                 {
                     busquedaFiltro(tipoFiltro, rolUsuario, campoBusqueda);
                     continuar = true;
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
 
                 if (continuar == false)
@@ -152,7 +156,6 @@ namespace BancoCK
                         filtro.Columns["Apellido2"].ColumnName = "Segundo Apellido";
                         filtro.Columns["Identificacion"].ColumnName = "Identificación";
                         filtro.Columns["Telefono"].ColumnName = "Teléfono";
-                        GridView1 = null;
                         GridView1.DataSource = filtro;
                         GridView1.DataBind();
                     }
@@ -183,7 +186,7 @@ namespace BancoCK
                             arreglo = cadena.Split(' ');
                             filtro = metodos.informacionRolxNombreCompleto(arreglo[0], arreglo[1], arreglo[2],rol);
                         }
-                        else if (contadorEspacios == 1)
+                        if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[2];
                             arreglo = cadena.Split(' ');
@@ -229,7 +232,7 @@ namespace BancoCK
 
                 if (filtro.Rows.Count == 0)
                 {
-                    GridView1 = null;
+                    GridView1.DataSource= null;
                     paso = true;
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
@@ -246,7 +249,7 @@ namespace BancoCK
 
                 if (paso)
                 {
-                     Response.Redirect("/pages/CambioRoles.aspx");
+                     //Response.Redirect("/pages/CambioRoles.aspx");
                 }
             }
 
@@ -282,6 +285,13 @@ namespace BancoCK
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            string rolUsuario = tipoRol.Value.ToString(); 
+            DataTable tabla = metodos.traerRoles();
+            tabla.Columns["Apellido1"].ColumnName = "Primer Apellido";
+            tabla.Columns["Apellido2"].ColumnName = "Segundo Apellido";
+            tabla.Columns["Identificacion"].ColumnName = "Identificación";
+            tabla.Columns["Telefono"].ColumnName = "Teléfono";
+            GridView1.DataSource = tabla;
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataBind();
 

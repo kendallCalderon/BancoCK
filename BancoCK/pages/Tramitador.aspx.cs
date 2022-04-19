@@ -16,7 +16,6 @@ namespace BancoCK
 
         DataTable detalles = new DataTable();
 
-        string script;
 
         protected void AsignarAnalista(object sender, EventArgs e)
         {
@@ -48,8 +47,9 @@ namespace BancoCK
                         metodos.asignarAnalista(arreglo[0], int.Parse(idPrestamo));
                         metodos.cambiarEstadoPrestamoSolicitud(int.Parse(idPrestamo));
                         detalles = metodos.devolverPrestamosClientes();
-                        script = string.Format("javascript:notificacion('{0}')", "Se ha asignado el prestamo al analista correctamente");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                         textoModal.InnerText = "Se ha asignado el prestamo al analista correctamente";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
+                        
                         string correo = metodos.ObtenerCorreo(arreglo[0], "Analista");
                         metodos.correoAnalistaInforme("camilorestrepo@outlook.es");
                         Response.Redirect("/pages/Tramitador.aspx");
@@ -57,15 +57,17 @@ namespace BancoCK
                 }
                 else
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "El analista solo se le puede asignar solicitudes que no tienen color rojo");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                    textoModal.InnerText = "El analista solo se le puede asignar solicitudes que no tienen color rojo";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
+
                 }
                
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:notificacion('{0}')", "Ocurrio un error al cargar al asignar un prestamo para un analista");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+
+                error.InnerText = "Ocurrio un error al tratar al tratar de asignar analista detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
             }
         }
 
@@ -107,8 +109,8 @@ namespace BancoCK
                 }
                 catch (Exception ex)
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "Ocurrio un error al cargar la tabla con informacion de BD");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                    error.InnerText = "Ocurrio un error en el evento carga de la pantalla tramitador, detalles: " + ex.Message;
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
                 }
             }
 
@@ -133,8 +135,9 @@ namespace BancoCK
                     tabla = metodos.traerPrestamosEntreFechas(DateTime.Parse(fechaInicial), DateTime.Parse(fechaLimite));
                     if(tabla.Rows.Count == 0)
                     {
-                        script = string.Format("javascript:notificacion('{0}')", "No se encontraron registros entre esas fechas escogidas");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error",script, true);
+
+                        textoModal.InnerText = "No se encontraron registros entre esas fechas escogidas";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                     }
                     else
                     {
@@ -146,8 +149,8 @@ namespace BancoCK
                         GridView1.DataBind();
                         if(tabla.Rows.Count == 0)
                         {
-                            script = string.Format("javascript:notificacion('{0}')", "No hay solicitudes para ese rango de fechas escogido");
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                            textoModal.InnerText = "No hay solicitudes para ese rango de fechas escogido ";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                         }
                         else
                         {
@@ -191,7 +194,7 @@ namespace BancoCK
                             string celda = GridView1.Rows[x].Cells[4].Text;
                             string[]vector = new string[2];
                             vector = celda.Split(' ');
-                            if (metodos.EncargoAnalista(arreglo[0]).Contains(vector[1]) == false && metodos.EncargoAnalista(arreglo[0]).Equals("General") == false)
+                            if (metodos.EncargoAnalista(arreglo[0]).Contains(vector[0]) == false && metodos.EncargoAnalista(arreglo[0]).Equals("General") == false)
                             {
                                 GridView1.Rows[x].BackColor = System.Drawing.ColorTranslator.FromHtml("#D03737");
                             }
@@ -200,8 +203,9 @@ namespace BancoCK
                     }
                     else
                     {
-                        script = string.Format("javascript:notificacion('{0}')", "Para buscar por fechas, debes llenar las dos listas desplegables");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                        textoModal.InnerText = "Para buscar por fechas, debes llenar las dos listas desplegables, detalles: ";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
+
 
                     }
 
@@ -211,8 +215,9 @@ namespace BancoCK
             }
             catch(Exception ex)
             {
-                script = string.Format("javascript:notificacion('{0}')", "Ocurrio un error al tratar de buscar por filtro");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error",script, true);
+                error.InnerText = "Ocurrio un error al tratar de buscar por filtro, detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
+                
             }
         }
 
@@ -243,5 +248,6 @@ namespace BancoCK
             Response.Redirect("/pages/Configuraciones.aspx");
 
         }
+
     }
 }

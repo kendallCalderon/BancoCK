@@ -3430,8 +3430,8 @@ namespace BancoCK
                 abrirConexion();
                 comando = new SqlCommand("cambiarEstadoParaRechazarAnalista", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@idPrestamo", idPrestamo);
-                comando.ExecuteNonQuery();
+                 comando.Parameters.AddWithValue("@idPrestamo", idPrestamo);
+              int i=  comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

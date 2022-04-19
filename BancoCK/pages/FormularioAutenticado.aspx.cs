@@ -103,7 +103,7 @@ namespace BancoCK.pages
                     }
 
                     //recuperamos la fecha actual
-                    string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                    string fecha = DateTime.Now.ToString("dd/MM/yyyy");
                     //registramos el préstamo del cliente
                     metodos.registrarPrestamoCliente(Session["Login"].ToString(), DateTime.Parse(fecha), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(),idMoneda);
                     string Rol = "Cliente";

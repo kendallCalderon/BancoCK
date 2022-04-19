@@ -9,6 +9,13 @@
 }
 
 
+.tabla_item_header {
+    background-color: var(--rojo);
+    color: #fff;
+}
+
+
+
 .tituloConfiguracion2 {
     color: var(--azul);
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa;
@@ -68,7 +75,7 @@
 }
 
 .modal-tramitador {
-    height: 510px !important;
+    height: 650px !important;
 }
 
 

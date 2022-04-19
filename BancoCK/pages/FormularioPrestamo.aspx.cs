@@ -89,7 +89,7 @@ namespace BancoCK.pages
                     }
                     else
                     {
-                        string fecha = DateTime.Now.ToString("dd-MM-yyyy"); // guardamos la fecha actual del préstamo
+                        string fecha = DateTime.Now.ToString("dd/MM/yyyy"); // guardamos la fecha actual del préstamo
                         // guardamos los datos del cliente no autenticado
                         metodos.guardarInformacionClienteNoAutenticado(txtIdentificacion.Value.ToString(), txtNombre.Value.ToString(), txtApellido1.Value.ToString(), txtApellido2.Value.ToString(), txtCorreo.Value.ToString(), int.Parse(txtTelefono.Value.ToString()), "NoLogeado");
                         // registramos el préstamo del cliente

@@ -105,15 +105,14 @@
 
 
 
-    <div id="Analista" class="modal">
+    <div id="Analista" class="modal modal-tramitador">
         <h5 class="modal-close">&#10005;</h5>
         <div class="modal-content center">
             <h4 class="tituloModal">Seleccione el nuevo rol del usuario</h4>
             <label runat="server" class="etiquetaModel" id="mensaje" style="font-size: 20px; color: white"></label>
             <br>
-
+            <label  class="etiquetaModel">Digite el rol a cambiar</label>
             <div class="input-field">
-                <label  class="etiquetaModel">Digite el rol a cambiar</label>
                 <div class="select is-danger">
                     <select autopostback="True" runat="server" id="Opcion">
                         <option>Analista</option>
@@ -174,16 +173,7 @@
             </div>
         </div>
 
-            <div id="confirmacion" class="modal">
-                <h5 class="modal-close">&#10005;</h5>
-                <div class="modal-content center">
-                    <h4 class="tituloModal">Banco CK</h4>
-                    <label style="font-size: 20px; color: white">Se ha modificado el rol del usuario exitosamente</label>
-                    <br>
-                    <asp:Button runat="server" class="btn-large btn" Text="Aceptar" />
 
-                </div>
-            </div>
              <asp:Panel ID="PanelInforme" runat="server">
                   <div id="informe" class="modal">
                 <h5 class="modal-close">&#10005;</h5>
@@ -196,6 +186,18 @@
                 </div>
             </div>
              </asp:Panel>
+
+    
+                <div id="confirmacion" class="modal">
+                <h5 class="modal-close">&#10005;</h5>
+                <div class="modal-content center">
+                    <h4 class="tituloModal">Banco CK</h4>
+                    <label style="font-size: 20px; color: white" id="textoModal" runat="server"></label>
+                    <br>
+                    <asp:Button runat="server" class="btn-large btn" Text="Aceptar" />
+
+                </div>
+            </div>
 
            
 

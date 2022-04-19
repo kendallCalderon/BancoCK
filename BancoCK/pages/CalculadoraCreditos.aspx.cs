@@ -93,8 +93,8 @@ namespace BancoCK
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:error('{0}')", "Ocurrio un error en el evento carga de la pantalla calculadora de crédito");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                error.InnerText = "Ocurrio un error al calcular la cuota mensual del préstamo, detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
             }
 
         }
@@ -154,21 +154,21 @@ namespace BancoCK
             {
                 if (Session["PresionoBotonMoneda"] == null)
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "Debes elegir un tipo de moneda antes de calcular");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                 }
                 else if (txtMonto.Value.ToString().Equals("") || txtTasa.Value.ToString().Equals("") || txtRangoAñosPrestamo.Value.ToString().Equals(""))
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                 }
                 else
                 {
 
                     if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMayor"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMenor"].ToString()))
                     {
-                        script = string.Format("javascript:notificacion('{0}')", "El monto ingresado no esta entre el monto minimo y maximo, favor cambiarlo");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                        textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                     }
                     else
                     {
@@ -204,8 +204,9 @@ namespace BancoCK
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:error('{0}')", "Ocurrio un error al calcular la cuota mensual del préstamo");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                error.InnerText = "Ocurrio un error al calcular la cuota mensual del préstamo, detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
+              
             }
         }
 

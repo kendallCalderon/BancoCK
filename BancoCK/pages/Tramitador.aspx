@@ -16,9 +16,6 @@
             </div>
       
 
-
-
-
         <div class="Titulo">
             <h1>Tramitador</h1>
         </div>
@@ -152,10 +149,46 @@
             </div>
         </div>
 
+         <div id="mensajeError" class="modal datos">
+        <h5 class="modal-close">&#10005;</h5>
+        <div class="modal-content center">
+            <h4 class="tituloModal">Error</h4>
+            <label runat="server" id="error" style="font-size: 20px; color: white"></label>
+            <br>
+            <asp:Button runat="server" class="btn-large error" Text="Aceptar" />
+            </div>
+        </div>
 
+    
+                <div id="confirmacion" class="modal">
+                <h5 class="modal-close">&#10005;</h5>
+                <div class="modal-content center">
+                    <h4 class="tituloModal">Banco CK</h4>
+                    <label style="font-size: 20px; color: white" id="textoModal" runat="server"></label>
+                    <br>
+                    <asp:Button runat="server" class="btn-large btn" Text="Aceptar" />
 
-    </div>
+                </div>
+            </div>
+           
+
 
 
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+           <script language="javascript">
+               function abrirModalConfirmacion() {
+                   $('#confirmacion').modal();
+                   $('#confirmacion').modal('open');
+               }
+           </script>
+
+
+           <script language="javascript">
+                    function abrirModalError() {
+                        $('#mensajeError').modal();
+                        $('#mensajeError').modal('open');
+                    }
+           </script>
+
 </asp:Content>
