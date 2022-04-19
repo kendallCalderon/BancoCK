@@ -8,7 +8,7 @@
 
     <h1 class="tituloConfiguracion">Configuración del sistema</h1> 
     <img src="/img/Configuracion.svg" class="imgConfiguracion"  />
-
+    
     </div>
 
 </asp:Content>

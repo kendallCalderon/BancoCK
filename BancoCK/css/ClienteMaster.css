@@ -9,12 +9,19 @@ body {
 
 }
 
-
+.boton{
+    all:inherit;
+    margin:0px 15px !important;
+    width:85.31px !important;
+}
 
 .navmenu_items {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer !important;
+    margin: 0px 15px !important;
+   
 }
 
 .headerr{

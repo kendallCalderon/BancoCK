@@ -15,22 +15,49 @@ namespace BancoCK
     {
 
         /// <summary>
-        /// Control cbxPrestamos.
+        /// Control fechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect cbxPrestamos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaInicio;
 
         /// <summary>
-        /// Control cbxFiltros.
+        /// Control tipoPrestamo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect cbxFiltros;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoPrestamo;
+
+        /// <summary>
+        /// Control filtro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText filtro;
+
+        /// <summary>
+        /// Control fechaFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaFinal;
+
+        /// <summary>
+        /// Control tipoBusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoBusqueda;
 
         /// <summary>
         /// Control btnBuscar.

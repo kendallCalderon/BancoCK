@@ -14,6 +14,8 @@
 
     <img class="contenedor_Imagen_imagenFondo" src="../img/bank.gif" />
 
+    <a class="btnRegresar" href="/pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
+
     <div class="ContenedorBusqueda">
         <h3>Créditos historicos por fecha</h3>
         <div class="contenedor_formulario">

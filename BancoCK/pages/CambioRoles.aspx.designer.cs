@@ -11,35 +11,35 @@ namespace BancoCK
 {
 
 
-    public partial class Formulario_web12
+    public partial class Formulario_web13
     {
 
         /// <summary>
-        /// Control fechaInicio.
+        /// Control tipoBusqueda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaInicio;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoBusqueda;
 
         /// <summary>
-        /// Control fechaFinal.
+        /// Control campotxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaFinal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText campotxt;
 
         /// <summary>
-        /// Control comboAnlista.
+        /// Control tipoRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboAnlista;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tipoRol;
 
         /// <summary>
         /// Control btnBuscar.
@@ -60,31 +60,49 @@ namespace BancoCK
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Control btnObservarCreditos.
+        /// Control mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnObservarCreditos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
 
         /// <summary>
-        /// Control btnObservarCreditosPendientes.
+        /// Control Opcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnObservarCreditosPendientes;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Opcion;
 
         /// <summary>
-        /// Control btnObservarHistorialCreditos.
+        /// Control mensaje2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnObservarHistorialCreditos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje2;
+
+        /// <summary>
+        /// Control rolTramitadorEscogido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect rolTramitadorEscogido;
+
+        /// <summary>
+        /// Control Encargo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Encargo;
 
         /// <summary>
         /// Control error.
@@ -94,6 +112,15 @@ namespace BancoCK
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl error;
+
+        /// <summary>
+        /// Control PanelInforme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelInforme;
 
         /// <summary>
         /// Control textoModal.

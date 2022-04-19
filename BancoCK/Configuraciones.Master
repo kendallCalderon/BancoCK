@@ -18,11 +18,19 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
-    
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -60,8 +68,10 @@
             </div>
 
             <a class="redirecciones" href="/pages/AdmnAnalistas.aspx"><i class="fa-solid fa-user"></i><span>Administrar Analistas</span></a>
-            <a class="redirecciones" href="/pages/AdmnTramitadores.aspx""><i class="fa-solid fa-user-tie"></i><span>Administrar Tramitadores</span></a>
-            <a class="redirecciones" href="/Pages/Profesor/NotasEstudiantes"><i class="fa-solid fa-square-poll-vertical"></i><span>Administrar tasas</span></a>
+            <a class="redirecciones" href="/pages/AdmnTramitadores.aspx"><i class="fa-solid fa-user-tie"></i><span>Administrar Tramitadores</span></a>
+            <a class="redirecciones" href="/pages/CambioTasas.aspx"><i class="fa-solid fa-square-poll-vertical"></i><span>Administrar tasas</span></a>
+            <a class="redirecciones" href="/pages/CambioRoles.aspx"><i class="fa-solid fa-user-pen"></i><span>Administrar Roles</span></a>
+            <a class="redirecciones" href="/pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
 
         </div>
 

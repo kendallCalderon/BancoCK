@@ -77,31 +77,31 @@ h2 {
     flex-direction: row;
 }
 
+
+
 .ContenedorFormulario_contenido1 {
-    display: flex;
-    flex-wrap:wrap;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--azul);
-    flex-grow:9;
-    margin:10px;
-    border-radius:7px;
-    flex-basis:200px;
-
-}
-
-ContenedorFormulario_imagen {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     background-color: var(--azul);
-    flex-grow:0;
+    flex-grow: 2;
     margin: 10px;
     border-radius: 7px;
-    flex-basis:200px;
+    height: 480px;
+    align-self: center;
+    justify-content: center;
 }
 
+.ContenedorFormulario_image {
+    display: flex;
+    flex-grow: 1;
+    height: 500px;
+    margin: 10px;
+    justify-content: center;
+    height: 480px;
+    align-items: center;
+}
 
 
 
@@ -196,7 +196,7 @@ ContenedorFormulario_imagen {
 
 
 .btnBuscar {
-    margin: 0 auto;
+    margin: 15px auto;
     margin-top: 20px;
     width: 180px;
     height: 30px;
@@ -346,16 +346,16 @@ input {
 
 }
 
-.ContenedorFormulario_contenido_filtros{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    flex-wrap:wrap;
+
+.columna2 {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
 }
-.ContenedorFormulario_contenido_filtros_1 {
+
+.columna2-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-wrap: wrap;
-    margin:10px;
 }
+

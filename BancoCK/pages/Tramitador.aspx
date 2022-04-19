@@ -16,9 +16,6 @@
             </div>
       
 
-
-
-
         <div class="Titulo">
             <h1>Tramitador</h1>
         </div>
@@ -27,20 +24,16 @@
 
             <div class="ContenedorFormulario_contenido1">
                 <h2 class="subtitulo">Solicitudes de préstamos</h2>
-                <label>Ingrese tipo Préstamo</label>
+                <label>Ingrese la fecha inicial</label>
+                <input type="date" runat="server" id="fechaInicio" class="browser-default tbx tbxCedulaCliente">
+                <label>Ingrese la fecha Final</label>
+                <input type="date" id="fechaFinal" runat="server" class="browser-default tbx tbxCedulaCliente">
+                <label>Seleccione el analista</label>
                 <div class="select is-danger">
-                    <select autopostback="True" runat="server" id="tipoPrestamo">
-                        <option>Vehiculo</option>
-                        <option>Vivienda</option>
-                        <option>Refundir deudas</option>
-                        <option>Educación</option>
-                        <option>Personal</option>
-                        <option>Apoyo negocio</option>
-                    </select>
+                    <asp:DropDownList runat="server" id="comboAnlista" OnSelectedIndexChanged="cbxComboAnlista_SelectedIndexChanged">
+                    </asp:DropDownList>
                 </div>
-                <label>Ingrese cedula del Analista</label>
-                <input class="browser-default tbx tbxCedulaCliente" type="text" placeholder="Cedula Analista" runat="server" id="txtCedulaAnalista" />
-                <asp:Button runat="server" ID="btnBuscar" CssClass="btnBuscar" Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
+                <asp:Button   runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
             </div>
 
             <div class="ContenedorFormulario_image">
@@ -48,12 +41,11 @@
             </div>
 
         </div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
 
 
         <div class="contenedor_tabla">
-            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound">
+            <asp:GridView class="striped responsive-table tabla"     ID="GridView1" runat="server" AutoGenerateColumns="False">
                 <Columns>
 
                     <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Préstamo #" HeaderText="Préstamo #">
@@ -61,38 +53,34 @@
 
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:BoundField>
-                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Identificacion" HeaderText="Identificación">
+                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Identificacion" HeaderText="Identificacion">
+                        <HeaderStyle CssClass="tabla_header"></HeaderStyle>
+
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Monto" HeaderText="Monto">
+                        <HeaderStyle CssClass="tabla_header"></HeaderStyle>
+
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Fecha crédito" HeaderText="Fecha crédito">
+                        <HeaderStyle CssClass="tabla_header"></HeaderStyle>
+
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Tipo Prestamo" HeaderText="Tipo Prestamo">
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
 
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:BoundField>
 
 
-                    <asp:TemplateField ItemStyle-CssClass="tabla_item" HeaderText="Nombre Analista">
-
-                        <ItemTemplate>
-
-                            <asp:DropDownList ID="ddlNombreAnalistas" CssClass=" browser-default cbxCombo" AutoPostBack="True" name="listaUsuarios" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre Analista" DataValueField="Nombre Analista" OnSelectedIndexChanged="CambioEnComBoBox">
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoSitiosConnectionString %>" SelectCommand="devolverAnalistasComboBox" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-                        </ItemTemplate>
-
-                        <HeaderStyle CssClass="tabla_header"></HeaderStyle>
-
-                    </asp:TemplateField>
-
-
-
                     <asp:TemplateField ItemStyle-CssClass="tabla_item" HeaderText="Acciones">
 
                         <ItemTemplate>
                             <itemstyle horizontalalign="Center" />
-
-
-                            <asp:LinkButton Text="text" runat="server" CommandArgument='<%# Eval("Préstamo #") %>' OnCommand="AsignarAnalista"><i class="fa-solid fa-circle-check icn"></i></asp:LinkButton>
-
-
-                        </ItemTemplate>
+                            <asp:LinkButton Text="text" runat="server" CommandArgument='<%# Eval("Préstamo #") %>' OnClick="AsignarAnalista" OnCommand="AsignarAnalista"><i class="fa-solid fa-circle-check icn"></i></asp:LinkButton>
+                        </ItemTemplate> 
 
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
 
@@ -161,9 +149,46 @@
             </div>
         </div>
 
+         <div id="mensajeError" class="modal datos">
+        <h5 class="modal-close">&#10005;</h5>
+        <div class="modal-content center">
+            <h4 class="tituloModal">Error</h4>
+            <label runat="server" id="error" style="font-size: 20px; color: white"></label>
+            <br>
+            <asp:Button runat="server" class="btn-large error" Text="Aceptar" />
+            </div>
+        </div>
+
+    
+                <div id="confirmacion" class="modal">
+                <h5 class="modal-close">&#10005;</h5>
+                <div class="modal-content center">
+                    <h4 class="tituloModal">Banco CK</h4>
+                    <label style="font-size: 20px; color: white" id="textoModal" runat="server"></label>
+                    <br>
+                    <asp:Button runat="server" class="btn-large btn" Text="Aceptar" />
+
+                </div>
+            </div>
+           
 
 
-    </div>
 
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+           <script language="javascript">
+               function abrirModalConfirmacion() {
+                   $('#confirmacion').modal();
+                   $('#confirmacion').modal('open');
+               }
+           </script>
+
+
+           <script language="javascript">
+                    function abrirModalError() {
+                        $('#mensajeError').modal();
+                        $('#mensajeError').modal('open');
+                    }
+           </script>
 
 </asp:Content>

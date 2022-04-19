@@ -23,6 +23,7 @@ namespace BancoCK
             {
                 if (!IsPostBack)
                 {
+                    //Llenamos el combo box
                     cbxComboPrestamo.Items.Add("Préstamo vehiculo");
                     cbxComboPrestamo.Items.Add("Préstamo Vivienda");
                     cbxComboPrestamo.Items.Add("Refundir mis deudas");
@@ -31,16 +32,18 @@ namespace BancoCK
                     cbxComboPrestamo.Items.Add("Apoyo Negocio");
                     tipoPrestamo = Session["tipoPrestamo"].ToString();
                     cbxComboPrestamo.SelectedValue = tipoPrestamo;
+                    //Obtenemos la tasa de interes
                     tasaInteres = metodos.devolverTasaTipoPrestamo(tipoPrestamo);
                     txtTasa.Value = tasaInteres.ToString();
+                    //obtenemos el monto Maximo y minimo
                     montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                     vector = montosPermitidos.Split(',');
                     ponerDecimales();
-                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
 
                 }
 
-
+                //preguntamos si se eligio un tipo de prestamo
                 if (Session["tipoPrestamo"] != null)
                 {
                     if (Session["tipoPrestamo"].ToString().Equals(cbxComboPrestamo.SelectedValue.ToString()) == false)
@@ -54,7 +57,7 @@ namespace BancoCK
                     }
 
                 }
-
+                //mostramos el mensaje con el monto máximo y minimo
                 if (Session["MonedaEscogida"] != null)
                 {
                     if (Session["MonedaEscogida"].ToString().Equals("Dolares"))
@@ -64,9 +67,10 @@ namespace BancoCK
                         montosPermitidos = metodos.devolverLimiteMontoPrestamoDolares(tipoPrestamo);
                         vector = montosPermitidos.Split(',');
                         ponerDecimales();
-                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '$') + ",  Monto Minimo: " + vector[1].Replace('₡', '$');
                         Session["MontoMaximo"] = vector[0];
                         Session["MontoMinimo"] = vector[1];
+                        Session["MonedaSigno"] = '$';
                     }
                     else
                     {
@@ -75,9 +79,10 @@ namespace BancoCK
                         montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                         vector = montosPermitidos.Split(',');
                         ponerDecimales();
-                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0] + ",  Monto Minimo: " + vector[1];
+                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
                         Session["MontoMaximo"] = vector[0];
                         Session["MontoMinimo"] = vector[1];
+                        Session["MonedaSigno"] = '₡';
                     }
                     Session["MonedaEscogida"] = null;
 
@@ -88,8 +93,8 @@ namespace BancoCK
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:error('{0}')", "Ocurrio un error en el evento carga de la pantalla calculadora de crédito");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                error.InnerText = "Ocurrio un error al calcular la cuota mensual del préstamo, detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
             }
 
         }
@@ -149,21 +154,21 @@ namespace BancoCK
             {
                 if (Session["PresionoBotonMoneda"] == null)
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "Debes elegir un tipo de moneda antes de calcular");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                 }
                 else if (txtMonto.Value.ToString().Equals("") || txtTasa.Value.ToString().Equals("") || txtRangoAñosPrestamo.Value.ToString().Equals(""))
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "No pueden quedar campos sin llenar");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                    textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                 }
                 else
                 {
 
                     if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMayor"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMenor"].ToString()))
                     {
-                        script = string.Format("javascript:notificacion('{0}')", "El monto ingresado no esta entre el monto minimo y maximo, favor cambiarlo");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
+                        textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                     }
                     else
                     {
@@ -171,8 +176,11 @@ namespace BancoCK
                         string cadena = string.Format("{0:N2}", resultado);
                         numero = Decimal.Parse(cadena);
                         valor1 = String.Format("{0:C}", numero);
+                        String signo = Session["MonedaSigno"].ToString();
+                        valor1 = valor1.Replace('₡', char.Parse(Session["MonedaSigno"].ToString()));
                         txtMontoMensual.Value = valor1;
                         Session["PresionoBotonMoneda"] = null;
+                        Session["MonedaSigno"] = null;
                         txtMonto.Value = "";
                         txtRangoAñosPrestamo.Value = "";
 
@@ -196,8 +204,9 @@ namespace BancoCK
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:error('{0}')", "Ocurrio un error al calcular la cuota mensual del préstamo");
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                error.InnerText = "Ocurrio un error al calcular la cuota mensual del préstamo, detalles: " + ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalError();", true);
+              
             }
         }
 

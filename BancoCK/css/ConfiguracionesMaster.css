@@ -9,13 +9,13 @@
 }
 
 body {
-    font-family:Poppins;
 }
 
 .navmenu_items {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer !important
 }
 
 .headerr {
@@ -256,7 +256,7 @@ label #sidebar_btn {
 
     #check:checked ~ .sidebar a {
         font-size: 20px;
-        margin-left: 195px;
+        margin-left: 165px;
         width: 100%;
     }
 
@@ -273,7 +273,7 @@ label #sidebar_btn {
 }
 
 #check:checked ~ .content {
-    margin-left: 100px;
+    margin-left: 60px;
 }
 
 #check:checked ~ .sidebar .profile_info {
@@ -294,11 +294,6 @@ label #sidebar_btn {
     margin-bottom: 10px;
     font-size: 14px;
     opacity: 0.8;
-}
-.redirecciones{
-   
-    padding-left:15px !important;
-
 }
 
 /* Responsive CSS */

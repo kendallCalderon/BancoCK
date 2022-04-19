@@ -11,7 +11,32 @@ namespace BancoCK
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Login"] == null)
+            {
+                btnCerrarSesion.Visible = false;
+            }
+            else
+            {
+                btnCerrarSesion.Visible = true;
+            }
+        }
 
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            if(Session["Login"] == null)
+            {
+                Response.Redirect("/pages/Home.aspx");
+            }
+            else
+            {
+                Response.Redirect("/pages/HomeAutenticado.aspx");
+            }
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Login"] = null;
+            Response.Redirect("/Pages/Home.aspx");
         }
     }
 }
