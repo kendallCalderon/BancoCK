@@ -481,6 +481,7 @@ body {
     margin-top:50px;
     
     
+    
 }
 
 .uk-divider-small {
@@ -500,3 +501,16 @@ body {
 }
 
 
+@media only screen and (min-width:1154px){
+    .Contenedor{
+        display:flex !important;
+        flex-wrap:wrap !important;
+    }
+
+    .publicidad__elemento1 {
+     
+        flex-wrap:wrap; 
+        flex-direction:column;
+    }
+   
+}

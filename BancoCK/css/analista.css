@@ -10,10 +10,12 @@ body {
     font-family:Poppins;
 }
 
+
+
 h2 {
     color: var(--azul);
-    font-size:40px;
-    font-weight:700;
+    font-size: 40px;
+    font-weight: 700;
     letter-spacing: .15em;
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa, -4px 8px 1px #bbb, -4px 8px 1px #ccc, -4px 8px 1px #ddd;
 }
@@ -21,14 +23,15 @@ h2 {
 .cajaFlexible1 {
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
     margin-top:20px;
+    align-items:center !important;
 }
 
 
 .cajaFlexible1_elemento1 {
-    
-    width: 50%;
+    width: 100%;
+    display:flex;
+   justify-content:center;
 }
 
 .cajaFlexible1_elemento2 {
@@ -49,7 +52,8 @@ h2 {
 
 
 .img-negocios {
-   object-fit:cover;
+   width:900px;
+   height:400px;
 }
 
 

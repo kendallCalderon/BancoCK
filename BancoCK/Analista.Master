@@ -33,7 +33,7 @@
                     <div class="nav-wrapper navcolor">
                         <img class="brand-logo" src="/img/logoBanco.png" />
                         <div class="navmenu">
-                            <asp:LinkButton OnClick="Unnamed_Click" class="navmenu_items"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
+                            <asp:LinkButton OnClick="Unnamed_Click" class="navmenu_items btnCerrarSesion"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
                         </div>
                     </div>
                 </nav>

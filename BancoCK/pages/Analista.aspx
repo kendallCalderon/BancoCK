@@ -10,9 +10,7 @@
             <div class="cajaFlexible1_elemento1">
                 <img class="img-negocios" src="/img/salaanalista.gif" />
             </div>
-            <div class="cajaFlexible1_elemento2">
-                <img class="img-negocios" src="/img/Manager _Isometric.svg" />
-            </div>
+            
         </div>
 
         <div class="Titulo">
