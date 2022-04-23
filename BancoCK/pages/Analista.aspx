@@ -55,8 +55,12 @@
                     
                 </div>
                 <br />
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <br />
-                <asp:Button runat="server" ID="btnBuscar" CssClass="btnBuscar" Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
+                
+              
+                <asp:Button runat="server" ID="btnBuscar" CssClass="btnBuscar" Text="Buscar"  OnClick="btnBuscar_Click"></asp:Button>
+                   
             </div>
 
             <div class="ContenedorFormulario_image">

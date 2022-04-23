@@ -232,17 +232,17 @@ namespace BancoCK
         [OperationContract]
         DataTable traePrestamoxTipoEstadoFechas(string tipoPrestamo, string estadoCredito, DateTime fechaInicio, DateTime fechaFinal);
         [OperationContract]
-        DataTable traePrestamoxTipoEstadoAnalista(string tipoPrestamo);
+        DataTable traePrestamoxTipoEstadoAnalista(string tipoPrestamo, string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxTipoEstadoFechasAnalista(string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal);
+        DataTable traePrestamoxTipoEstadoFechasAnalista(string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal, string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxNombreCompletoFechasAnalista(string nombre,string apellido1, string apellido2,string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal);
+        DataTable traePrestamoxNombreCompletoFechasAnalista(string nombre,string apellido1, string apellido2,string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal, string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxNombreconApellidoFechasAnalista(string nombre, string apellido1, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
+        DataTable traePrestamoxNombreconApellidoFechasAnalista(string nombre, string apellido1, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo, string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxNombreFechasAnalista(string nombre,DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo);
+        DataTable traePrestamoxNombreFechasAnalista(string nombre,DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxApellidosFechasAnalistas(string apellido1,string apellido2, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
+        DataTable traePrestamoxApellidosFechasAnalistas(string apellido1,string apellido2, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
         DataTable ObtenerAnalistas();
@@ -256,41 +256,41 @@ namespace BancoCK
         [OperationContract]
         void EliminarAnalista(string Identificacion);
         [OperationContract]
-        DataTable traePrestamoxApellidoFechasAnalistas(string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo);
+        DataTable traePrestamoxApellidoFechasAnalistas(string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxCorreoFechasAnalistas(string correo, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
+        DataTable traePrestamoxCorreoFechasAnalistas(string correo, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxTelefonoFechasAnalista(int telefono, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
+        DataTable traePrestamoxTelefonoFechasAnalista(int telefono, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxIdentificacionFechasAnalista(string Identificacion, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo);
+        DataTable traePrestamoxIdentificacionFechasAnalista(string Identificacion, DateTime fechaInicio, DateTime fechaFinal,string tipoPrestamo, string IdentificacionFuncionario);
 
         [OperationContract]
-        DataTable traePrestamoxNombreCompletoAnalista(string nombre, string apellido1,string apellido2,string tipoPrestamo);
+        DataTable traePrestamoxNombreCompletoAnalista(string nombre, string apellido1,string apellido2,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxNombreconApellidoAnalista(string nombre,string apellido1,string tipoPrestamo );
+        DataTable traePrestamoxNombreconApellidoAnalista(string nombre,string apellido1,string tipoPrestamo, string Identificacion );
 
         [OperationContract]
-        DataTable traePrestamoxNombreAnalista(string nombre,string tipoPrestamo);
+        DataTable traePrestamoxNombreAnalista(string nombre,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxApellidosAnalista(string apellido1,string apellido2,string tipoPrestamo);
+        DataTable traePrestamoxApellidosAnalista(string apellido1,string apellido2,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxApellidoAnalista(string apellido1,string tipoPrestamo);
+        DataTable traePrestamoxApellidoAnalista(string apellido1,string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxCorreoAnalista(string correo, string tipoPrestamo);
+        DataTable traePrestamoxCorreoAnalista(string correo, string tipoPrestamo, string Identificacion);
 
         [OperationContract]
-        DataTable traePrestamoxTelefonoAnalista(int telefono, string tipoPrestamo);
+        DataTable traePrestamoxTelefonoAnalista(int telefono, string tipoPrestamo, string Identificacion);
 
 
         [OperationContract]
-        DataTable traePrestamoxIdentificacionAnalista(string identificacion,string tipoPrestamo);
+        DataTable traePrestamoxIdentificacionAnalista(string identificacion,string tipoPrestamo, string IdentificacionFuncionario);
 
         [OperationContract]
         float traerSalarioBrutoCliente(int idPrestamos);

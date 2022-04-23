@@ -17,7 +17,8 @@ namespace BancoCK
 
         public void mostrarTabla(string tipoPrestamo)
         {
-            tabla = metodos.traePrestamoxTipoEstadoAnalista(tipoPrestamo);
+           
+            tabla = metodos.traePrestamoxTipoEstadoAnalista(tipoPrestamo, Session["Login"].ToString());
             tabla.Columns["idPrestamos"].ColumnName = "Préstamo #";
             tabla.Columns["Nombre"].ColumnName = "Nombre Cliente";
             tabla.Columns["Apellido1"].ColumnName = "Primer Apellido";
@@ -35,6 +36,7 @@ namespace BancoCK
 
             foreach (DataRow dr in tabla.Rows)
             {
+               
                 int idPrestamo1 = int.Parse(dr["Préstamo #"].ToString());
                 float salarioBruto = metodos.traerSalarioBrutoCliente(idPrestamo1);
                 float salarioFinal = float.Parse(dr["Salario Neto"].ToString());
@@ -54,14 +56,21 @@ namespace BancoCK
 
             for (int x = 0; x < GridView1.Rows.Count; x++)
             {
+                bool ValidarPorcentaje = false;
+                int mensual = Convert.ToInt32(GridView1.Rows[x].Cells[7].Text.ToString());
+                int SalarioNeto = Convert.ToInt32(GridView1.Rows[x].Cells[8].Text.ToString());
+                int porcentajeDiferencial = Convert.ToInt32((40 * SalarioNeto) / 100);
+                if (mensual > porcentajeDiferencial)
+                {
+                    ValidarPorcentaje = true;
+                }
                 string nivelEndeudamiento = GridView1.Rows[x].Cells[11].Text.Replace(" %", "");
-                if (float.Parse(nivelEndeudamiento) > 60 || (float.Parse(GridView1.Rows[x].Cells[5].Text) > float.Parse(GridView1.Rows[x].Cells[8].Text)))
+                if (float.Parse(nivelEndeudamiento) > 60 || ValidarPorcentaje==true)
                 {
                     GridView1.Rows[x].BackColor = System.Drawing.ColorTranslator.FromHtml("#D03737");
                 }
             }
-            script = string.Format("javascript:notificacion('{0}')", "La solicitud de crédito ha sido aceptada");
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+         
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -195,12 +204,12 @@ namespace BancoCK
                 bool continuar = false;
                 if ((fechaInicio.Value.ToString().Equals("") || fechaInicio.Value.ToString() == null || fechaFinal.Value.ToString().Equals("") || fechaFinal.Value.ToString() == null) && (filtro.Value.ToString().Equals("") || filtro.Value.ToString() == null))
                 {
-                    tabla = metodos.traePrestamoxTipoEstadoAnalista(tipoPrestamo.Value.ToString());
+                    tabla = metodos.traePrestamoxTipoEstadoAnalista(tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                     continuar = true;
                 }
                 else if ((fechaInicio.Value.ToString().Equals("") == false || fechaInicio.Value.ToString() != null && fechaFinal.Value.ToString().Equals("") == false && fechaFinal.Value.ToString() != null) && (filtro.Value.ToString().Equals("") || filtro.Value.ToString() == null))
                 {
-                    tabla = metodos.traePrestamoxTipoEstadoFechasAnalista(tipoPrestamo.Value.ToString(),DateTime.Parse(fechaInicio.Value.ToString()), DateTime.Parse(fechaFinal.Value.ToString()));
+                    tabla = metodos.traePrestamoxTipoEstadoFechasAnalista(tipoPrestamo.Value.ToString(),DateTime.Parse(fechaInicio.Value.ToString()), DateTime.Parse(fechaFinal.Value.ToString()), Session["Login"].ToString());
                     continuar = true;
 
                 }
@@ -247,12 +256,14 @@ namespace BancoCK
 
                         foreach (DataRow dr in tabla.Rows)
                         {
+                           
                             int idPrestamo = int.Parse(dr["Préstamo #"].ToString());
                             float salarioBruto = metodos.traerSalarioBrutoCliente(idPrestamo);
                             float salarioFinal = float.Parse(dr["Salario Neto"].ToString());
                             float porcentajeEndeudamiento = salarioFinal / salarioBruto;
                             porcentajeEndeudamiento = porcentajeEndeudamiento * 100;
                             double nivel = porcentajeEndeudamiento;
+                         
                             nivel = Math.Round(nivel,0);
                             string nivelEndeudamiento = nivel.ToString() + " %";
                             dr["Nivel de endeudamiento"] = nivelEndeudamiento;
@@ -266,8 +277,16 @@ namespace BancoCK
 
                         for(int x=0; x < GridView1.Rows.Count; x++)
                         {
+                            bool ValidarPorcentaje = false;
+                            int mensual = int.Parse(GridView1.Rows[x].Cells[7].Text.ToString());
+                            int SalarioNeto = Convert.ToInt32(GridView1.Rows[x].Cells[8].Text.ToString());
+                            int porcentajeDiferencial = Convert.ToInt32((40 * SalarioNeto) / 100);
+                            if (mensual > porcentajeDiferencial)
+                            {
+                                ValidarPorcentaje = true;
+                            }
                             string nivelEndeudamiento = GridView1.Rows[x].Cells[11].Text.Replace(" %", "");
-                            if (float.Parse(nivelEndeudamiento) > 70 || (float.Parse(GridView1.Rows[x].Cells[5].Text) > float.Parse(GridView1.Rows[x].Cells[8].Text)))
+                            if (float.Parse(nivelEndeudamiento) > 60 ||  ValidarPorcentaje==true)
                             {
                                 GridView1.Rows[x].BackColor = System.Drawing.ColorTranslator.FromHtml("#D03737");
                             }
@@ -300,17 +319,17 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompletoFechasAnalista(arreglo[0], arreglo[1], arreglo[2], tipoPrestamo.Value.ToString(), fechaInicio, fechaFinal);
+                            tabla = metodos.traePrestamoxNombreCompletoFechasAnalista(arreglo[0], arreglo[1], arreglo[2], tipoPrestamo.Value.ToString(), fechaInicio, fechaFinal, Session["Login"].ToString());
                         }
                         else if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[2];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreconApellidoFechasAnalista(arreglo[0], arreglo[1], fechaInicio, fechaFinal,tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreconApellidoFechasAnalista(arreglo[0], arreglo[1], fechaInicio, fechaFinal,tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         else
                         {
-                            tabla = metodos.traePrestamoxNombreFechasAnalista(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreFechasAnalista(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         break;
                     case "Apellido":
@@ -319,28 +338,28 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompletoFechasAnalista(arreglo[0], arreglo[1], arreglo[2], tipoPrestamo.Value.ToString(), fechaInicio, fechaFinal);
+                            tabla = metodos.traePrestamoxNombreCompletoFechasAnalista(arreglo[0], arreglo[1], arreglo[2], tipoPrestamo.Value.ToString(), fechaInicio, fechaFinal, Session["Login"].ToString());
 
                         }
                         else if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxApellidosFechasAnalistas(arreglo[0], arreglo[1], fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxApellidosFechasAnalistas(arreglo[0], arreglo[1], fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         else
                         {
-                            tabla = metodos.traePrestamoxApellidoFechasAnalistas(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxApellidoFechasAnalistas(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         break;
                     case "Correo":
-                        tabla = metodos.traePrestamoxCorreoFechasAnalistas(cadena, fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxCorreoFechasAnalistas(cadena, fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                     case "Telefono":
-                        tabla = metodos.traePrestamoxTelefonoFechasAnalista(int.Parse(cadena),fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxTelefonoFechasAnalista(int.Parse(cadena),fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                     case "Identificacion":
-                        tabla = metodos.traePrestamoxIdentificacionFechasAnalista(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxIdentificacionFechasAnalista(cadena,fechaInicio, fechaFinal, tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                 }
             }
@@ -362,17 +381,17 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompletoAnalista(arreglo[0], arreglo[1], arreglo[2],tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreCompletoAnalista(arreglo[0], arreglo[1], arreglo[2],tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         else if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[2];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreconApellidoAnalista(arreglo[0], arreglo[1], tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreconApellidoAnalista(arreglo[0], arreglo[1], tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         else
                         {
-                            tabla = metodos.traePrestamoxNombreAnalista(cadena,tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreAnalista(cadena,tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         break;
                     case "Apellido":
@@ -381,28 +400,28 @@ namespace BancoCK
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxNombreCompletoAnalista(arreglo[0], arreglo[1], arreglo[2],tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxNombreCompletoAnalista(arreglo[0], arreglo[1], arreglo[2],tipoPrestamo.Value.ToString(), Session["Login"].ToString());
 
                         }
                         else if (contadorEspacios == 1)
                         {
                             string[] arreglo = new string[3];
                             arreglo = cadena.Split(' ');
-                            tabla = metodos.traePrestamoxApellidosAnalista(arreglo[0], arreglo[1],tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxApellidosAnalista(arreglo[0], arreglo[1],tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         else
                         {
-                            tabla = metodos.traePrestamoxApellidoAnalista(cadena,tipoPrestamo.Value.ToString());
+                            tabla = metodos.traePrestamoxApellidoAnalista(cadena,tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         }
                         break;
                     case "Correo":
-                        tabla = metodos.traePrestamoxCorreoAnalista(cadena,tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxCorreoAnalista(cadena,tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                     case "Telefono":
-                        tabla = metodos.traePrestamoxTelefonoAnalista(int.Parse(cadena),tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxTelefonoAnalista(int.Parse(cadena),tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                     case "Identificacion":
-                        tabla = metodos.traePrestamoxIdentificacionAnalista(cadena,tipoPrestamo.Value.ToString());
+                        tabla = metodos.traePrestamoxIdentificacionAnalista(cadena,tipoPrestamo.Value.ToString(), Session["Login"].ToString());
                         break;
                 }
             }

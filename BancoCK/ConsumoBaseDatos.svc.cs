@@ -2878,7 +2878,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxTipoEstadoAnalista(string tipoPrestamo)
+        public DataTable traePrestamoxTipoEstadoAnalista(string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -2886,6 +2886,7 @@ namespace BancoCK
                 comando = new SqlCommand("traePrestamoxTipoEstadoAnalista", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -2902,7 +2903,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxTipoEstadoFechasAnalista(string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal)
+        public DataTable traePrestamoxTipoEstadoFechasAnalista(string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal, string Identificacion)
         {
             try
             {
@@ -2912,6 +2913,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
                 comando.Parameters.AddWithValue("@fechaInicio",fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -2928,7 +2930,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreCompletoFechasAnalista(string nombre, string apellido1, string apellido2, string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal)
+        public DataTable traePrestamoxNombreCompletoFechasAnalista(string nombre, string apellido1, string apellido2, string tipoPrestamo, DateTime fechaInicio, DateTime fechaFinal, string Identificacion)
         {
             try
             {
@@ -2941,6 +2943,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
                 comando.Parameters.AddWithValue("@fechaInicio",fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -2957,7 +2960,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreconApellidoFechasAnalista(string nombre, string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxNombreconApellidoFechasAnalista(string nombre, string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -2969,6 +2972,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio",fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo",tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -2985,7 +2989,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreFechasAnalista(string nombre, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxNombreFechasAnalista(string nombre, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -2996,6 +3000,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3012,7 +3017,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxApellidosFechasAnalistas(string apellido1, string apellido2, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxApellidosFechasAnalistas(string apellido1, string apellido2, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3024,6 +3029,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3040,7 +3046,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxApellidoFechasAnalistas(string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxApellidoFechasAnalistas(string apellido1, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3051,6 +3057,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3067,7 +3074,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxCorreoFechasAnalistas(string correo, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxCorreoFechasAnalistas(string correo, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3078,6 +3085,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3094,7 +3102,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxTelefonoFechasAnalista(int telefono, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxTelefonoFechasAnalista(int telefono, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3105,6 +3113,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3121,7 +3130,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxIdentificacionFechasAnalista(string Identificacion, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo)
+        public DataTable traePrestamoxIdentificacionFechasAnalista(string Identificacion, DateTime fechaInicio, DateTime fechaFinal, string tipoPrestamo, string IdentificacionFuncionario)
         {
             try
             {
@@ -3132,6 +3141,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
                 comando.Parameters.AddWithValue("@fechaFinal", fechaFinal);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@IdentificacionFuncionario", IdentificacionFuncionario);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3148,7 +3158,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreCompletoAnalista(string nombre, string apellido1, string apellido2, string tipoPrestamo)
+        public DataTable traePrestamoxNombreCompletoAnalista(string nombre, string apellido1, string apellido2, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3159,6 +3169,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Apellido1",apellido1);
                 comando.Parameters.AddWithValue("@Apellido2", apellido2);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3175,7 +3186,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreconApellidoAnalista(string nombre, string apellido1, string tipoPrestamo)
+        public DataTable traePrestamoxNombreconApellidoAnalista(string nombre, string apellido1, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3185,6 +3196,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Nombre", nombre);
                 comando.Parameters.AddWithValue("@Apellido1", apellido1);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3201,7 +3213,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxNombreAnalista(string nombre, string tipoPrestamo)
+        public DataTable traePrestamoxNombreAnalista(string nombre, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3210,6 +3222,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Nombre", nombre);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3226,7 +3239,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxApellidosAnalista(string apellido1, string apellido2, string tipoPrestamo)
+        public DataTable traePrestamoxApellidosAnalista(string apellido1, string apellido2, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3236,6 +3249,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Apellido1",apellido1);
                 comando.Parameters.AddWithValue("@Apellido2", apellido2);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3252,7 +3266,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxApellidoAnalista(string apellido1, string tipoPrestamo)
+        public DataTable traePrestamoxApellidoAnalista(string apellido1, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3261,6 +3275,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Apellido1", apellido1);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3277,7 +3292,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxCorreoAnalista(string correo, string tipoPrestamo)
+        public DataTable traePrestamoxCorreoAnalista(string correo, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3286,6 +3301,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Correo",correo);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3302,7 +3318,7 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxTelefonoAnalista(int telefono, string tipoPrestamo)
+        public DataTable traePrestamoxTelefonoAnalista(int telefono, string tipoPrestamo, string Identificacion)
         {
             try
             {
@@ -3311,6 +3327,7 @@ namespace BancoCK
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Telefono",telefono);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@Identificacion", Identificacion);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
@@ -3327,15 +3344,16 @@ namespace BancoCK
             }
         }
 
-        public DataTable traePrestamoxIdentificacionAnalista(string identificacion, string tipoPrestamo)
+        public DataTable traePrestamoxIdentificacionAnalista(string identificacion, string tipoPrestamo, string IdentificacionFuncionario)
         {
             try
             {
                 abrirConexion();
                 comando = new SqlCommand("traePrestamoxIdentificacionAnalista", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@identificacion",identificacion);
+                comando.Parameters.AddWithValue("@Identificacion",identificacion);
                 comando.Parameters.AddWithValue("@TipoPrestamo", tipoPrestamo);
+                comando.Parameters.AddWithValue("@IdentificacionFuncionario", IdentificacionFuncionario);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DatatableUsuarios = new DataTable();
