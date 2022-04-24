@@ -25,11 +25,11 @@
                            <label>Ingrese tipo prestamo</label>
                             <div class="select is-danger">
                             <select AutoPostBack="True" runat="server" id="tipoPrestamo">
-                               <option>Vehiculo</option>
-                               <option>Vivienda</option>
+                               <option>Préstamo vehiculo</option>
+                               <option>Préstamo Vivienda</option>
                                <option>Refundir deudas</option>
-                               <option>Educación</option>
-                               <option>Personal</option>
+                               <option>Préstamo Educacion</option>
+                               <option>Préstamo Personal</option>
                               <option>Apoyo negocio</option>
                             </select>
                            </div>
@@ -100,7 +100,7 @@
 
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:BoundField>
-                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Tipo Prestamo" HeaderText="EstadoCredito">
+                    <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Estado crédito" HeaderText="Estado crédito">
                         <HeaderStyle CssClass="tabla_header"></HeaderStyle>
 
                         <ItemStyle HorizontalAlign="Center" />

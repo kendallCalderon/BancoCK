@@ -133,7 +133,6 @@ namespace BancoCK
                     metodos.enviarCorreoClienteSolicitudCreditoRechazado(arreglo[4], arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[5]);
                     Session["denegado"] = "cambio";
                     mostrarTabla(Session["tipoPrestamo"].ToString());
-                    //Response.Redirect("/pages/Analista.aspx");
                 }
                 else
                 {

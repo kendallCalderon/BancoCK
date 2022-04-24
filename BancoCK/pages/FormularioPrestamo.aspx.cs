@@ -25,7 +25,8 @@ namespace BancoCK.pages
             descripcion = tabla.Rows[0]["Descripcion"].ToString();
             requisitos = tabla.Rows[0]["Requisito"].ToString();
             contenido1.InnerText = descripcion;
-            contenido3.InnerText = requisitos;
+            contenido3.InnerText = requisitos; 
+
         }
 
         protected void btnTramitar_Click(object sender, EventArgs e)
@@ -72,7 +73,7 @@ namespace BancoCK.pages
                         signo = '₡';
                     }
 
-                    // damos formato al monto maximo y minimo
+
                     if (idMoneda == 2)
                     {
                         arreglo = montoValores.Split(',');
@@ -93,25 +94,26 @@ namespace BancoCK.pages
                         montoMaximo.Replace('₡', signo);
                     }
 
+
                     //validamos que el monto ingresado por el usuario este en el rango del monto maximo y minimo
-                    if (double.Parse(txtMonto.Value.ToString()) > double.Parse(arreglo[0]) || double.Parse(txtMonto.Value.ToString()) < double.Parse(arreglo[0]))
+                    if (double.Parse(txtMonto.Value.ToString()) > double.Parse(arreglo[0]) || double.Parse(txtMonto.Value.ToString()) < double.Parse(arreglo[1]) || int.Parse(txtRangoAños.Value.ToString()) > metodos.traerAños(Session["tipoPrestamo"].ToString()) || int.Parse(txtRangoAños.Value.ToString()) <= 0)
                     {
-                        mensaje = "El monto no puede pasar de " + montoMaximo + " y " + montoMinimo;
+                        mensaje = "El monto no puede pasar de " + montoMaximo + " y " + montoMinimo + " , ni tampoco puede ser mayor a un plazo en años de " + metodos.traerAños(Session["tipoPrestamo"].ToString()) +" años";
                         script = string.Format("javascript:notificacion('{0}')", mensaje);
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
                     }
                     else
                     {
-                        string fecha = DateTime.Now.ToString("dd/MM/yyyy"); // guardamos la fecha actual del préstamo
+                        string fecha = DateTime.Now.ToString("dd-MM-yyyy"); // guardamos la fecha actual del préstamo
                         // guardamos los datos del cliente no autenticado
                         metodos.guardarInformacionClienteNoAutenticado(txtIdentificacion.Value.ToString(), txtNombre.Value.ToString(), txtApellido1.Value.ToString(), txtApellido2.Value.ToString(), txtCorreo.Value.ToString(), int.Parse(txtTelefono.Value.ToString()), "NoLogeado");
                         // registramos el préstamo del cliente
-                        metodos.registrarPrestamoClienteOriginal(txtIdentificacion.Value.ToString(),DateTime.Parse(fecha), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
+                        metodos.registrarPrestamoClienteOriginal(txtIdentificacion.Value.ToString(), DateTime.Parse(fecha), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
                         script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
-                        Session["tipoPrestamo"] = null;
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);;
                         // enviamos el correo al cliente
                         metodos.enviarCorreo(txtCorreo.Value.ToString());
+                        Response.Redirect("/pages/Prestamos.aspx");
                     }
 
 
@@ -124,7 +126,6 @@ namespace BancoCK.pages
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", script, true);
             }
-            Response.Redirect("/pages/Prestamos.aspx");
         }
 
         protected void btnAtras_Click(object sender, EventArgs e)

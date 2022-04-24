@@ -365,5 +365,16 @@ namespace BancoCK
 
         [OperationContract]
         DataTable ObtenerTramitadores();
+
+
+        [OperationContract]
+        int traerAños(string tipoPrestamo);
+
+        [OperationContract]
+        int traerNumero(string Identificacion);
+
+
+        [OperationContract]
+        DataTable traePrestamoxTipoEstadoGeneral();
     }
 }

@@ -96,6 +96,11 @@ h1 {
 .tabla {
     text-align: center;
     border: 2px solid var(--rojo);
+    text-align: center;
+    border: solid 2px var(--rojo);
+    box-shadow: 5px 5px 10px #222;
+    font-family: Poppins;
+}
     
    
     
@@ -139,15 +144,15 @@ h1 {
 .tabla_header {
     background-color: var(--rojo);
     color: #fff;
-    border: none;
+    background-color: var(--rojo);
+    color: #fff;
 }
 
 .tabla_item {
     text-align: center;
-    padding:0px !important;
-    margin:0px;
-    
-    
+    padding: 0px !important;
+    margin: 0px;
+
 }
 
 

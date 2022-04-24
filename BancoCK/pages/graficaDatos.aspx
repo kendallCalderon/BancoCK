@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/css/graficaDatos.css" />
+    <link rel="stylesheet" href="/css/CambioRoles.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.5/dist/js/uikit.min.js"></script>
     <style type="text/css">
         .auto-style1 {
@@ -21,19 +22,14 @@
         <div class="contenedor_formulario">
             <div class="contenedor_formulario_item">
                 <label class="lblfechas">Seleccione fecha de inicio:</label>
-                <div class="select is-danger">
-                    <asp:DropDownList runat="server" class="cbxfechas1" ID="cbxfechas1">
-                    </asp:DropDownList>
-                </div>
+                <input type="date" ID="cbxfechas1" runat="server" />
             </div>
             <div class="contenedor_formulario_item">
                 <label class="lblfechas">Seleccione la fecha final:</label>
-                <div class="select is-danger">
-                    <asp:DropDownList runat="server" class="cbxfechas1" ID="cbxfechas2">
-                    </asp:DropDownList>
-                </div>
+                    <input type="date" ID="cbxfechas2" runat="server" />
             </div>
             <div class="contenedor_formulario_item">
+                <label class="lblfechas" style="visibility:hidden">Seleccione fecha de inicio:</label>
                 <asp:Button runat="server" ID="mostrar" Text="Aceptar" cssClass="boton_aceptar" OnClick="mostrar_Click"></asp:Button>
             </div>
         </div>
@@ -490,10 +486,25 @@
 
         </li>
     </ul>
+     
+                    <div id="confirmacion" class="modal">
+                <h5 class="modal-close">&#10005;</h5>
+                <div class="modal-content center">
+                    <h4 class="tituloModal">Banco CK</h4>
+                    <label style="font-size: 20px; color: white" id="textoModal" runat="server">"Le informamos que no hay indicadores para las fechas ingresadas, pruebe con otras fechas por favor</label>
+                    <br>
+                    <asp:Button runat="server" class="btn-large btn" Text="Aceptar" />
+
+                </div>
+            </div>
 
 
-
-
+                <script language="javascript">
+                function abrirModalConfirmacion() {
+                    $('#confirmacion').modal();
+                    $('#confirmacion').modal('open');
+                }
+                </script>
 
 
 

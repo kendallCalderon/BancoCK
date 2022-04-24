@@ -2782,6 +2782,7 @@ namespace BancoCK
                 comando.Parameters.AddWithValue("@Correo",cadena);
                 comando.Parameters.AddWithValue("@estadoCredito", estadoCredito);
                 comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFinal", fechaInicio);
                 comando.Parameters.AddWithValue("@TipoPrestamo",tipoPrestamo);
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
@@ -2832,7 +2833,7 @@ namespace BancoCK
             try
             {
                 abrirConexion();
-                comando = new SqlCommand("traePrestamoxTelefonoFechas", conexion);
+                comando = new SqlCommand("traePrestamoxIdentificacionFechas", conexion);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Identificacion",identificacion);
                 comando.Parameters.AddWithValue("@estadoCredito", estadoCredito);
@@ -3875,6 +3876,80 @@ namespace BancoCK
             catch (Exception ex)
             {
                 throw new Exception("Error al recuperar la descripcion del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+
+        public int traerAños(string tipoPrestamo)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerAños", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombre",tipoPrestamo);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                int numero = int.Parse(DatatableUsuarios.Rows[0]["plazoAños"].ToString());
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer los años del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public int traerNumero(string Identificacion)
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traerNumero", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Identificacion",Identificacion);
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                int numero = int.Parse(DatatableUsuarios.Rows[0]["numero"].ToString());
+                return numero;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traer los años del prestamo, detalles:  " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public DataTable traePrestamoxTipoEstadoGeneral()
+        {
+            try
+            {
+                abrirConexion();
+                comando = new SqlCommand("traePrestamoxTipoEstadoGeneral", conexion);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DatatableUsuarios = new DataTable();
+                adaptador.Fill(DatatableUsuarios);
+                return DatatableUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al traerlos prestamos, detalles:  " + ex.Message);
             }
             finally
             {

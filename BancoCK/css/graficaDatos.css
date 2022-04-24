@@ -82,7 +82,8 @@ font-size:17px;
 
 
 .boton_aceptar {
-    margin:30% 0px;
+    margin:0 0;
+    margin-top:30px;
     width: 100px;
     height: 30px;
     border: none;

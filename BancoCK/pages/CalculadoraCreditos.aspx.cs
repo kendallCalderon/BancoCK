@@ -84,7 +84,6 @@ namespace BancoCK
                         Session["MontoMinimo"] = vector[1];
                         Session["MonedaSigno"] = '₡';
                     }
-                    Session["MonedaEscogida"] = null;
 
 
                 }
@@ -139,13 +138,16 @@ namespace BancoCK
             Session["MonedaEscogida"] = "Dolares";
             Session["PresionoBotonMoneda"] = "presionado";
             
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+
         }
 
         protected void btnColones_Click(object sender, EventArgs e)
         {
             Session["MonedaEscogida"] = "Colones";
             Session["PresionoBotonMoneda"] = "presionado";
-           
+            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+
         }
 
         protected void btnCalcular_Click(object sender, EventArgs e)
@@ -167,34 +169,54 @@ namespace BancoCK
 
                     if (double.Parse(txtMonto.Value.ToString()) > double.Parse(Session["MontoMayor"].ToString()) || double.Parse(txtMonto.Value.ToString()) < double.Parse(Session["MontoMenor"].ToString()))
                     {
-                        textoModal.InnerText = "Debes elegir un tipo de moneda antes de calcular";
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
-                    }
-                    else
-                    {
-                        double resultado = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAñosPrestamo.Value.ToString()), float.Parse(txtTasa.Value.ToString()));
-                        string cadena = string.Format("{0:N2}", resultado);
-                        numero = Decimal.Parse(cadena);
-                        valor1 = String.Format("{0:C}", numero);
-                        String signo = Session["MonedaSigno"].ToString();
-                        valor1 = valor1.Replace('₡', char.Parse(Session["MonedaSigno"].ToString()));
-                        txtMontoMensual.Value = valor1;
-                        Session["PresionoBotonMoneda"] = null;
-                        Session["MonedaSigno"] = null;
-                        txtMonto.Value = "";
-                        txtRangoAñosPrestamo.Value = "";
-
-
-                        if (Session["Login"] == null)
+                        if (Session["MonedaEscogida"].ToString().Equals("Dolares"))
                         {
-                            fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                            metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                            textoModal.InnerText = "El monto debe esta entre " + Session["MontoMaximo"].ToString() + " y " + Session["MontoMinimo"].ToString() + " Dolares";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                         }
                         else
                         {
-                            fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                            metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                            textoModal.InnerText = "El monto debe esta entre " + Session["MontoMaximo"].ToString() + " y " + Session["MontoMinimo"].ToString() + " Colones";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
                         }
+                      
+                    }
+                    else
+                    {
+
+                        int años = metodos.traerAños(Session["tipoPrestamo"].ToString());
+                        if(int.Parse(txtRangoAñosPrestamo.Value.ToString()) > años || int.Parse(txtRangoAñosPrestamo.Value.ToString()) <= 0)
+                        {
+                            textoModal.InnerText = "El maximo de años permitido para el prestamo tipo " + Session["tipoPrestamo"].ToString() + " es de " + años + " años y minimo de un año";
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
+                        }
+                        else
+                        {
+                            double resultado = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAñosPrestamo.Value.ToString()), float.Parse(txtTasa.Value.ToString()));
+                            string cadena = string.Format("{0:N2}", resultado);
+                            numero = Decimal.Parse(cadena);
+                            valor1 = String.Format("{0:C}", numero);
+                            String signo = Session["MonedaSigno"].ToString();
+                            valor1 = valor1.Replace('₡', char.Parse(Session["MonedaSigno"].ToString()));
+                            txtMontoMensual.Value = valor1;
+                            Session["PresionoBotonMoneda"] = null;
+                            Session["MonedaSigno"] = null;
+                            txtMonto.Value = "";
+                            txtRangoAñosPrestamo.Value = "";
+
+
+                            if (Session["Login"] == null)
+                            {
+                                fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                                metodos.registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                            }
+                            else
+                            {
+                                fecha = DateTime.Now.ToString("dd-MM-yyyy");
+                                metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                            }
+                        }
+                       
 
                     }
 

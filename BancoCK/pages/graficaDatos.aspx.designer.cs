@@ -21,7 +21,7 @@ namespace BancoCK.pages
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbxfechas1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cbxfechas1;
 
         /// <summary>
         /// Control cbxfechas2.
@@ -30,7 +30,7 @@ namespace BancoCK.pages
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbxfechas2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cbxfechas2;
 
         /// <summary>
         /// Control mostrar.
@@ -256,5 +256,14 @@ namespace BancoCK.pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pClicsNoAutenticadoVivienda;
+
+        /// <summary>
+        /// Control textoModal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl textoModal;
     }
 }
