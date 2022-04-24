@@ -17,6 +17,20 @@ namespace BancoCK
         protected void Page_Load(object sender, EventArgs e)
         {
 
+                tabla = metodos.traePrestamoxTipoEstadoGeneral();
+                tabla.Columns["idPrestamos"].ColumnName = "Préstamo #";
+                tabla.Columns["FechaCredito"].ColumnName = "Fecha crédito";
+                tabla.Columns["TipoPrestamo"].ColumnName = "Tipo Prestamo";
+                tabla.Columns["EstadoCredito"].ColumnName = "Estado crédito";
+                
+                GridView1.DataSource = tabla;
+                GridView1.DataBind();
+                if(tabla.Rows.Count > 1)
+            {
+                tabla.Rows.Clear();
+            }
+           
+
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -62,17 +76,22 @@ namespace BancoCK
                         tabla.Columns["idPrestamos"].ColumnName = "Préstamo #";
                         tabla.Columns["FechaCredito"].ColumnName = "Fecha crédito";
                         tabla.Columns["TipoPrestamo"].ColumnName = "Tipo Prestamo";
+                        tabla.Columns["EstadoCredito"].ColumnName = "Estado crédito";
+
                         GridView1.DataSource = tabla;
                         GridView1.DataBind();
                     }
-
+                
                 }
                 else
                 {
                     GridView1 = null;
+                   
                 }
+                
 
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 script = string.Format("javascript:notificacion('{0}')", "Error al buscar prestamos en la pantalla de historial de créditos");
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
@@ -185,17 +204,17 @@ namespace BancoCK
                         }
                         else
                         {
-                            tabla = metodos.traePrestamoxApellido(cadena, estadoCrédito,tipoPrestamo.ToString());
+                            tabla = metodos.traePrestamoxApellido(cadena, estadoCrédito,tipoPrestamo.Value.ToString());
                         }
                         break;
                     case "Correo":
-                        tabla = metodos.traePrestamoxCorreo(cadena, estadoCrédito, tipoPrestamo.ToString());
+                        tabla = metodos.traePrestamoxCorreo(cadena, estadoCrédito, tipoPrestamo.Value.ToString());
                         break;
                     case "Telefono":
-                        tabla = metodos.traePrestamoxTelefono(int.Parse(cadena), estadoCrédito, tipoPrestamo.ToString());
+                        tabla = metodos.traePrestamoxTelefono(int.Parse(cadena), estadoCrédito, tipoPrestamo.Value.ToString());
                         break;
                     case "Identificacion":
-                        tabla = metodos.traePrestamoxIdentificacion(cadena, estadoCrédito, tipoPrestamo.ToString());
+                        tabla = metodos.traePrestamoxIdentificacion(cadena, estadoCrédito, tipoPrestamo.Value.ToString());
                         break;
                 }
             }catch(Exception ex)
@@ -221,5 +240,7 @@ namespace BancoCK
 
             return contador;
         }
+
+
     }
 }

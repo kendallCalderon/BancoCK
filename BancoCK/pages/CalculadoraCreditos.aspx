@@ -25,7 +25,7 @@
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <label>Plazo en años</label>
-                    <input type="number"  id="txtRangoAñosPrestamo" runat="server" max="30"  min="1"/>
+                    <input type="number"  id="txtRangoAñosPrestamo" runat="server"/>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
                     <label>Tasa %</label>

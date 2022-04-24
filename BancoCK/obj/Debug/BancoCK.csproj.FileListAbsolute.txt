@@ -171,8 +171,8 @@ C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\VBCSComp
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
+C:\Users\camil\Desktop\proyectoBancoOriginal\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache

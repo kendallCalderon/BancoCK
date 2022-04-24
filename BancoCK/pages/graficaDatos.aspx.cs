@@ -17,6 +17,7 @@ namespace BancoCK.pages
 
         public void mostrarIndicadorxFechas()
         {
+            int bloque1 = 0, bloque2 = 0, bloque3 = 0, bloque4 = 0;
 
             // autenticados
             pClicsVivienda.InnerText = Convert.ToString(metodos.indicadorAutenticadoVivienda(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
@@ -27,26 +28,38 @@ namespace BancoCK.pages
             pClicsEducacion.InnerText = Convert.ToString(metodos.indicadorAutenticadoEducacion(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
 
 
+            if(pClicsVivienda.InnerText.ToString().Equals("0") && pClicsVehiculo.InnerText.Equals("0") && pClicsNegocio.InnerText.Equals("0") && pClicsdeudas.InnerText.Equals("0") && pClicsPersonal.InnerText.Equals("0") && pClicsEducacion.InnerText.Equals("0"))
+            {
+                bloque1 = 1;
+            }
+
 
             // no autenticado
-            pClicsNoAutenticadoVivienda.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosVivienda(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
+                pClicsNoAutenticadoVivienda.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosVivienda(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pClicsNoAutenticadoVehículo.InnerText = Convert.ToString(metodos.indicadorNoAutenticadoVehiculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pClicsNoAutenticadoNegocio.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosApoyoNegocio(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pClicsNoAutenticadodeudas.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosDeudas(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pClicsNoAutenticadoPersonal.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosPersonal(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pClicsNoAutenticadoEducacion.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosEducacion(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
 
+            if(pClicsNoAutenticadoVivienda.InnerText.Equals("0") && pClicsNoAutenticadoVehículo.InnerText.Equals("0") && pClicsNoAutenticadoNegocio.InnerText.Equals("0") && pClicsNoAutenticadodeudas.InnerText.Equals("0") && pClicsNoAutenticadoPersonal.InnerText.Equals("0") && pClicsNoAutenticadoEducacion.InnerText.Equals("0"))
+            {
+                bloque2 = 1;
+            }
 
 
-            //precalculo autenticados
-            pAutenticadoVivienda.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoViviendaPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
+                //precalculo autenticados
+                pAutenticadoVivienda.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoViviendaPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pAutenticadoVehiculo.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoVehiculoPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pAutenticadoNegocio.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoApoyoNegocioPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pAutenticadodeudas.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoDeudasPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pAutenticadoPersonal.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoPersonalPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pAutenticadoEducacion.InnerText = Convert.ToString(metodos.devolverIndicadoresAutenticadoEducacionPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
 
-
+            if(pAutenticadoVivienda.InnerText.Equals("0") && pAutenticadoVehiculo.InnerText.Equals("0") && pAutenticadoNegocio.InnerText.Equals("0") && pAutenticadodeudas.InnerText.Equals("0") && pAutenticadoPersonal.InnerText.Equals("0") && pAutenticadoEducacion.InnerText.Equals("0"))
+            {
+                bloque3 = 1;
+            }
 
 
             //precalculo no autenticados
@@ -56,6 +69,16 @@ namespace BancoCK.pages
             pNoAutenticadodeudas.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadoDeudasPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pNoAutenticadoPersonal.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadosPersonalPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
             pNoAutenticadoEducacion.InnerText = Convert.ToString(metodos.devolverIndicadoresNoAutenticadoEducacionPrecalculo(DateTime.Parse(Session["fechaInicial"].ToString()), DateTime.Parse(Session["fechaFinal"].ToString())));
+
+            if(pNoAutenticadoVivienda.InnerText.Equals("0") && pNoAutenticadoVehiculo.InnerText.Equals("0") && pNoAutenticadoNegocio.InnerText.Equals("0") && pNoAutenticadodeudas.InnerText.Equals("0") && pNoAutenticadoPersonal.InnerText.Equals("0") && pNoAutenticadoEducacion.InnerText.Equals("0"))
+            {
+                bloque4 = 1;
+            }
+
+
+            if(bloque1 == 1 && bloque2 == 1 && bloque3 == 1 && bloque4 == 1){
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalConfirmacion();", true);
+            }
         }
 
         public void llenarIndicadoresGeneralClicks(string cadena, string prestamo)
@@ -137,45 +160,8 @@ namespace BancoCK.pages
         protected void mostrar_Click(object sender, EventArgs e)
         {
 
-            Session["fechaInicial"] = cbxfechas1.SelectedValue.ToString();
-            Session["fechaFinal"] = cbxfechas2.SelectedValue.ToString();
-
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //if (!IsPostBack)
-            //{
-            //    if (Session["Login"] == null)
-            //    {
-            //        Response.Redirect("Home.aspx");
-            //    }
-
-
-            //}
-
-            if (Session["fechaInicial"] == null || Session["fechaFinal"] == null)
-            {
-                tabla = metodos.devolverFechasIndicadores();
-                string fechaInicio, fechaFinal;
-
-
-                for (int x = 0; x < tabla.Rows.Count; x++)
-                {
-                    if (lista.Contains(tabla.Rows[x]["Fecha"].ToString().Replace(" 00:00:00", "")) == false)
-                    {
-                        lista.Add(tabla.Rows[x]["Fecha"].ToString().Replace(" 00:00:00", ""));
-                    }
-                }
-
-                for (int x = 0; x < lista.Count; x++)
-                {
-                    cbxfechas1.Items.Add(lista[x]);
-                    cbxfechas2.Items.Add(lista[x]);
-                }
-
-                fechaInicio = cbxfechas1.SelectedValue.ToString() + " 00:00:00";
-                fechaFinal = cbxfechas2.SelectedValue.ToString() + " 00:00:00";
+            Session["fechaInicial"] = cbxfechas1.Value.ToString();
+            Session["fechaFinal"] = cbxfechas2.Value.ToString();
 
                 //me traigo los indicadores de clicks logeados y no logeados
                 string generalDeudas = metodos.generalDeudas();
@@ -209,11 +195,72 @@ namespace BancoCK.pages
                 llenarIndicadoresGeneralPrecalculo(generalVivienda, "Vivienda");
                 llenarIndicadoresGeneralPrecalculo(generalVehiculo, "Vehiculo");
 
-            }
-            else
+                if (Session["fechaInicial"] != null || Session["fechaFinal"] != null)
             {
                 mostrarIndicadorxFechas();
+                Session["fechaInicial"] = null;
+                Session["fechaFinal"] = null;
             }
+
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //if (!IsPostBack)
+            //{
+            //    if (Session["Login"] == null)
+            //    {
+            //        Response.Redirect("Home.aspx");
+            //    }
+
+
+            //}
+            if(!Page.IsPostBack)
+            {
+                if (Session["fechaInicial"] == null || Session["fechaFinal"] == null)
+                {
+
+
+                    //me traigo los indicadores de clicks logeados y no logeados
+                    string generalDeudas = metodos.generalDeudas();
+                    string generalNegocio = metodos.generalApoyoNegocio();
+                    string generalEducacion = metodos.generalEducacion();
+                    string generalPersonal = metodos.generalPersonal();
+                    string generalVivienda = metodos.generalPrestamoVivienda();
+                    string generalVehiculo = metodos.generalVehiculo();
+
+                    //lleno las cartas con el indicador
+                    llenarIndicadoresGeneralClicks(generalDeudas, "Deudas");
+                    llenarIndicadoresGeneralClicks(generalNegocio, "Negocio");
+                    llenarIndicadoresGeneralClicks(generalEducacion, "Educacion");
+                    llenarIndicadoresGeneralClicks(generalPersonal, "Personal");
+                    llenarIndicadoresGeneralClicks(generalVivienda, "Vivienda");
+                    llenarIndicadoresGeneralClicks(generalVehiculo, "Vehiculo");
+
+                    //me traigo los indicadores de precalculo logeados y no logeados
+                    string generalDeudasPrecalculo = metodos.generalDeudasPrecalculo();
+                    string generalNegocioPrecalculo = metodos.generalApoyoNegocioPrecalculo();
+                    string generalEducacionPrecalculo = metodos.generalEducacionPrecalculo();
+                    string generalPersonalPrecalculo = metodos.generalPersonalPrecalculo();
+                    string generalViviendaPrecalculo = metodos.generalPrestamoViviendaPrecalculo();
+                    string generalVehiculoPrecalculo = metodos.generalVehiculoPrecalculo();
+
+                    //lleno las cartas con el indicador
+                    llenarIndicadoresGeneralPrecalculo(generalDeudas, "Deudas");
+                    llenarIndicadoresGeneralPrecalculo(generalNegocio, "Negocio");
+                    llenarIndicadoresGeneralPrecalculo(generalEducacion, "Educacion");
+                    llenarIndicadoresGeneralPrecalculo(generalPersonal, "Personal");
+                    llenarIndicadoresGeneralPrecalculo(generalVivienda, "Vivienda");
+                    llenarIndicadoresGeneralPrecalculo(generalVehiculo, "Vehiculo");
+
+                }
+                else
+                {
+                    mostrarIndicadorxFechas();
+                }
+            }
+
+            
                
 
         }

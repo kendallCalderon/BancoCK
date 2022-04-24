@@ -12,7 +12,6 @@
         </div>
 
        
-
             </div>
       
 
@@ -30,7 +29,7 @@
                 <input type="date" id="fechaFinal" runat="server" class="browser-default tbx tbxCedulaCliente">
                 <label>Seleccione el analista</label>
                 <div class="select is-danger">
-                    <asp:DropDownList runat="server" id="comboAnlista" OnSelectedIndexChanged="cbxComboAnlista_SelectedIndexChanged">
+                    <asp:DropDownList runat="server" id="comboAnlista" OnSelectedIndexChanged="cbxComboAnlista_SelectedIndexChanged" >
                     </asp:DropDownList>
                 </div>
                 <asp:Button   runat="server" id="btnBuscar" CssClass="btnBuscar"  Text="Buscar" OnClick="btnBuscar_Click"></asp:Button>
@@ -45,7 +44,7 @@
 
 
         <div class="contenedor_tabla">
-            <asp:GridView class="striped responsive-table tabla" ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView class="tabla centered responsive-table" OnPageIndexChanging="GridView1_PageIndexChanging" ID="GridView1" AllowPaging="True" PageSize="5" runat="server" AutoGenerateColumns="False">
                 <Columns>
 
                     <asp:BoundField HeaderStyle-CssClass="tabla_header" ItemStyle-CssClass="tabla_item" DataField="Préstamo #" HeaderText="Préstamo #">

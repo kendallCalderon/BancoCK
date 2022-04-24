@@ -134,13 +134,11 @@ namespace BancoCK
                 if (campoBusqueda.Equals(""))
                 {
                    filtro =  metodos.traerRolesxrol(rolUsuario);
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
                 else
                 {
                     busquedaFiltro(tipoFiltro, rolUsuario, campoBusqueda);
                     continuar = true;
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "abrirModal", "abrirModalAviso();", true);
                 }
 
                 if (continuar == false)
