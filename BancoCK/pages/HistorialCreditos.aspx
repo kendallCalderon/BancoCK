@@ -8,9 +8,7 @@
         <a class="btnRegresar" href="/pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
         <div class="ImagenInicial">
             <img class="ImagenInicial_Fondo" src="/img/trabaner.gif" />
-
         </div>
-         
         <div class="Titulo">
             <h1>Tramitador</h1>
         </div>

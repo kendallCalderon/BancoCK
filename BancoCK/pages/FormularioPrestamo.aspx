@@ -68,7 +68,7 @@
                     <asp:Button class="btn1" Text="Tramitar" runat="server" ID="btnTramitar" OnClick="btnTramitar_Click"/>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                    <asp:Button class="btn2" Text="Atras" runat="server" ID="btnAtras" UseSubmitBehavior="false" OnClick="btnAtras_Click"/>
+                    <asp:Button class="btn2" Text="Atras" runat="server" ID="btnAtras" OnClick="btnAtras_Click"/>
                                </ContentTemplate>
                         </asp:UpdatePanel>
                 </div>

@@ -85,7 +85,7 @@ namespace BancoCK.pages
                         tasaPrestamo = metodos.devolverTasaTipoPrestamo(Session["tipoPrestamo"].ToString());
                         cuotaMensual = metodos.calcularCuotaMensual(float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), tasaPrestamo);
                         montoValores = metodos.devolverLimiteMontoPrestamo(Session["tipoPrestamo"].ToString());
-                        signo = '₡';
+                        signo = '₡'; 
                     }
 
                     if(idMoneda == 2)
@@ -102,10 +102,10 @@ namespace BancoCK.pages
                         arreglo = montoValores.Split(',');
                         numero = Decimal.Parse(arreglo[0]);
                         montoMaximo = String.Format("{0:C}", numero);
-                        montoMaximo.Replace('₡', signo);
+                        montoMaximo = montoMaximo.Replace('$', '₡');
                         numero = Decimal.Parse(arreglo[1]);
                         montoMinimo = String.Format("{0:C}", numero);
-                        montoMaximo.Replace('₡', signo);
+                        montoMinimo = montoMinimo.Replace('$', '₡');
                     }
 
 
@@ -137,11 +137,11 @@ namespace BancoCK.pages
             catch (Exception ex)
             {
                 error = "Error al guardar la informacion del cliente en la BD, favor revisar la bd del sistema bancario " + ex.Message;
-                script = string.Format("javascript:alerta('{0}')", error);
+                script = string.Format("javascript:alerta('{0}')",error);
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "alerta", script, true);
             }
-
+           
         }
     }
 }

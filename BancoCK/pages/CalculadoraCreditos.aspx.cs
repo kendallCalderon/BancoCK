@@ -39,7 +39,7 @@ namespace BancoCK
                     montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                     vector = montosPermitidos.Split(',');
                     ponerDecimales();
-                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
+                    txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('$', '₡') + ",  Monto Minimo: " + vector[1].Replace('$', '₡');
 
                 }
 
@@ -79,7 +79,9 @@ namespace BancoCK
                         montosPermitidos = metodos.devolverLimiteMontoPrestamo(tipoPrestamo);
                         vector = montosPermitidos.Split(',');
                         ponerDecimales();
-                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('₡', '₡') + ",  Monto Minimo: " + vector[1].Replace('₡', '₡');
+                        txtMensajeMonto.InnerText = "Monto Maximo: " + vector[0].Replace('$', '₡') + ",  Monto Minimo: " + vector[1].Replace('$', '₡');
+                        vector[0] = vector[0].Replace('$', '₡');
+                        vector[1] = vector[0].Replace('$', '₡');
                         Session["MontoMaximo"] = vector[0];
                         Session["MontoMinimo"] = vector[1];
                         Session["MonedaSigno"] = '₡';

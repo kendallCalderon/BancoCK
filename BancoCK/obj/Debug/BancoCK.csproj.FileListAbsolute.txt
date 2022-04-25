@@ -171,8 +171,8 @@ C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\AjaxControlToolkit.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CoreCompileInputs.cache
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.CopyComplete
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.dll
 C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.pdb
-C:\Users\diego\Documents\chechitocuc\cuatri 7\Admin y Programacion de Sitios Web\BancoCK\BancoCK\obj\Debug\BancoCK.csproj.AssemblyReference.cache

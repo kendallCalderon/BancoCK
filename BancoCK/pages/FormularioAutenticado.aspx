@@ -44,10 +44,10 @@
                     </div>
                 </div>
                 <div class="contenidoPrincipal_formulario_Acomodo_Botones">
-                    <asp:Button class="btn1" Text="Atras" runat="server" UseSubmitBehavior="false" ID="btnAtras" OnClick="btnAtras_Click1"  />
+                    <asp:Button class="btn1" Text="Atras" runat="server" ID="btnAtras" OnClick="btnAtras_Click1"  />
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                    <asp:Button class="btn2" Text="Tramitar" ID="btnTramitar"  OnClick="Unnamed_Click" runat="server" />
+                    <asp:Button class="btn2" Text="Tramitar" ID="btnTramitar" OnClick="Unnamed_Click" runat="server" />
                             </ContentTemplate>
                         </asp:UpdatePanel>
                 </div>

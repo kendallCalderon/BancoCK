@@ -88,10 +88,10 @@ namespace BancoCK.pages
                         arreglo = montoValores.Split(',');
                         numero = Decimal.Parse(arreglo[0]);
                         montoMaximo = String.Format("{0:C}", numero);
-                        montoMaximo.Replace('₡', signo);
+                        montoMaximo= montoMaximo.Replace('$','₡');
                         numero = Decimal.Parse(arreglo[1]);
                         montoMinimo = String.Format("{0:C}", numero);
-                        montoMaximo.Replace('₡', signo);
+                        montoMinimo=montoMinimo.Replace('$','₡');
                     }
 
 

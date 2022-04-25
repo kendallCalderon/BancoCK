@@ -181,11 +181,20 @@ namespace BancoCK
                         metodos.enviarCorreoClienteSolicitudCredito(arreglo[4],arreglo[0],arreglo[1],arreglo[2],arreglo[3],arreglo[5]);
                         Session["cambio"] = "cambio";
                     mostrarTabla(Session["tipoPrestamo"].ToString());
+                    Session["validacion"] = "validado";
                 }
                 else
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "El analista solo puede aceptar solicitudes que no tienen color rojo");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                    if (Session["validacion"] == null)
+                    {
+                        script = string.Format("javascript:notificacion('{0}')", "El analista solo puede aceptar solicitudes que no tienen color rojo");
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                    }
+                    else
+                    {
+                        Session["validacion"] = null;
+                    }
+                    
                 }
 
             }
