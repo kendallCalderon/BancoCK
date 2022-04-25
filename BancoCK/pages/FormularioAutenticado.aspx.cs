@@ -121,7 +121,7 @@ namespace BancoCK.pages
                         //recuperamos la fecha actual
                         string fecha = DateTime.Now.ToString("dd-MM-yyyy");
                         //registramos el préstamo del cliente
-                        metodos.registrarPrestamoCliente(Session["Login"].ToString(), DateTime.Parse(fecha), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
+                        metodos.registrarPrestamoCliente(Session["Login"].ToString(), DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
                         string Rol = "Cliente";
                         //Obtenemos el correo del cliente
                         string Correo = metodos.ObtenerCorreo(Session["Login"].ToString(), Rol);

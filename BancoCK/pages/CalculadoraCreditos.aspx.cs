@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -210,12 +211,12 @@ namespace BancoCK
                             if (Session["Login"] == null)
                             {
                                 fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                                metodos.registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                                metodos.registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
                             }
                             else
                             {
                                 fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                                metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.Parse(fecha));
+                                metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
                             }
                         }
                        
