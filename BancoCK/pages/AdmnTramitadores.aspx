@@ -31,7 +31,7 @@
         </Columns>
     </asp:GridView>
 
-<img class="imgAnalista" src="/img/TramitadorConf.gif" />
+<img class="imgAnalista" src="../img/TramitadorConf.gif" />
 
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Cliente.Master" AutoEventWireup="true" CodeBehind="CalculadoraCreditos.aspx.cs" Inherits="BancoCK.Formulario_web14" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/css/Calculadora.css" />
+    <link rel="stylesheet" href="../css/Calculadora.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
@@ -55,7 +55,7 @@
                 </div>
                 </div>
                 <div class="contenedorFlexible_contenido_subcontenido">
-                     <img class="img-imagenFondo" src="/img/bank.gif" />
+                     <img class="img-imagenFondo" src="../img/bank.gif" />
                 </div>
             </div>
         </div>

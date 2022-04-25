@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Analista.Master" AutoEventWireup="true" CodeBehind="HistorialCreditos.aspx.cs" Inherits="BancoCK.Formulario_web11" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/css/Tramitador.css" />
+    <link rel="stylesheet" href="../css/Tramitador.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
-        <a class="btnRegresar" href="/pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
+        <a class="btnRegresar" href="../pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
         <div class="ImagenInicial">
-            <img class="ImagenInicial_Fondo" src="/img/trabaner.gif" />
+            <img class="ImagenInicial_Fondo" src="../img/trabaner.gif" />
         </div>
         <div class="Titulo">
             <h1>Tramitador</h1>
@@ -64,7 +64,7 @@
             </div>
 
             <div class="ContenedorFormulario_image">
-                <img class="img-negociosImagen" src="/img/admintra.gif" />
+                <img class="img-negociosImagen" src="../img/admintra.gif" />
             </div>
 
         </div>

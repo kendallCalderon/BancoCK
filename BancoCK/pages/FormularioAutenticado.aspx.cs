@@ -42,7 +42,7 @@ namespace BancoCK.pages
 
         protected void btnAtras_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Prestamos.aspx");
+            Response.Redirect("Prestamos.aspx");
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace BancoCK.pages
                         metodos.enviarCorreo(Correo);
                         script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
-                        Response.Redirect("/pages/Prestamos.aspx");
+                        Response.Redirect("Prestamos.aspx");
                     }
 
                 }

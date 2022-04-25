@@ -20,9 +20,9 @@
 <body>
 
 
-      <img class="logo" src="/img/log.gif"  />
+      <img class="logo" src="../img/log.gif"  />
    
-    <video class="vid" src="/img/regis.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+    <video class="vid" src="../img/regis.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
        
     
     

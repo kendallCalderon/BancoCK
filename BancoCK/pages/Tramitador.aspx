@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Analista.Master" AutoEventWireup="true" CodeBehind="Tramitador.aspx.cs" Inherits="BancoCK.Formulario_web12" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/css/Tramitador.css" />
+    <link rel="stylesheet" href="../css/Tramitador.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Contenedor">
         <div class="ImagenInicial">
-            <img class="ImagenInicial_Fondo" src="/img/trabaner.gif" />
+            <img class="ImagenInicial_Fondo" src="../img/trabaner.gif" />
         </div>
 
        
@@ -36,7 +36,7 @@
             </div>
 
             <div class="ContenedorFormulario_image">
-                <img class="img-negociosImagen" src="/img/admintra.gif" />
+                <img class="img-negociosImagen" src="../img/admintra.gif" />
             </div>
 
         </div>
@@ -100,7 +100,7 @@
                     <div>
                         <div class="card">
                             <div class="card-image">
-                                <img class="imgs" src="/img/graficoana.jpg">
+                                <img class="imgs" src="../img/graficoana.jpg">
                             </div>
                             <div>
                                 <span class="card-title">Comparativa Créditos</span>
@@ -116,7 +116,7 @@
                     <div>
                         <div class="card">
                             <div class="card-image">
-                                <img class="imgs" src="/img/creditosana.jpg">
+                                <img class="imgs" src="../img/creditosana.jpg">
                             </div>
                             <div>
                                 <span class="card-title">Configuraciones</span>
@@ -134,7 +134,7 @@
                     <div>
                         <div class="card">
                             <div class="card-image">
-                                <img class="imgs" src="/img/historialana.jpg">
+                                <img class="imgs" src="../img/historialana.jpg">
                             </div>
                             <div>
                                 <span class="card-title">Historial créditos</span>

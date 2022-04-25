@@ -44,7 +44,7 @@ namespace BancoCK
                         
                 string correo = metodos.ObtenerCorreo(arreglo[0], "Analista");
                 metodos.correoAnalistaInforme(correo);
-                //Response.Redirect("/pages/Tramitador.aspx");
+                //Response.Redirect("Tramitador.aspx");
                 Tabla();
          
             }
@@ -103,6 +103,15 @@ namespace BancoCK
         {
             try
             {
+                if (!IsPostBack)
+                {
+                    if (Session["Login"] == null)
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
+
+
+                }
                 if (!Page.IsPostBack)
                 {
                     detalles = metodos.devolverPrestamosClientes();
@@ -231,14 +240,14 @@ namespace BancoCK
 
         protected void btnObservarCreditos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/graficaDatos.aspx");
+            Response.Redirect("graficaDatos.aspx");
         }
 
       
 
         protected void btnObservarHistorialCreditos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/HistorialCreditos.aspx");
+            Response.Redirect("HistorialCreditos.aspx");
         }
 
         protected void btnAdministrarAnalistas_Click(object sender, EventArgs e)
@@ -248,7 +257,7 @@ namespace BancoCK
 
         protected void btnObservarCreditosPendientes_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Configuraciones.aspx");
+            Response.Redirect("Configuraciones.aspx");
 
         }
 

@@ -60,7 +60,7 @@ namespace BancoCK.pages
         protected void btnOk_Click(object sender, EventArgs e)
         {
           
-            Response.Redirect("/pages/Home.aspx");
+            Response.Redirect("Home.aspx");
         }
     }
 }

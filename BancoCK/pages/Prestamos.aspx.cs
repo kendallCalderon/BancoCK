@@ -33,7 +33,7 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Préstamo Vivienda";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
 
                 }
                 else
@@ -41,7 +41,7 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Préstamo Vivienda";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -66,14 +66,14 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Préstamo Personal";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Personal";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -99,14 +99,14 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -135,14 +135,14 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Refundir mis deudas";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Refundir mis deudas";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -171,14 +171,14 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Apoyo Negocio";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Apoyo Negocio";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -204,14 +204,14 @@ namespace BancoCK.pages
                     Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioPrestamo.aspx");
+                    Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Educacion";
                     fecha = DateTime.Now.ToString("dd-MM-yyyy");
                     metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
-                    Response.Redirect("/pages/FormularioAutenticado.aspx");
+                    Response.Redirect("FormularioAutenticado.aspx");
                 }
 
 
@@ -231,37 +231,37 @@ namespace BancoCK.pages
         protected void btnVivienda_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Préstamo Vivienda";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
 
         protected void btnPersonal_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Préstamo Personal";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
 
         protected void btnVehiculo_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Préstamo vehiculo";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
 
         protected void btnDeudas_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Refundir mis deudas";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
 
         protected void btnNegocio_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Apoyo Negocio";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
 
         protected void btnEducacion_Click(object sender, EventArgs e)
         {
             Session["tipoPrestamo"] = "Préstamo Educacion";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
         }
     }
 }

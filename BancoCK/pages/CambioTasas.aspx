@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Configuraciones.Master" AutoEventWireup="true" CodeBehind="CambioTasas.aspx.cs" Inherits="BancoCK.Formulario_web2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <link rel="stylesheet" href="/css/Tasas.css" />
-    <script src="/js/modals.js"></script>
+        <link rel="stylesheet" href="../css/Tasas.css" />
+    <script src="../js/modals.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="ContenedorFormulario">
@@ -45,7 +45,7 @@
         </div>
             </div>
 
-    <img class="imgAnalista" src="/img/TasasConf.png" />
+    <img class="imgAnalista" src="../img/TasasConf.png" />
 
     <div id="tasas" class="modal modalTasas">
         <h5 class="modal-close">&#10005;</h5>

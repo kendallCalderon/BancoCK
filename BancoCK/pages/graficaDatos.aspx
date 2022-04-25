@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Analista.Master" AutoEventWireup="true" CodeBehind="graficaDatos.aspx.cs" Inherits="BancoCK.pages.graficaDatos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/css/graficaDatos.css" />
-    <link rel="stylesheet" href="/css/CambioRoles.css" />
+    <link rel="stylesheet" href="../css/graficaDatos.css" />
+    <link rel="stylesheet" href="../css/CambioRoles.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.5/dist/js/uikit.min.js"></script>
     <style type="text/css">
         .auto-style1 {
@@ -14,7 +14,7 @@
 
 
     <img class="contenedor_Imagen_imagenFondo" src="../img/bank.gif" />
-    <a class="btnRegresar" href="/pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
+    <a class="btnRegresar" href="../pages/Tramitador.aspx"><i class="fa-solid fa-left-long"></i><span>Regresar</span></a>
     <div class="ContenedorBusqueda">
         <h3>Créditos historicos por fecha</h3>
         <div class="contenedor_formulario">

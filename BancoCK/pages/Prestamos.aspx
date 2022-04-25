@@ -29,7 +29,7 @@
                     </div>
                     <div class="card-action">
                         <asp:Button class="btnSolicitar" OnClick="Unnamed1_Click"  Text="Solicitar" runat="server" /> 
-                        <asp:LinkButton id="btnVivienda" OnClick="btnVivienda_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                        <asp:LinkButton id="btnVivienda" OnClick="btnVivienda_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <div class="card-action">
                         <asp:Button class="btnSolicitar" OnClick="Unnamed2_Click"  Text="Solicitar" runat="server" />
                         <%--<i class="fa-solid fa-calculator fa-2x icono"></i>--%>
-                        <asp:LinkButton id="btnPersonal" OnClick="btnPersonal_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                        <asp:LinkButton id="btnPersonal" OnClick="btnPersonal_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="card-action">
                         <asp:Button class="btnSolicitar" OnClick="Unnamed3_Click" Text="Solicitar" runat="server" />
-                       <asp:LinkButton id="btnVehiculo" OnClick="btnVehiculo_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                       <asp:LinkButton id="btnVehiculo" OnClick="btnVehiculo_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="card-action">
                         <asp:Button class="btnSolicitar" OnClick="Unnamed4_Click"  Text="Solicitar" runat="server" />
-                        <asp:LinkButton id="btnDeudas" OnClick="btnDeudas_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                        <asp:LinkButton id="btnDeudas" OnClick="btnDeudas_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="card-action">
                      <asp:Button class="btnSolicitar" OnClick="Unnamed5_Click"  Text="Solicitar" runat="server" />
-                       <asp:LinkButton id="btnNegocio" OnClick="btnNegocio_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                       <asp:LinkButton id="btnNegocio" OnClick="btnNegocio_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                     </div>
                     <div class="card-action">
                         <asp:Button class="btnSolicitar" OnClick="Unnamed6_Click"  Text="Solicitar" runat="server" />
-                        <asp:LinkButton id="btnEducacion" OnClick="btnEducacion_Click" runat="server" ><img src="/img/Calculator.png" class="iconoo"  /></asp:LinkButton>
+                        <asp:LinkButton id="btnEducacion" OnClick="btnEducacion_Click" runat="server" ><img src="../img/Calculator.png" class="iconoo"  /></asp:LinkButton>
                     </div>
                 </div>
             </div>

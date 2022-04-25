@@ -257,7 +257,7 @@ namespace BancoCK
 
                 if (paso)
                 {
-                     //Response.Redirect("/pages/CambioRoles.aspx");
+                     //Response.Redirect("CambioRoles.aspx");
                 }
             }
 

@@ -16,8 +16,17 @@ namespace BancoCK
         string script;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["Login"] == null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
 
-                tabla = metodos.traePrestamoxTipoEstadoGeneral();
+
+            }
+
+            tabla = metodos.traePrestamoxTipoEstadoGeneral();
                 tabla.Columns["idPrestamos"].ColumnName = "Préstamo #";
                 tabla.Columns["FechaCredito"].ColumnName = "Fecha crédito";
                 tabla.Columns["TipoPrestamo"].ColumnName = "Tipo Prestamo";

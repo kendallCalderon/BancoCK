@@ -25,18 +25,18 @@ namespace BancoCK
         {
             if(Session["Login"] == null)
             {
-                Response.Redirect("/pages/Home.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {
-                Response.Redirect("/pages/HomeAutenticado.aspx");
+                Response.Redirect("HomeAutenticado.aspx");
             }
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session["Login"] = null;
-            Response.Redirect("/Pages/Home.aspx");
+            Response.Redirect("Home.aspx");
         }
     }
 }

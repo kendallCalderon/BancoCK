@@ -113,18 +113,18 @@ namespace BancoCK
         }
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Prestamos.aspx");
+            Response.Redirect("Prestamos.aspx");
         }
 
         protected void btnTramitar_Click(object sender, EventArgs e)
         {
             if (Session["Login"] == null)
             {
-                Response.Redirect("/pages/formularioPrestamo.aspx");
+                Response.Redirect("formularioPrestamo.aspx");
             }
             else
             {
-                Response.Redirect("/pages/FormularioAutenticado.aspx");
+                Response.Redirect("FormularioAutenticado.aspx");
             }
         }
 
@@ -140,7 +140,7 @@ namespace BancoCK
             Session["MonedaEscogida"] = "Dolares";
             Session["PresionoBotonMoneda"] = "presionado";
             
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
 
         }
 
@@ -148,7 +148,7 @@ namespace BancoCK
         {
             Session["MonedaEscogida"] = "Colones";
             Session["PresionoBotonMoneda"] = "presionado";
-            Response.Redirect("/pages/CalculadoraCreditos.aspx");
+            Response.Redirect("CalculadoraCreditos.aspx");
 
         }
 

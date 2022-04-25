@@ -113,7 +113,7 @@ namespace BancoCK.pages
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);;
                         // enviamos el correo al cliente
                         metodos.enviarCorreo(txtCorreo.Value.ToString());
-                        Response.Redirect("/pages/Prestamos.aspx");
+                        Response.Redirect("Prestamos.aspx");
                     }
 
 
@@ -130,7 +130,7 @@ namespace BancoCK.pages
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Prestamos.aspx");
+            Response.Redirect("Prestamos.aspx");
         }
 
     }

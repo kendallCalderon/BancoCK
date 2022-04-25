@@ -20,7 +20,7 @@ namespace BancoCK.pages
 
         protected void btnRgistrarse_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/pages/Registro.aspx");
+            Response.Redirect("Registro.aspx");
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace BancoCK.pages
                 this.Response.Cookies.Add(cookie);
 
                 Session["Login"] = username;
-                Response.Redirect("/pages/HomeAutenticado.aspx", false);
+                Response.Redirect("HomeAutenticado.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
                 
 
@@ -52,7 +52,7 @@ namespace BancoCK.pages
                 this.Response.Cookies.Add(cookie);
 
                 Session["Login"] = username;
-                Response.Redirect("/pages/Tramitador.aspx", false);
+                Response.Redirect("Tramitador.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
                
             }
@@ -64,7 +64,7 @@ namespace BancoCK.pages
                 this.Response.Cookies.Add(cookie);
 
                 Session["Login"] = username;
-                Response.Redirect("/pages/Analista.aspx", false);
+                Response.Redirect("Analista.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
                 
             }

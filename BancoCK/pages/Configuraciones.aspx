@@ -7,7 +7,7 @@
     <div class="Contenedor">
 
     <h1 class="tituloConfiguracion">Configuración del sistema</h1> 
-    <img src="/img/Configuracion.svg" class="imgConfiguracion"  />
+    <img src="../img/Configuracion.svg" class="imgConfiguracion"  />
     
     </div>
 

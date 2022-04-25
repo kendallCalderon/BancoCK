@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ClienteAutenticado.Master" AutoEventWireup="true" CodeBehind="HomeAutenticado.aspx.cs" Inherits="BancoCK.pages.HomeAutenticado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="/sass/Home.css" />
+    <link rel="stylesheet" href="../sass/Home.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -9,8 +9,8 @@
 
         <div class="flexible">
             <div class="container_item_imagen">
-                <%--<img class="img-imagenFondo" src="/img/imagenFondo.jpg" />--%>
-                <video class="vidAutenticado" src="/img/homevideo.mp4" muted loop  autoplay  ></video>
+                <%--<img class="img-imagenFondo" src="../img/imagenFondo.jpg" />--%>
+                <video class="vidAutenticado" src="../img/homevideo.mp4" muted loop  autoplay  ></video>
                    
             </div>
 
@@ -59,7 +59,7 @@
                 
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/Negocio.jpg">
+                            <img class="img-cartas" src="../img/Negocio.jpg">
                         </div>
                         <div>
                             <span class="card-title">Apoyo negocio</span>
@@ -75,7 +75,7 @@
                 
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/Personal.jpg">
+                            <img class="img-cartas" src="../img/Personal.jpg">
                         </div>
                         <div>
                             <span class="card-title">Préstamo Personal</span>
@@ -93,7 +93,7 @@
                
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/Educacion.jpg">
+                            <img class="img-cartas" src="../img/Educacion.jpg">
                         </div>
                         <div>
                             <span class="card-title">Préstamo Educación</span>
@@ -113,7 +113,7 @@
                
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/Vivienda.jpg">
+                            <img class="img-cartas" src="../img/Vivienda.jpg">
                         </div>
                         <div>
                             <span class="card-title">Préstamo Vivienda</span>
@@ -131,7 +131,7 @@
                
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/Deuda.jpg">
+                            <img class="img-cartas" src="../img/Deuda.jpg">
                         </div>
                         <div>
                             <span class="card-title">Refundir mis deudas</span>
@@ -151,7 +151,7 @@
                 
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-cartas" src="/img/car.jpg">
+                            <img class="img-cartas" src="../img/car.jpg">
                         </div>
                         <div>
                             <span class="card-title">Préstamo Vehiculo</span>
