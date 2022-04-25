@@ -82,7 +82,7 @@ h1 {
 }
 
 .select {
-    width: 265px;
+    width: 400px;
 }
 
 
@@ -377,9 +377,12 @@ h2 {
     
 }
 
-    .ddwnConfiguraciones_body:hover {
-        background-color: var(--rojo-orcuro) !important;
-    }
+
+
+
+.ddwnConfiguraciones_body:hover {
+    background-color: var(--rojo-orcuro) !important;
+}
 
 .btnAdministrarAnalistas{
     
