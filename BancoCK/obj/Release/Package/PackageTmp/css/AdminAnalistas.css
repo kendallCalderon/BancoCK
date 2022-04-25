@@ -1,0 +1,247 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --rojo: #D03737;
+    --rojo-orcuro: #bf1717;
+    --azul: #0C1248;
+    --azul-oscuro: #0C1228;
+    --gris: #444;
+}
+
+h1 {
+    color: var(--azul);
+    margin-left: 100px;
+    margin-top: 28px;
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa;
+}
+
+.contenedor-header{
+    display:flex;
+    flex-direction:row;
+    
+}
+
+.tabla_item {
+    text-align: center;
+    padding: 0px !important;
+    margin: 0px;
+}
+
+
+.tabla {
+    margin-top: 20px;
+    width: 950px;
+    margin-left: 300px;
+    text-align: center;
+    border:solid 2px var(--rojo);
+    box-shadow: 5px 5px 10px #222;
+    font-family:Poppins;
+    
+}
+
+.tabla_item_header{
+    background-color:var(--rojo);
+    color:#fff;
+     
+}
+
+.btnInsertar {
+    margin-left:300px;
+    margin-top: 40px !important;
+    width: initial !important;
+    width: 180px !important;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 18px;
+    color: #fff;
+    transition-duration: 0.1s;
+    font-family:Poppins;
+   
+
+}
+
+    .btnInsertar:hover {
+        box-shadow: 4px 4px 5px var(--rojo);
+        transform: scaleX(1.07);
+    }
+
+
+.iedit {
+    color: var(--azul);
+    transition-duration: 0.2s;
+}
+
+
+
+.iedit:hover {
+    transform: scale(1.2);
+}
+
+
+.itrash {
+    color: var(--azul);
+    transition-duration: 0.2s;
+}
+
+    .itrash:hover {
+        transform: scale(1.2);
+    }
+
+    .ContenedorInsertar{
+        width:500px;
+        height:500px;
+        background-color:var(--rojo);
+        display:flex !important;
+        flex-direction:row !important;
+        flex-wrap:wrap;
+        align-items:center;
+        margin-left:250px;
+        border-radius:8px;
+        
+        
+        
+    }
+
+.icnAtras{
+   
+    color:var(--azul);
+}
+
+
+
+.btnicon {
+   
+    position: absolute;
+    top: 10px;
+    margin-left: 10px;
+    transition-duration: 0.2s;
+    
+    
+    
+        
+}
+
+    .btnicon:hover {
+        transform: scale(1.2);
+    }
+
+    .t{
+        margin-top:17px;
+    }
+
+.ContenedorInsertar_item {
+    width: 200px !important;
+    margin: 10px 0px !important;
+}
+
+.btnModal {
+    border: none;
+    background: linear-gradient(to right, var(--azul), var(--azul), var(--azul), var(--azul-oscuro));
+    border-bottom: solid 4px #050441;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+    display: block;
+    background-color: var(--azul);
+    width: 30%;
+    height: 40px;
+    margin-left:30px;
+    text-align:center;
+    padding-top:8px;
+    margin-left:170px;
+    text-decoration:none !important;
+    
+    
+    
+}
+
+.btnModal:hover {
+    box-shadow: 4px 4px 5px var(--azul);
+    transform: scaleX(1.07);
+}
+
+.BackgroundModal {
+    backdrop-filter: blur(4px);
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 80%;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    outline: 0;
+    font-size: 1rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    margin: 10px auto;
+}
+
+    .form__field::placeholder {
+        color: transparent;
+    }
+
+    .form__field:placeholder-shown ~ .form__label {
+        font-size: 1rem;
+        cursor: text;
+        top: 20px;
+        margin: 0px 10%;
+    }
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 10%;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--azul), var(--azul));
+    border-image-slice: 1;
+}
+
+    .form__field:focus ~ .form__label {
+        position: absolute;
+        top: 10px;
+        display: block;
+        transition: 0.2s;
+        font-size: 0.8rem;
+        color: var(--azul);
+        font-weight: 700;
+        margin: 0 10%;
+    }
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.imgAnalista {
+    height: 270px !important;
+    width: 1000px;
+    margin-left: 300px;
+    margin-top: 30px;
+    
+   
+}

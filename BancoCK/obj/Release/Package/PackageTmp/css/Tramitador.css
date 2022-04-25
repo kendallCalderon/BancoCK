@@ -1,0 +1,470 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family:Poppins;
+}
+
+:root {
+    --rojo: #D03737;
+    --rojo-orcuro: #bf1717;
+    --azul: #0C1248;
+    --azul-oscuro: #0C1228;
+    --gris: #444;
+}
+
+.ImagenInicial{
+    display:flex;
+    flex-wrap:wrap;
+    height:350px;
+    width:100%;
+    justify-content:center;
+     
+}
+
+
+h1 {
+    color: var(--azul);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa, -4px 8px 1px #bbb, -4px 8px 1px #ccc, -4px 8px 1px #ddd;
+}
+
+.Titulo{
+    display:flex;
+    flex-wrap:wrap;
+    color:black;
+    justify-content:center;
+    margin:10px 0;
+}
+
+.ContenedorFormulario {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+
+
+.ContenedorFormulario_contenido1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--azul);
+    flex-grow: 2;
+    margin: 10px;
+    border-radius: 7px;
+    height:480px;
+    align-self:center;
+    justify-content:center;
+}
+
+.ContenedorFormulario_image {
+    display: flex;
+    flex-grow: 1;
+    height: 500px;
+    margin: 10px;
+    justify-content: center;
+    height: 480px;
+    align-items:center;
+}
+
+.subtitulo {
+    color: white;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.select {
+    width: 400px;
+}
+
+
+.contenedor_tabla {
+    margin: 50px 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-y: scroll;height: 400px; 
+}
+
+.tabla {
+    text-align: center;
+    border: 2px solid var(--rojo);
+    text-align: center;
+    border: solid 2px var(--rojo);
+    box-shadow: 5px 5px 10px #222;
+    font-family: Poppins;
+}
+    
+   
+    
+   
+
+
+.btnRegresar {
+    position: absolute !important;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: var(--rojo);
+    text-decoration: none !important;
+    transition-duration: 0.1s;
+}
+    .btnRegresar:hover {
+        color: var(--rojo-orcuro);
+        font-weight: 700;
+    }
+
+.cbxCombo {
+    width: 164px;
+    height: 24px !important;
+    border: none !important;
+    padding-top: 0px;
+    margin: 0px auto;
+    outline: none !important;
+    font-size: 15px;
+    transition-duration:0.1s;
+    
+}
+
+    .cbxCombo:hover {
+        color: var(--rojo);
+        transform:scaleX(1.05);
+    }
+
+
+
+
+
+.tabla_header {
+    background-color: var(--rojo);
+    color: #fff;
+    background-color: var(--rojo);
+    color: #fff;
+}
+
+.tabla_item {
+    text-align: center;
+    padding: 0px !important;
+    margin: 0px;
+
+}
+
+
+
+.btnBuscar {
+   
+    margin: 30px auto !important;
+    margin-top: 70px;
+    width:initial !important;
+    width:180px !important;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+}
+
+    .btnBuscar:hover {
+        box-shadow: 4px 4px 5px var(--rojo);
+        transform: scaleX(1.07);
+    }
+
+.boton3 {
+    background: var(--azul);
+    width: 80px;
+    display: inline-block;
+    height: 26px;
+    margin: 5px;
+    color: white;
+    border-radius: 10px;
+}
+
+
+
+.img-negociosImagen {
+    height:500px;
+    width:100%;
+}
+
+label {
+    margin: 10px auto;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size:18px;
+}
+
+
+input {
+    vertical-align: middle !important;
+    width: 265px !important;
+    height: 40px !important;
+    background-color: white !important;
+    margin: 0 auto !important ;
+    outline:none;
+}
+
+
+
+.tbxCedulaCliente::placeholder {
+    color: #888;
+}
+
+
+.icn {
+    color: var(--azul) !important;
+    margin: 0px 9px;
+    transition-duration:0.2s;
+   
+}
+
+    .icn:hover{
+        transform:scale(1.2);
+    }
+
+
+    .tbxCedulaCliente:focus {
+        border-bottom: 3px solid var(--rojo);
+        outline: none;
+    }
+
+
+
+
+
+
+
+.card-image {
+    max-height: 220px;
+    overflow: hidden;
+}
+
+
+.contenedorCartas {
+    background-color: #eee;
+    margin: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedorCartas_item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card {
+    width: 270px;
+    height: 385px;
+    margin: 0 50px;
+    box-shadow: 8px 8px 12px #777;
+}
+
+.card-title {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.imgs {
+    width: 428px;
+    height: 220px !important;
+    margin-bottom: 10px;
+    object-fit: cover;
+    transition-duration: 0.5s;
+}
+
+
+    .imgs:hover {
+        transform: scale(1.5);
+    }
+
+
+.btnObservar {
+    all:inherit;
+    padding:0px;
+    margin: 0 auto !important;
+    margin-top: 30px !important;
+    width: 130px !important;
+    height: 30px !important;
+    border: none;
+    background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px #999;
+    font-size: 15px !important;
+    color: #fff;
+    transition-duration: 0.1s;
+}
+
+    .btnObservar:hover {
+        box-shadow: 4px 4px 5px var(--rojo);
+        transform: scaleX(1.07);
+    }
+
+
+h2 {
+    color: var(--azul);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #868484, -3px 6px 1px #abaaaa, -4px 8px 1px #bbb, -4px 8px 1px #ccc, -4px 8px 1px #ddd;
+}
+
+.columna2 {
+    display: flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.columna2-item{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+}
+
+.ddwnConfiguraciones {
+    background-color: var(--rojo) !important;
+    border:none !important;
+    margin-top:35px;
+    border-radius:8px !important;
+}
+
+
+
+.ddwnConfiguraciones_header {
+    background-color: var(--rojo) !important;
+    color: #fff;
+    border: none !important;
+    border-radius: 8px !important;
+    
+}
+
+.ddwnConfiguraciones_header:hover {
+    background-color: var(--rojo-orcuro) !important;
+    
+}
+
+.ddwnConfiguraciones_header:focus {
+        background-color: var(--rojo-orcuro) !important;
+}
+
+.ddwnConfiguraciones_body {
+    border: none;
+    border-radius: 8px !important;
+    height:50px !important;
+    padding:12px 0px;
+    text-align:center;
+    
+    
+}
+
+
+
+
+.ddwnConfiguraciones_body:hover {
+    background-color: var(--rojo-orcuro) !important;
+}
+
+.btnAdministrarAnalistas{
+    
+    background-color:transparent !important;
+    border:none !important;
+    color:#fff;
+    font-size:18px;
+}
+
+   
+    .ddwnAdminAnalista_Contenido {
+    background-color: var(--rojo);
+}
+
+.sideConfiguraciones {
+    background-color: var(--rojo) !important;
+    filter: opacity(0.9);
+}
+
+
+
+.modal {
+    overflow: hidden !important;
+    background-color: var(--azul) !important;
+    height: 290px !important;
+    color: white !important;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.datos {
+    height: 240px !important;
+    background-color: var(--rojo) !important;
+}
+
+.tituloModal {
+    color: white !important;
+}
+
+.btn {
+    margin-top: 30%;
+    text-align: center;
+    border: none;
+    background: linear-gradient(to right, #D03737, #D03737, #D03737, #bf1717 );
+    border-bottom: solid 4px #910000;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+}
+
+.error {
+    margin-top: 30%;
+    text-align: center;
+    border: none;
+    background-color: var(--azul) !important;
+    border-bottom: solid 4px #910000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px #111;
+    font-size: 15px;
+    color: #fff;
+    transition-duration: 0.1s;
+    height: 30px;
+}
+
+.tituloModal {
+    color: white !important;
+}
+
+
+.tituloModal {
+    color: white !important;
+}
+
+.btn:hover {
+    box-shadow: 4px 4px 5px var(--azul);
+    transform: scaleX(1.07);
+}

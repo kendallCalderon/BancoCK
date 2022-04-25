@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ClienteAutenticado.master.cs" Inherits="BancoCK.ClienteAutenticado" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/ClienteMaster.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <script src="https://kit.fontawesome.com/be9c2ad52f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="bulma/css/bulma.css">
+ <link rel="stylesheet" href="Foundation/css/foundation.css">
+    <link rel="stylesheet" href="uikit/css/uikit.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+      <script src="../js/modals.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <header class="headerr">
+
+            <div class="navbar-fixed ">
+                <nav class="navcase ">
+                    <div class="head"></div>
+                    <div class="nav-wrapper navcolor  ">
+                        <img class="brand-logo" src="../img/logoBanco.png" />
+                        <div class="navmenu">
+                            <a class="navmenu_items" href="HomeAutenticado.aspx">Pagina inicio</a>
+                            <a class="navmenu_items" href="Prestamos.aspx">Préstamos</a>
+                            <a class="navmenu_items" href="collapsible.html">Contactos</a>
+                            <a class="navmenu_items" href="collapsible.html">Historia</a>
+                            <asp:LinkButton OnClick="Unnamed_Click"  class="navmenu_items"  runat="server" >Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket fa-1x"></i></asp:LinkButton>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        <footer class="page-footer foter">
+            <div class="container">
+                <div class="row footerdiv">
+                    <div class="col l6 s12">
+                        <img src="../img/logoBanco.png" />
+                    </div>
+                    <div class="divcontactos">
+                        <h5 class="white-text">Contactos</h5>
+                        <ul>
+                            <li class="grey-text text-lighten-3">Correo</li>
+                            <li class="grey-text text-lighten-3">bck@hotmail.com</li>
+                            <li class="grey-text text-lighten-3">Teléfono: 22715566</li>
+                        </ul>
+                    </div>
+                    <div class="divinformacion">
+                        <h5 class="white-text">Información</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tipo de cambio</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Calculadora</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">¿Quiénes somos?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2022 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+      
+    </form>
+</body>
+</html>
