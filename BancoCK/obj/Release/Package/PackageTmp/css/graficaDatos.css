@@ -167,25 +167,25 @@ p {
 
 
 .cartaUno {
-    background-image: url("/img/Negociogr.jpg") !important;
+    background-image: url("../img/Negociogr.jpg") !important;
     background-position: center;
     background-size: cover;
 }
 
 .cartaDos {
-    background-image: url("/img/Personalgr.jpg") !important;
+    background-image: url("../img/Personalgr.jpg") !important;
     background-position: center;
     background-size: cover;
 }
 
 .cartaTres {
-    background-image: url("/img/Edugr.jpg") !important;
+    background-image: url("../img/Edugr.jpg") !important;
     background-position: center;
     background-size: cover;
 }
 
 .cartaCuatro {
-    background-image: url("/img/Deudagr.jpg") !important;
+    background-image: url("../img/Deudagr.jpg") !important;
     background-position: center;
     background-size: cover;
     
@@ -193,13 +193,13 @@ p {
 }
 
 .cartaCinco {
-    background-image: url("/img/Vehiculogr.jpg") !important;
+    background-image: url("../img/Vehiculogr.jpg") !important;
     background-position: center;
     background-size: cover;
 }
 
 .cartaSeis {
-    background-image: url("/img/Viviendagr.jpg") !important;
+    background-image: url("../img/Viviendagr.jpg") !important;
     background-position: center;
     background-size: cover;
 }

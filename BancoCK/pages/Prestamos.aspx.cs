@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,7 @@ namespace BancoCK.pages
     {
         string script;
         ConsumoBaseDatos metodos = new ConsumoBaseDatos();
-        string fecha = "";
+     
         protected void Page_Load(object sender, EventArgs e)
         {
          
@@ -31,16 +32,16 @@ namespace BancoCK.pages
 
 
                     Session["tipoPrestamo"] = "Préstamo Vivienda";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Vivienda", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
 
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Vivienda";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Vivienda", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Vivienda", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 
@@ -64,15 +65,15 @@ namespace BancoCK.pages
                 {
 
                     Session["tipoPrestamo"] = "Préstamo Personal";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Personal", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Personal";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Personal", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Personal", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 
@@ -97,15 +98,15 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo vehiculo", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo vehiculo";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo vehiculo", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo vehiculo", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 
@@ -133,15 +134,15 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Refundir mis deudas";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Refundir mis deudas", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Refundir mis deudas";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Refundir mis deudas", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Refundir mis deudas", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 
@@ -169,15 +170,15 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Apoyo Negocio";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Apoyo Negocio", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Apoyo Negocio";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Apoyo Negocio", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Apoyo Negocio", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 
@@ -202,15 +203,15 @@ namespace BancoCK.pages
                 if (Session["Login"] == null)
                 {
                     Session["tipoPrestamo"] = "Préstamo Educacion";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickUsuarioNoAutenticado("Préstamo Educación", 1, "clicks", fecha);
                     Response.Redirect("FormularioPrestamo.aspx");
                 }
                 else
                 {
                     Session["tipoPrestamo"] = "Préstamo Educacion";
-                    fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Educación", 1, "clicks", DateTime.Parse(fecha));
+                    var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                    metodos.registrarIndicadorPrestamoClickAutenticado("Préstamo Educación", 1, "clicks", fecha);
                     Response.Redirect("FormularioAutenticado.aspx");
                 }
 

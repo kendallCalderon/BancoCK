@@ -112,7 +112,7 @@ namespace BancoCK
                 {
                     if (GridView1.Rows[x].Cells[0].Text.Equals(idPrestamo))
                     {
-                        if ((GridView1.Rows[x].BackColor ==  System.Drawing.ColorTranslator.FromHtml("#D03737")) == true)
+                        if ((GridView1.Rows[x].BackColor == System.Drawing.ColorTranslator.FromHtml("#D03737")) == true)
                         {
                             continuar = true;
                             break;
@@ -133,13 +133,25 @@ namespace BancoCK
                     metodos.enviarCorreoClienteSolicitudCreditoRechazado(arreglo[4], arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[5]);
                     Session["denegado"] = "cambio";
                     mostrarTabla(Session["tipoPrestamo"].ToString());
+                    Session["validacion"] = "validado";
                 }
                 else
                 {
-                    script = string.Format("javascript:notificacion('{0}')", "El analista solo puede rechazar solicitudes que  tienen color rojo");
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
-                }
 
+
+                    if (Session["validacion"] == null)
+                    {
+                        script = string.Format("javascript:notificacion('{0}')", "El analista solo puede rechazar solicitudes que  tienen color rojo");
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "error", script, true);
+                    }
+                    else
+                    {
+                        Session["validacion"] = null;
+                    }
+
+                   
+
+                }
             }
             catch (Exception ex)
             {

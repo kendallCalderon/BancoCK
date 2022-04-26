@@ -210,13 +210,13 @@ namespace BancoCK
 
                             if (Session["Login"] == null)
                             {
-                                fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                                metodos.registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
+                                var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                                metodos.registrarIndicadorPrestamoUsuarioNoAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", fecha);
                             }
                             else
                             {
-                                fecha = DateTime.Now.ToString("dd-MM-yyyy");
-                                metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
+                                var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
+                                metodos.registrarIndicadorPrestamoUsuarioAutenticadoPrecalculo(Session["tipoPrestamo"].ToString(), 1, "Calculos", fecha);
                             }
                         }
                        

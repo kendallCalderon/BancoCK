@@ -104,11 +104,11 @@ namespace BancoCK.pages
                     }
                     else
                     {
-                        string fecha = DateTime.Now.ToString("dd-MM-yyyy"); // guardamos la fecha actual del préstamo
+                        var fecha = DateTime.ParseExact(DateTime.Now.ToString("MM-dd-yyyy"), "MM-dd-yyyy", CultureInfo.InvariantCulture); // guardamos la fecha actual del préstamo
                         // guardamos los datos del cliente no autenticado
                         metodos.guardarInformacionClienteNoAutenticado(txtIdentificacion.Value.ToString(), txtNombre.Value.ToString(), txtApellido1.Value.ToString(), txtApellido2.Value.ToString(), txtCorreo.Value.ToString(), int.Parse(txtTelefono.Value.ToString()), "NoLogeado");
                         // registramos el préstamo del cliente
-                        metodos.registrarPrestamoClienteOriginal(txtIdentificacion.Value.ToString(), DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd").ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture), "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
+                        metodos.registrarPrestamoClienteOriginal(txtIdentificacion.Value.ToString(), fecha, "espera", float.Parse(txtMonto.Value.ToString()), int.Parse(txtRangoAños.Value.ToString()), cuotaMensual, float.Parse(txtSalarioNeto.Value.ToString()), int.Parse(txtAñosLaborando.Value.ToString()), float.Parse(txtSalarioBruto.Value.ToString()), Session["tipoPrestamo"].ToString(), idMoneda);
                         script = string.Format("javascript:notificacion('{0}')", "Se ha enviado tu solicitud de crédito, favor estar atento a tu correo sobre la aprobación de tu credito");
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "notificacion", script, true);
                         // enviamos el correo al cliente
